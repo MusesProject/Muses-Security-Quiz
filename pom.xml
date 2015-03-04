@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>ch.unige</groupId>
-    <artifactId>security-quizz</artifactId>
+    <artifactId>muses-security-quizz</artifactId>
     <packaging>war</packaging>
     <version>0.1.0.BUILD-SNAPSHOT</version>
-    <name>security-quizz</name>
+    <name>muses-security-quizz</name>
     <properties>
         <aspectj.version>1.7.2</aspectj.version>
         <java.version>7</java.version>
