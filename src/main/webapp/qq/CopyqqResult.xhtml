@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/mobile.xhtml">
+	
+<ui:define name="head">
+ 	<pm:header title="Resultat" >
+            </pm:header>
+</ui:define>
+
+<ui:define name="content">
+
+	<pm:content styleClass="jqm-content" >
+
+			<h:outputText
+						value="#{messages.label_qq_result} = #{quizAppMbean.totalCorrAnswer}" />
+
+					<p:dataTable value="#{quizAppMbean.samplequestions}" var="question"
+						tableStyleClass="ui-table-columntoggle">
+
+						<p:column headerText="#{messages.label_qq_question}">
+							<h:outputText value="#{question.questionText}" />
+						</p:column>
+						<p:column headerText="#{messages.label_qq_your_answer}">
+							<h:outputText value="#{question.selectedOption.optionText}" />
+						</p:column>
+						<p:column headerText="#{messages.label_qq_outcome}"
+							rendered="#{!question.selectedOption.answer}">
+							<h:outputText value="#{messages.label_qq_wrong}" />
+						</p:column>
+						<p:column headerText="#{messages.label_qq_outcome}"
+							rendered="#{question.selectedOption.answer}">
+							<h:outputText value="#{messages.label_qq_true}" />
+						</p:column>
+
+
+
+
+			</p:dataTable>
+
+			<p:chart type="pie" model="#{pieChartView.pieModel1}" />
+			<p:chart type="bar" model="#{chartView.barModel}" />
+			<p:chart type="bar" model="#{chartView.horizontalBarModel}" />
+
+
+		</pm:content>
+	
+</ui:define>
+
+</ui:composition>
+
+        

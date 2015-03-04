@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+<h:head>
+</h:head>
+
+<h:body>
+		<pm:page>
+            <pm:header title="Login"></pm:header>
+             
+            <pm:content>
+            	<pm:field >
+            		<p style="text-align: center" >
+            			<h:graphicImage style="width:35%" library="images" name="muses.png" ></h:graphicImage>
+            		</p>
+            	</pm:field>
+
+				<pm:field>
+					<p:outputLabel for="username" value="Username :" />
+					<p:inputText id="username" />
+				</pm:field>
+
+				<pm:field>
+					<p:outputLabel for="password" value="Password:" />
+					<p:password id="password" />
+				</pm:field>
+
+				<p:commandButton  value="Register" type="button" />
+
+            </pm:content>
+ 
+            <pm:footer style="" title="Footer"></pm:footer>
+        </pm:page>
+
+</h:body>
+
+</html>

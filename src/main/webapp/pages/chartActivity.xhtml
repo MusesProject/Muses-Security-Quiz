@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+
+<h:head>
+</h:head>
+
+<h:body>
+
+		<!-- ************** Main Page ************** -->
+		
+		
+		<pm:page id="main">
+            <pm:header title="Resultat" >
+            	<p:commandButton id="btn-menu" icon="ui-icon-bars" type="button" />
+            </pm:header>
+             
+            <pm:content>
+				<p:button styleClass="chart-btn-Vbar" value="V bar chart" type="button" outcome="/chartz/vbarchart" />
+				<p:button  value="H bar chart" type="button" outcome="/chartz/hbarchart" />
+				<p:button  value="Point bar chart" type="button" outcome="/chartz/pointchart" />
+				<p:button  value="Line chart" type="button" outcome="/chartz/linechart" />
+			</pm:content>
+
+								<!-- ************** Overlay Stuff ************** -->
+								
+			<p:overlayPanel for="btn-menu" widgetVar="pnl-basic" at="left"
+				showEffect="overlay">
+				<div class="center">
+				<h:graphicImage style="width:50%" library="images"
+						name="museCircle.png"></h:graphicImage>
+				
+				<h2 style="color:white;text-shadow: none;" >Quick Menu</h2>
+				</div>
+				<p:menu>
+					<p:menuitem value="Main menu" url="#" />
+					<p:menuitem value="Quizz" url="#" />
+					<p:menuitem value="Resultat" url="#" />
+					<p:menuitem value="Préférence" url="#" />
+				</p:menu>
+			</p:overlayPanel>
+
+
+			<pm:footer title="Muses Security Quizz tm"></pm:footer>
+        </pm:page>
+        
+</h:body>
+
+</html>
+        

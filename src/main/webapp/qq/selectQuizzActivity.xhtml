@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/mobile.xhtml">
+	
+<ui:define name="head">
+ 	<pm:header title="#{messages.label_head_quiz}" >
+            </pm:header>
+</ui:define>
+
+<ui:define name="content">
+
+	<pm:content styleClass="jqm-content" >
+	<p class="center">
+			#{messages.label_quizz_select}
+		</p>
+		<p class="center">
+		
+		
+		
+			<p:dataList value="#{quizAppMbean.newQuizz}"  var="quizz" styleClass="center btnQuiz"  ajax="false" rendered="#{quizAppMbean.employee.getMyQuizzes().size()!= 0}">
+						
+						<h:form styleClass="center" >
+						<p:commandButton action="/qq/step_one.xhtml" style="width:100%" styleClass="center btnQuiz" value="#{quizz.description}"  >
+						 	<f:setPropertyActionListener value="#{quizz}" target="#{quizAppMbean.quizzChosen}" />
+						 	<f:param name="description" value="#{quizz.description}" />						  		
+						 </p:commandButton>
+						
+						</h:form>
+   						
+    			</p:dataList>
+    			
+    			<p:dataGrid value="#{quizAppMbean.newQuizz}"  var="quizz" styleClass="center"  ajax="false btnQuiz" rendered="#{quizAppMbean.employee.getMyQuizzes().size() == 0}">
+						
+						
+						<h:form styleClass="center" >
+						<p:commandButton action="/qq/step_one.xhtml" style="width:100%" styleClass="center btnQuiz" value="#{quizz.description}" disabled = "false" >
+						 	<f:setPropertyActionListener value="#{quizz}" target="#{quizAppMbean.quizzChosen}" />
+						 	<f:param name="description" value="#{quizz.description}" />						  		
+						 </p:commandButton>
+						
+						</h:form>
+   						
+    			</p:dataGrid>
+			</p>
+			
+			<p class="center">
+	
+		
+		</p>
+	</pm:content>
+	
+</ui:define>
+
+</ui:composition>
+
+        
+

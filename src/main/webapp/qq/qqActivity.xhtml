@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+	<style>
+.ui-paginator {
+	display: none !important;
+}
+</style>
+
+</h:head>
+
+<h:body>
+
+	<h:form id="quizForm">
+		<pm:page id="second">
+
+		<p:dataList value="#{quizAppMbean.quizzChosen.listQuestions}" var="question"
+			widgetVar="dataList" type="definition" paginatorPosition="top"
+			paginator="true" rows="1" rowIndexVar="row">
+
+			<h:panelGrid columns="1">
+				<h:outputText value="Question Number #  #{row+1}" />
+
+				<h:outputText value="#{question.questionText}"
+					style="font-size:30px " />
+
+				<p:dataGrid columns="2" value="#{question.answers}"
+					var="option">
+					<p:commandButton value="#{option}"
+						style="height:100px;width:300px"
+						action="#{quizAppMbean.moveToNextQuestion}">
+						<f:setPropertyActionListener target="#{question.selectedOption}"
+							value="#{option}" />
+
+						<f:setPropertyActionListener target="#{quizAppMbean.selectedOption}"
+							value="#{option}" />
+					</p:commandButton>
+
+
+				</p:dataGrid>
+
+			</h:panelGrid>
+
+		</p:dataList>
+
+		<p:button update="result" widgetVar="resultButton"
+			outcome="/qq/qqResult" value="Complete quiz"></p:button>>
+
+		<p:dialog id="result" modal="true" width="700" header="Results"
+			widgetVar="finalDialog" closable="true" resizable="no">
+
+			<h:outputText
+				value="Total correct answer = #{quizAppMbean.totalCorrAnswer}" />
+
+			<p:dataTable value="#{quizAppMbean.quizzChosen.listQuestions}" var="question">
+
+				<p:column headerText="question">#{question.questionText}</p:column>
+				
+
+
+
+
+			</p:dataTable>			
+		
+
+		</p:dialog>
+
+        </pm:page>
+
+	</h:form>
+
+</h:body>
+</html>

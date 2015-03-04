@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	      xmlns:sec="http://www.springframework.org/security/tags"
+	
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view renderKitId="PRIMEFACES_MOBILE" locale="#{localeBean.locale}"  contentType="text/html" />
+<h:head>
+</h:head>
+
+<h:body>
+    <sec:authorize access="hasAnyRole('ROLE_USER')">
+
+	<h:form>
+		<pm:page id="main">
+			<pm:field>
+				<p style="text-align: center" class="topImg">
+					<h:graphicImage style="width:60%" library="images"
+						name="logo.png"></h:graphicImage>
+				</p>
+			</pm:field>
+			
+			<pm:header title="Muse Security Quizz" ></pm:header>
+             
+            <pm:content>
+				<p class="center">
+					<p:button styleClass="btnWidth" value="Quizz" type="button" outcome="/qq/selectQuizzActivity" data-icon="quiz" />
+					<p:button styleClass="btnWidth" value="Result" type="button" />
+					<p:button styleClass="btnWidth" value="Profile" type="button" />
+					<p:button styleClass="btnWidth" value="About Muses" type="button" />
+				  <p:commandButton action="#{authenticationBean.doLogout()}" value="logout"  ajax="false" styleClass="btnWidth" />
+					
+				</p>
+			</pm:content>
+ 
+            <pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false" title="Footer"></pm:footer>
+        </pm:page>
+
+	</h:form>
+	    </sec:authorize>
+	     <sec:authorize access="isAnonymous()">
+	     you must be logged
+	     	</sec:authorize>
+	     
+	
+</h:body>
+
+</html>

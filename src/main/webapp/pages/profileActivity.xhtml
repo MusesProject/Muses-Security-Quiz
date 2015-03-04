@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/mobile.xhtml">
+	
+<ui:define name="head">
+ 	<pm:header title="Profile" >
+    </pm:header>
+    <style>
+		body{font-size:1.5em;}
+		.ui-block-a{text-align: end;}
+		.ui-block-b{width:10%!important;}
+    </style>
+    
+    
+</ui:define>
+<ui:define name="content">
+
+	<pm:content styleClass="jqm-content" >
+		
+		<h1>#{quizAppMbean.employee.firstname} Profile</h1>
+			<div>
+			<p:panelGrid columns="3" >
+				<p:outputLabel value="#{messages.label_surname} :" />
+				<p:outputLabel value="" />
+				<p:outputLabel value="#{quizAppMbean.employee.lastname}" />
+				
+				<p:outputLabel value="Email :" />
+				<p:outputLabel value="" />
+				<p:outputLabel value="#{quizAppMbean.employee.email}" />
+				
+				
+				<p:outputLabel value="#{messages.label_job} : " />
+				<p:outputLabel value="" />
+				<p:outputLabel value="#{quizAppMbean.employee.job}" />
+				
+				<p:outputLabel value="#{messages.label_anciennete} : " />
+				<p:outputLabel value="" />
+				<p:outputLabel value="#{quizAppMbean.employee.experience}" />
+				
+				<p:outputLabel value="#{messages.label_age} : " />
+				<p:outputLabel value="" />
+				<p:outputLabel value="#{quizAppMbean.employee.age}" />
+				
+				<p:outputLabel value="#{messages.label_sex} : " />
+				<p:outputLabel value="" />
+				<p:outputLabel value="#{messages.label_woman}" rendered="#{quizAppMbean.employee.sex == 2}" />
+				<p:outputLabel value="#{messages.label_man}" rendered="#{quizAppMbean.employee.sex == 1}" />
+				
+				<p:outputLabel value="#{messages.label_quizz} : " />
+				<p:outputLabel value="" />
+				<p:outputLabel value="#{quizAppMbean.employee.getMyQuizzes().size()}" />
+				
+			</p:panelGrid>
+</div>
+		</pm:content>
+	
+</ui:define>
+
+</ui:composition>
+
+        

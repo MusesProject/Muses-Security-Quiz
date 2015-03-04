@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<style> html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+
+</style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false"
+		type="text/javascript"></script>
+	<script type="text/javascript">
+	function initialize() {
+		  var mapOptions = {
+		    center: new google.maps.LatLng(44.5452, -78.5389),
+		    zoom: 9
+		  };
+		  var map = new google.maps.Map(document.getElementById('map-canvas'),
+		      mapOptions);
+
+		  var bounds = new google.maps.LatLngBounds(
+		      new google.maps.LatLng(44.490, -78.649),
+		      new google.maps.LatLng(44.599, -78.443)
+		  );
+
+		  // Define a rectangle and set its editable property to true.
+		  var rectangle = new google.maps.Rectangle({
+		    bounds: bounds,
+		    editable: true
+		  });
+
+		  rectangle.setMap(map);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+			</script>
+</h:head>
+
+
+<h:body>
+    
+	<p:growl id="messages" showDetail="true" />
+	<f:view contentType="text/html">
+		<p:gmap id="gmap" center="44.5452, -78.5389" zoom="13" type="HYBRID"
+			style="width:100%;height:400px" model="#{addMarkersView.emptyModel}"
+			onPointClick="handlePointClick(event);" widgetVar="map" />			
+	</f:view>
+	<p:dialog widgetVar="dlg" showEffect="fade">
+		<h:form prependId="false">
+			<h:panelGrid columns="2">
+				<h:outputLabel for="title" value="Title:" />
+				<p:inputText id="title" value="#{addMarkersView.title}" />
+
+				<f:facet name="footer">
+					<p:commandButton value="Add"
+						actionListener="#{addMarkersView.addMarker}" update=":messages"
+						oncomplete="markerAddComplete()" />
+					<p:commandButton value="Cancel" onclick="return cancel()" />
+				</f:facet>
+			</h:panelGrid>
+
+			<h:inputHidden id="lat" value="#{addMarkersView.lat}" />
+			<h:inputHidden id="lng" value="#{addMarkersView.lng}" />
+		</h:form>
+	</p:dialog>
+
+			<div id="map-canvas"></div>
+
+
+
+</h:body>
+
+</html>

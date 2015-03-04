@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+<f:view renderKitId="PRIMEFACES_MOBILE" locale="#{localeBean.locale}"  contentType="text/html" />
+<h:head>
+</h:head>
+
+<h:body>
+	<sec:authorize access="hasAnyRole('ROLE_USER')">
+	<pm:page styleClass="jqm-demos" >
+	
+		<pm:header styleClass="jqm-header" >
+			<ui:insert name="head" />
+			<a class="jqm-navmenu-link ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" href="#menu" data-role="button" role="button">Menu</a>
+		</pm:header>
+	
+		<ui:insert name="content" />
+	
+		<div id="menu" data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a" >
+				<h:form>
+			
+			<div class="center">
+				<h:graphicImage style="width:50%" library="images"
+					name="museCircle.png"></h:graphicImage>
+	
+				<h2 style="color: white; text-shadow: none;">Quick Menu</h2>
+			</div>
+			<p:menu>
+				<p:menuitem value="#{messages.label_menu_main}" outcome="/pages/main" />
+				<p:menuitem value="#{messages.label_menu_quiz}" outcome="/qq/selectQuizzActivity" />
+				<p:menuitem value="#{messages.label_menu_result}" outcome="/qq/quizResult" />
+				<p:menuitem value="#{messages.label_menu_profile}" outcome="/pages/profileActivity"  />
+				<p:menuitem action="#{authenticationBean.doLogout()}" value="#{messages.label_logout}" ajax="false" />
+				
+			</p:menu>
+			
+			
+			
+
+				<p:panelGrid columns="2" cellspacing="0" cellpadding="0"
+						styleClass="S-hidden">
+						<p:panelGrid cellspacing="0" cellpadding="0" >
+							<p:panelGrid columns="4" >
+
+								<h:panelGroup styleClass="ui-responsive">
+									<h:commandLink id="switchToEnglish"
+										action="#{localeBean.setSelectedLocale}">
+										<f:param name="locale" value="en" />
+										<h:graphicImage library="images" name="en.png"
+											alt="Switch language to English" />
+									</h:commandLink>
+									<p:tooltip for="switchToEnglish">
+										<h:outputFormat value="">
+											<f:param value="English" />
+										</h:outputFormat>
+									</p:tooltip>
+								</h:panelGroup>
+								<h:panelGroup styleClass="ui-responsive">
+									<h:commandLink id="switchToGerman"
+										action="#{localeBean.setSelectedLocale}">
+										<f:param name="locale" value="de" />
+										<h:graphicImage library="images" name="de.png"
+											alt="Switch language to German" />
+									</h:commandLink>
+									<p:tooltip for="switchToGerman">
+										<h:outputFormat value="">
+											<f:param value="Deutsch" />
+										</h:outputFormat>
+									</p:tooltip>
+								</h:panelGroup>
+								<h:panelGroup styleClass="ui-responsive">
+									<h:commandLink id="switchToSpanish"
+										action="#{localeBean.setSelectedLocale}">
+										<f:param name="locale" value="es" />
+										<h:graphicImage library="images" name="es.png"
+											alt="Switch language to Spanish" />
+									</h:commandLink>
+									<p:tooltip for="switchToSpanish">
+										<h:outputFormat value="">
+											<f:param value="Espanol" />
+										</h:outputFormat>
+									</p:tooltip>
+								</h:panelGroup>
+								<h:panelGroup styleClass="ui-responsive">
+									<h:commandLink id="switchToFrench"
+										action="#{localeBean.setSelectedLocale}">
+										<f:param name="locale" value="fr" />
+										<h:graphicImage library="images" name="fr.png"
+											alt="Switch language to French" />
+									</h:commandLink>
+									<p:tooltip for="switchToFrench">
+										<h:outputFormat value="">
+											<f:param value="Francais" />
+										</h:outputFormat>
+									</p:tooltip>
+								</h:panelGroup>
+							</p:panelGrid>
+						</p:panelGrid>
+					</p:panelGrid>
+					
+				</h:form>
+
+
+
+
+			</div>
+	
+		<pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false" title="Muses Security Quizz™" >
+	
+		</pm:footer>
+	
+	</pm:page>
+	</sec:authorize>
+</h:body>
+</html>

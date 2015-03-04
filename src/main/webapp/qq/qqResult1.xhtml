@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/mobile.xhtml">
+	
+<ui:define name="head">
+ 	<pm:header title="Resultat" >
+            </pm:header>
+</ui:define>
+
+<ui:define name="content">
+
+	<pm:content styleClass="jqm-content" >
+
+			<h:outputText
+						value="#{messages.label_qq_resultat}" />
+
+				<p:dataTable value="#{quizAppMbean.resultQuizzChosen.getQuizz().getListQuestions()}" var="question"
+				tableStyleClass="ui-table-columntoggle" rowIndexVar="rowIndex">
+
+
+			   <p:column headerText="Quiz">
+			   
+					<h:outputText styleClass="boldResult" value="#{messages.label_qq_question}: " />				
+					<h:outputText value="#{question.questionText}" />
+					<br/>
+					<h:outputText styleClass="boldResult" value="#{messages.label_qq_reponse}: " />					
+					<h:outputText value="#{question.answers.get(question.response)}" />
+					<br/>
+					<h:outputText styleClass="boldResult" value="#{messages.label_qq_Yreponse}: " />					
+					<h:outputText value="#{question.answers.get(quizAppMbean.resultQuizzChosen.getResponses().get(rowIndex))}" />
+					<br/>
+				</p:column>
+
+
+
+			</p:dataTable>
+
+			<p:chart type="pie" model="#{quizAppMbean.pieModel1}" />
+			<p:chart type="bar" model="#{quizAppMbean.barModel}" />
+
+
+
+		</pm:content>
+		
+			
+
+
+
+	
+</ui:define>
+
+</ui:composition>
+
+        

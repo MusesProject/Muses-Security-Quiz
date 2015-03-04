@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/mobile.xhtml">
+	
+<ui:define name="head">
+ 	<pm:header title="#{messages.label_menu_result} " >
+            </pm:header>
+</ui:define>
+
+<ui:define name="content">
+
+
+	<pm:content styleClass="jqm-content"  rendered="#{quizAppMbean.employee.getMyQuizResults().size() != 0}">
+	
+	<h:outputText value="#{quizAppMbean.quizzChosen.description}" />
+	<br/>
+	
+	
+	<h:outputText
+						value="#{messages.label_qq_result}   #{quizAppMbean.employee.lastname}" />
+						<br/>
+
+			<p:dataList value="#{quizAppMbean.employee.getMyQuizResults()}"  var="resultquizz" styleClass="center btn-margin"  ajax="false">
+						
+						<h:form styleClass="center" >
+						<p:commandButton action="/qq/qqResult1.xhtml" style="width:60%" styleClass="center btn_inline"  value="#{resultquizz.getQuizz().getDescription()}" ajax="false" >
+						    <f:setPropertyActionListener value="#{resultquizz}" target="#{quizAppMbean.resultQuizzChosen}" />
+						 	
+						 	<f:param name="description" value="#{results.getQuizz().getDescription()}" />						  		
+						 </p:commandButton>
+						
+						</h:form>
+   						
+    			</p:dataList>
+
+			
+
+
+		</pm:content>
+		
+			<pm:content styleClass="jqm-content"  rendered="#{quizAppMbean.employee.getMyQuizzes().size() == 0}">
+			
+				<h:outputText
+						value="#{messages.label_qq_no_quizz}" />
+						<br/>
+			
+			</pm:content>
+	
+</ui:define>
+
+</ui:composition>
+
+        

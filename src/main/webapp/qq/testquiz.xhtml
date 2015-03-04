@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/mobile.xhtml">
+
+	<ui:define name="head">
+
+		<pm:header title="Select a quizz">
+<style>
+	.ui-paginator {
+		display: none !important;
+	}
+	
+	li.ui-li-static.ui-body-inherit {
+		display: none;
+	}
+	
+	<h:outputText value =".ui-li-static:nth-child (#{quizAppMbean1 .counter + 1}){display:block !important;}"/>
+
+</style>
+
+		</pm:header>
+
+	</ui:define>
+
+
+	<ui:define name="content">
+
+		<pm:content styleClass="jqm-content">
+
+
+			<h:form id="quizForm">
+				<p:dataList value="#{quizAppMbean1.samplequestions}" var="question"
+					widgetVar="dataList" type="definition" paginatorPosition="top"
+					paginator="true" rows="10" rowIndexVar="row" columns="1" id="peace">
+
+					<h:panelGrid columns="1" id="out">
+
+						<h:outputText value="Question Number #  #{row+1}" />
+
+						<h:outputText value="#{question.questionText}"
+							style="font-size:30px " />
+
+						<p:dataGrid columns="2" value="#{question.questionOptions}"
+							var="option">
+							<p:commandButton value="#{option.optionText}"
+								style="height:100px;width:300px" ajax="false"
+								action="#{quizAppMbean1.moveToNextQuestion}">
+
+
+								<f:setPropertyActionListener target="#{question.selectedOption}"
+									value="#{option}" />
+
+								<f:setPropertyActionListener
+									target="#{quizAppMbean1.selectedOption}" value="#{option}" />
+							</p:commandButton>
+
+						</p:dataGrid>
+
+					</h:panelGrid>
+
+				</p:dataList>
+
+				<p:button update="result" widgetVar="resultButton"
+					outcome="/qq/qqResult" value="Complete quiz"></p:button>
+
+				<p:dialog id="result" modal="true" width="700" header="Results"
+					widgetVar="finalDialog" closable="true" resizable="no">
+
+					<h:outputText
+						value="Total correct answer = #{quizAppMbean1.totalCorrAnswer}" />
+
+					<p:dataTable value="#{quizAppMbean1.samplequestions}"
+						var="question">
+
+						<p:column headerText="question">#{question.questionText}</p:column>
+						<p:column headerText="your answer">#{question.selectedOption.optionText}</p:column>
+						<p:column headerText="Outcome"
+							rendered="#{!question.selectedOption.answer}">Wrong</p:column>
+						<p:column headerText="Outcome"
+							rendered="#{question.selectedOption.answer}">Correct</p:column>
+
+
+
+
+					</p:dataTable>
+
+
+				</p:dialog>
+
+
+			</h:form>
+
+		</pm:content>
+
+	</ui:define>
+
+</ui:composition>

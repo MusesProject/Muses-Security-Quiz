@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+<h:head>
+<style>
+input{font-size:1em !important};
+.ui-slider-input{height:initial!important;}
+</style>
+</h:head>
+
+<h:body>
+		<pm:page>
+            <pm:header title="#{messages.label_register}" ></pm:header>
+             
+            <pm:content>
+            	<h:form>
+            
+            	<pm:field >
+            		<p style="text-align: center" >
+            			<span class="logoDarkTxt" >Register to </span>
+            			<span class="logoPinkTxt" >MUSES</span>
+            		</p>
+            	</pm:field>
+
+				<pm:field>
+					<p:outputLabel for="name" value="#{messages.label_name} :" />
+					<p:inputText id="name" value="#{registerBean.firstname}" />
+				</pm:field>
+				
+				<pm:field>
+					<p:outputLabel for="surname" value="#{messages.label_surname} :" />
+					<p:inputText id="surname" value="#{registerBean.lastname}" />
+				</pm:field>
+				
+				
+				<pm:field>
+					<p:outputLabel for="password" value="#{messages.label_Password} :" />
+					<p:password id="password" value="#{registerBean.password}"/>
+				</pm:field>
+				
+				<pm:field>
+					<p:outputLabel for="cpassword" value="#{messages.label_confirm_psw} :" />
+					<p:password id="cpassword" value="#{registerBean.confirmpassword}"/>
+				</pm:field>
+				
+				<pm:field>
+					<p:outputLabel for="email" value="Email :" />
+					<p:inputText id="email" value="#{registerBean.email}"/>
+				</pm:field>
+				
+				<pm:field>
+					<p:outputLabel for="profession" value="#{messages.label_job} :" />
+					<p:inputText id="profession" value="#{registerBean.job}"/>
+				</pm:field>
+
+				<pm:field>
+					<p:outputLabel for="anciennete" value="#{messages.label_anciennete}" />
+					<pm:inputSlider maxValue="50" id="anciennete" value="#{registerBean.experience}" style="height:initial!important" />
+				</pm:field>
+				
+				<pm:field>
+					<p:outputLabel for="age" value="#{messages.label_age}" />
+					<pm:inputSlider id="age" maxValue="70" value="#{registerBean.age}" style="height:initial!important" />
+				</pm:field>
+
+				<pm:field>
+					<p:outputLabel for="sexe" value="#{messages.label_sex}" />
+					<p:selectOneButton id="sexe" value="#{registerBean.sex}" style="text-align: center;" >
+						<f:selectItem itemLabel="#{messages.label_man}" itemValue="1" />
+						<f:selectItem itemLabel="#{messages.label_woman}" itemValue="2" />
+					</p:selectOneButton>
+				</pm:field>
+				
+				<p style="text-align: center;">
+				<p:commandButton  value="#{messages.label_save}"  styleClass="ui-btn-inline btnInline"  action="#{registerBean.createEmployeeAccount}" />
+				<p:button  value="#{messages.label_cancel}"  styleClass="ui-btn-inline btnInline" outcome="/public/loginActivity" />
+				</p>
+					</h:form>
+				
+            </pm:content>
+ 
+            <pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false" title="Muses Security Quizz™" ></pm:footer>
+        </pm:page>
+
+</h:body>
+
+</html>

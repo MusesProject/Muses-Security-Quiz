@@ -1,0 +1,32 @@
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-01-13 10:34:44
+project --topLevelPackage ch.unige --projectName security-quizz --java 7 --packaging JAR
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2015-01-13 10:34:56
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-01-13 10:35:01
+jpa setup --database H2_IN_MEMORY --provider HIBERNATE 
+entity jpa --class ch.unige.userProfile
+field string --fieldName username
+field string --fieldName password --notNull 
+web jsf setup 
+web jsf all --package ch.unige
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2015-01-13 10:54:22
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-01-19 12:29:38
+entity jpa --class ch.unige.Employee 
+field string --fieldName firstname --notNull 
+field string --fieldName lastname --notNull 
+field string --fieldName email --notNull 
+field string --fieldName password --notNull 
+field string --fieldName job --notNull 
+field number --fieldName experience --type int --notNull 
+field number --fieldName age --type int --notNull 
+web jsf all --package ch.unige
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2015-01-22 16:31:19
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-01-22 16:31:52
+entity jpa --class ch.unige.QuizzQuestion --
+entity jpa --class ch.unige.Quizz
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-01-27 14:31:57
+entity jpa --class ch.unige.QuizzResult
+focus --class ~.Employee
+field list --fieldName myQuizzes --type ~.Quizz
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-02-04 16:08:16
+jpa setup --database MYSQL --provider HIBERNATE 
+entity jpa --class ch.unige.QuizzResultDetails

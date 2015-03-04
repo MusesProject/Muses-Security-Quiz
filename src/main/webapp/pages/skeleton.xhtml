@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form>
+		<pm:page>
+            <pm:header title="Skeleton" >
+            	<p:commandButton id="btn-menu" icon="ui-icon-bars" type="button" />
+            </pm:header>
+             
+            <pm:content>
+            
+            
+            </pm:content>
+
+			<p:overlayPanel for="btn-menu" widgetVar="pnl-basic" at="left"
+				showEffect="overlay">
+				<div class="center">
+				<h:graphicImage style="width:50%" library="images"
+						name="museCircle.png"></h:graphicImage>
+				
+				<h2 style="color:white;text-shadow: none;" >Quick Menu</h2>
+				</div>
+				<p:menu>
+					<p:menuitem value="Main menu" outcome="/pages/mainActivity" />
+					<p:menuitem value="Quizz" outcome="/qq/selectQuizzActivity" />
+					<p:menuitem value="Resultat" outcome="/qq/qqResult" />
+					<p:menuitem value="Préférence" />
+				</p:menu>
+			</p:overlayPanel>
+
+
+			<pm:footer title="Muses Security Quizz tm"></pm:footer>
+        </pm:page>
+
+	</h:form>
+</h:body>
+
+</html>
+        

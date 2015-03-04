@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/mobile.xhtml">
+	
+<ui:define name="head">
+ 	<pm:header title="Security Quiz" >
+    </pm:header>
+    <style>
+		.ui-datagrid-data{width:100%;height:100%;text-align: center;}
+    	.btnQuiz{height:150%; width:75%;}
+    	table.ui-datagrid-data{border-spacing: 8;}
+    	.ui-content.jqm-content{text-align: center;}
+    </style>
+    
+    
+</ui:define>
+
+<ui:define name="content">
+
+	<pm:content styleClass="jqm-content" >
+
+				<br />
+				<h:outputText value="#{quizAppMbean.quizzChosen.listQuestions.get(2).questionText}"
+					style="font-size:30px " />
+
+		<p:dataGrid columns="1" value="#{quizAppMbean.quizzChosen.listQuestions.get(2).answers}"
+					var="option"  rowIndexVar="rowIndex">
+					
+					<p:commandButton value="#{option}" styleClass="btnQuiz"
+						action="#{quizAppMbean.moveToNextQuestion}">
+							<f:setPropertyActionListener target="#{quizAppMbean.response}"
+							value="#{rowIndex}" />
+							
+						<f:setPropertyActionListener target="#{quizAppMbean.step}"
+							value="#{3}" />
+					</p:commandButton>
+
+
+				</p:dataGrid>
+
+
+		</pm:content>
+	
+</ui:define>
+
+</ui:composition>
+
+        

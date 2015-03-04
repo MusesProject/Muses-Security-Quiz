@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+<h:head>
+	<style>
+		
+		input{font-size:1em !important};
+	</style>
+</h:head>
+
+<h:body>
+	<h:form>
+		<pm:page>
+            <pm:header title="Login" ></pm:header>
+             
+            <pm:content>
+            	<pm:field >
+            		<p style="text-align: center" >
+            			<h:graphicImage style="width:35%" library="images" name="logo.png" ></h:graphicImage>
+            			<br />
+            			<span class="logoDarkTxt" >What is the MUSES Project about?</span>
+            			<br />
+            			<span>MUSES stands for<span class="logoPinkTxt" > Multiplatform Usable Endpoint Security.</span> In this section we provide the most relevant facts about the project.</span>
+            			<br />
+            		</p>
+            	</pm:field>
+				<pm:field style="text-align: -webkit-center !important;">
+					<p:outputLabel value="Email :" />
+					<p:inputText id="username" required="true"
+						value="#{authenticationBean.username}" />
+				</pm:field>
+
+				<pm:field>
+					<p:outputLabel value="Password:" />
+					<p:password type="password" id="password"
+						value="#{authenticationBean.password}" required="true" />
+				</pm:field>
+
+				<p style="text-align: center;">
+					<p:commandButton value="#{messages.label_login}"
+					action="#{authenticationBean.doLogin()}" ajax="false" styleClass="ui-btn-inline btnInline" />		
+					<p:button value="#{messages.label_register}" outcome="/public/register" styleClass="ui-btn-inline btnInline" />
+				</p>
+            </pm:content>
+ 
+            <pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false" title="Muses Security Quizz™"></pm:footer>
+        </pm:page>
+
+	</h:form>
+</h:body>
+
+</html>

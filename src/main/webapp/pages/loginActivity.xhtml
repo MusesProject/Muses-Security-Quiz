@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+<h:head>
+	<style>
+		
+		input{font-size:1em !important};
+	</style>
+</h:head>
+
+<h:body>
+	<h:form>
+		<pm:page>
+            <pm:header title="Login" ></pm:header>
+             
+            <pm:content>
+				<h:form id="quizForm">
+
+					<p:dataList value="#{quizAppMbean.samplequestions}" var="question"
+						widgetVar="dataList" type="definition" paginatorPosition="top"
+						paginator="true" rows="1" rowIndexVar="row">
+
+						<h:panelGrid columns="1">
+							<h:outputText value="Question Number #  #{row+1}" />
+
+							<h:outputText value="#{question.questionText}"
+								style="font-size:30px " />
+
+							<p:dataGrid columns="2" value="#{question.questionOptions}"
+								var="option">
+								<p:commandButton value="#{option.optionText}"
+									style="height:100px;width:300px"
+									action="#{quizAppMbean.moveToNextQuestion}">
+									<f:setPropertyActionListener
+										target="#{question.selectedOption}" value="#{option}" />
+
+									<f:setPropertyActionListener
+										target="#{quizAppMbean.selectedOption}" value="#{option}" />
+								</p:commandButton>
+
+
+							</p:dataGrid>
+
+						</h:panelGrid>
+
+					</p:dataList>
+
+					<p:button update="result" widgetVar="resultButton"
+						outcome="/qq/qqResult" value="Complete quiz"></p:button>>
+
+	</h:form>
+	
+	<h:form>
+
+					<pm:field>
+						<p:outputLabel for="selectOneRadio" value="#{quizAppMbean.samplequestions}" />
+						<p:selectOneRadio id="selectOneRadio" widgetVar="" >
+							<f:selectItem itemLabel="Option 1" itemValue="1" />
+							<f:selectItem itemLabel="Option 2" itemValue="2" />
+							<f:selectItem itemLabel="Option 3" itemValue="3" />
+						</p:selectOneRadio>
+					</pm:field>
+
+				</h:form>
+
+<p:dataTable id="cars" selectionMode="multiple" 
+                 paginator="true" rows="10" tableStyleClass="ui-table-columntoggle">
+ 
+       
+       
+    </p:dataTable>
+			</pm:content>
+ 
+            <pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false" title="Muses Security Quizz™"></pm:footer>
+        </pm:page>
+
+	</h:form>
+</h:body>
+
+</html>
