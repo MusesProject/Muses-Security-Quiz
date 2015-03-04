@@ -20,4 +20,8 @@ public class ApplicationBean {
         }
         return builder.toString().trim();
     }
+    
+    public String getAppName() {
+        return "Security-quizz";
+    }
 }
