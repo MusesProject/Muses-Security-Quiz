@@ -23,9 +23,9 @@ select,
 textarea,
 button,
 .ui-btn {
-	font-size: 1.3em;
+	font-size: 100%;
 	line-height: 1.3;
-	font-family: cursive;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;;
 }
 legend,
 .ui-input-text input,
@@ -943,8 +943,7 @@ z-index: 1!important;
 /* center and resize button in main menu */
 .center{
 	text-align: center!important;
-	margin: 0;
-}
+margin-bottom: 0;}
 .btnWidth{
 	width: 75%!important;
 	margin: 2% auto!important;
@@ -1160,7 +1159,18 @@ input{font-size:1em !important}
 	overflow: initial !important;
 }
 
+.questionStyle {
+font-weight: bold;
+font-size: 1.3em;
+}
+
 @media ( min-width : 60em) {
+	
+		.btnLogin{
+	width: 35% !important;
+	color: white !important;
+	text-shadow: none !important;
+	}
 	
  .jqm-footer{
  z-index: 1000 !important;
