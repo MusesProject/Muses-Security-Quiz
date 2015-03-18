@@ -8,7 +8,7 @@
 	template="/templates/mobile.xhtml">
 	
 <ui:define name="head">
- 	<pm:header title="#{messages.label_head_quiz}" >
+ 	<pm:header title="#{messages.label_head_quiz}" styleClass="headerTxt" >
             </pm:header>
 </ui:define>
 
@@ -25,7 +25,7 @@
 			<p:dataList value="#{quizAppMbean.newQuizz}"  var="quizz" styleClass="center btnQuiz"  ajax="false" rendered="#{quizAppMbean.employee.getMyQuizzes().size()!= 0}">
 						
 						<h:form styleClass="center" >
-						<p:commandButton action="/qq/step_one.xhtml" style="width:100%" styleClass="center btnQuiz" value="#{quizz.description}"  >
+						<p:commandButton action="/qq/step_one.xhtml" style="width:100%" styleClass="center btnQuiz" value="#{quizz.description}"  ajax="false" >
 						 	<f:setPropertyActionListener value="#{quizz}" target="#{quizAppMbean.quizzChosen}" />
 						 	<f:param name="description" value="#{quizz.description}" />						  		
 						 </p:commandButton>
@@ -38,7 +38,7 @@
 						
 						
 						<h:form styleClass="center" >
-						<p:commandButton action="/qq/step_one.xhtml" style="width:100%" styleClass="center btnQuiz" value="#{quizz.description}" disabled = "false" >
+						<p:commandButton action="/qq/step_one.xhtml" style="width:100%" styleClass="center btnQuiz" value="#{quizz.description}" disabled = "false" ajax="false" >
 						 	<f:setPropertyActionListener value="#{quizz}" target="#{quizAppMbean.quizzChosen}" />
 						 	<f:param name="description" value="#{quizz.description}" />						  		
 						 </p:commandButton>

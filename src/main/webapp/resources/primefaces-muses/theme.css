@@ -1191,6 +1191,7 @@ font-size: 1.3em;
 
 	.ui-btn {
 		text-align: center !important;
+		
 	}
 	.jqm-demos .jqm-navmenu-panel {
 		visibility: visible;
@@ -1354,9 +1355,13 @@ text-shadow: none !important;
 }
 
 .btnQuiz{
-	width:75% !important;float: none!important; display:inline !important;
+	width:75% !important;
+	float: none!important; 
+	display:inline !important;
 	color: white !important;
 	text-shadow: none !important;
+	text-overflow: initial !important;
+		white-space: normal !important;
 }
 
 .btnQuiz:ACTIVE{
@@ -1367,4 +1372,12 @@ text-shadow: none !important;
 .btnInline:ACTIVE{
 	
 	background-color:#ab227d !important;
+}
+
+.ui-header .ui-title, .ui-footer .ui-title{
+	overflow: visible !important;
+}
+
+.listQuiz{
+	margin-top:5% ;
 }

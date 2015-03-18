@@ -15,35 +15,43 @@
 <ui:define name="content">
 
 
-	<pm:content styleClass="jqm-content"  rendered="#{quizAppMbean.employee.getMyQuizResults().size() != 0}">
-	
-	<h:outputText value="#{quizAppMbean.quizzChosen.description}" />
-	<br/>
-	
-	
-	<h:outputText
-						value="#{messages.label_qq_result}   #{quizAppMbean.employee.lastname}" />
-						<br/>
+		<pm:content styleClass="jqm-content"
+			rendered="#{quizAppMbean.employee.getMyQuizResults().size() != 0}">
+			<p>
+				<h:outputText value="#{quizAppMbean.quizzChosen.description}" />
+				<br />
 
-			<p:dataList value="#{quizAppMbean.employee.getMyQuizResults()}"  var="resultquizz" styleClass="center btn-margin"  ajax="false">
-						
-						<h:form styleClass="center" >
-						<p:commandButton action="/qq/qqResult1.xhtml" style="width:60%" styleClass="center btn_inline"  value="#{resultquizz.getQuizz().getDescription()}" ajax="false" >
-						    <f:setPropertyActionListener value="#{resultquizz}" target="#{quizAppMbean.resultQuizzChosen}" />
-						 	
-						 	<f:param name="description" value="#{results.getQuizz().getDescription()}" />						  		
-						 </p:commandButton>
-						
-						</h:form>
-   						
-    			</p:dataList>
 
-			
+				<h:outputText
+					value="#{messages.label_qq_result}   #{quizAppMbean.employee.lastname}" />
+				<br />
+			</p>
+			<br />
+			<p:dataList value="#{quizAppMbean.employee.getMyQuizResults()}"
+				var="resultquizz" styleClass="center btn-margin listQuiz"
+				ajax="false">
+
+				<h:form styleClass="center">
+					<p:commandButton action="/qq/qqResult1.xhtml" style="width:60%"
+						styleClass="center btn_inline"
+						value="#{resultquizz.getQuizz().getDescription()}" ajax="false">
+						<f:setPropertyActionListener value="#{resultquizz}"
+							target="#{quizAppMbean.resultQuizzChosen}" />
+
+						<f:param name="description"
+							value="#{results.getQuizz().getDescription()}" />
+					</p:commandButton>
+
+				</h:form>
+
+			</p:dataList>
+
+
 
 
 		</pm:content>
-		
-			<pm:content styleClass="jqm-content"  rendered="#{quizAppMbean.employee.getMyQuizzes().size() == 0}">
+
+		<pm:content styleClass="jqm-content"  rendered="#{quizAppMbean.employee.getMyQuizzes().size() == 0}">
 			
 				<h:outputText
 						value="#{messages.label_qq_no_quizz}" />
