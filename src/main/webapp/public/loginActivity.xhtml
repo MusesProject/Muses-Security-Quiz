@@ -36,14 +36,14 @@
 					<p:outputLabel for="username" value="Email :" />
 					<p:inputText id="username" required="true"
 						value="#{authenticationBean.username}"
-						requiredMessage="#{label_required_username}" />
+						requiredMessage="#{messages.label_required_username}" />
 				</pm:field>
 
 				<pm:field>
 					<p:outputLabel for="password" value="Password:" />
 					<p:password type="password" id="password"
 						value="#{authenticationBean.password}" required="true" 
-						requiredMessage="#{label_required_psw}" />
+						requiredMessage="#{messages.label_required_psw}" />
 				</pm:field>
 
 				<p style="text-align: center;">
