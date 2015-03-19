@@ -1394,6 +1394,7 @@ text-shadow: none !important;
 
 .ui-header .ui-title, .ui-footer .ui-title{
 	overflow: visible !important;
+	white-space:normal !important;
 }
 
 .listQuiz{

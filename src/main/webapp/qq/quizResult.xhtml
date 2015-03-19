@@ -18,7 +18,8 @@
 		<pm:content styleClass="jqm-content"
 			rendered="#{quizAppMbean.employee.getMyQuizResults().size() != 0}">
 			<p>
-
+	<h:outputText value="#{resultquizz.getQuizz().getDescription()} #{resultquizz.getDate()}" />
+	<br/>
 
 				<h:outputText
 					value="#{messages.label_qq_result}   #{quizAppMbean.employee.lastname}" />
@@ -27,7 +28,7 @@
 			<br />
 			<p:dataList value="#{quizAppMbean.employee.getMyQuizResults()}"
 				var="resultquizz" styleClass="center btn-margin listQuiz"
-				ajax="false">
+				ajax="false" >
 
 				<h:form styleClass="center">
 					<p:commandButton action="/qq/qqResult1.xhtml" style="width:60%" styleClass="center btn_inline btnResult"  value="#{resultquizz.getQuizz().getDescription()} #{resultquizz.getDate()}" ajax="false" >

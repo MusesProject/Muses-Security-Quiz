@@ -8,7 +8,7 @@
 	template="/templates/mobile.xhtml">
 	
 <ui:define name="head">
- 	<pm:header title="Resultat" >
+ 	<pm:header title="#{quizAppMbean.resultQuizzChosen.getQuizz().getDescription()} #{quizAppMbean.resultQuizzChosen.getDate()}"" >
             </pm:header>
 </ui:define>
 
@@ -16,16 +16,6 @@
 
 	<pm:content styleClass="jqm-content" >
 	
-	<h:outputText value="#{quizAppMbean.quizzChosen.description}" />
-	<br/>
-	
-	
-	<h:outputText
-						value="#{messages.label_qq_resultat} #{quizAppMbean.employee.lastname}" />
-						<br/>
-	
-			<h:outputText
-						value="#{messages.label_qq_result}" />
 
 
 			<p:dataTable value="#{quizAppMbean.quizzChosen.getListQuestions()}" var="question"
