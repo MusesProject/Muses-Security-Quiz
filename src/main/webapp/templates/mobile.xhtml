@@ -10,7 +10,10 @@
 <f:view renderKitId="PRIMEFACES_MOBILE" locale="#{localeBean.locale}"  contentType="text/html" />
 <h:head>
 </h:head>
-
+<f:metadata>
+    <f:event type="preRenderView"  listener="#{quizAppMbean.check}" >
+    </f:event>
+</f:metadata>
 <h:body>
 	<sec:authorize access="hasAnyRole('ROLE_USER')">
 	<pm:page styleClass="jqm-demos" >
