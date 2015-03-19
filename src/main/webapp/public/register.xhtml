@@ -10,6 +10,9 @@
 <style>
 input{font-size:1em !important};
 .ui-slider-input{height:initial!important;}
+.ui-btn-active{
+background-color:#ab227d !important;
+}
 </style>
 </h:head>
 
@@ -76,9 +79,10 @@ input{font-size:1em !important};
 					</p:selectOneButton>
 				</pm:field>
 				
+				
 				<p style="text-align: center;">
-				<p:commandButton  value="#{messages.label_save}"  styleClass="ui-btn-inline btnInline"  action="#{registerBean.createEmployeeAccount}" />
-				<p:button  value="#{messages.label_cancel}"  styleClass="ui-btn-inline btnInline" outcome="/public/loginActivity" />
+				<p:commandButton  value="#{messages.label_save}"  styleClass="ui-btn-inline btnInline btnReg"  action="#{registerBean.createEmployeeAccount}" />
+				<p:button  value="#{messages.label_cancel}"  styleClass="ui-btn-inline btnInline btnReg" outcome="/public/loginActivity" />
 				</p>
 					</h:form>
 				

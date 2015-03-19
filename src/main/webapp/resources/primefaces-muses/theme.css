@@ -1352,10 +1352,28 @@ color: black !important;
 	width: 50% !important;
 color: white !important;
 text-shadow: none !important;
+text-shadow: none !important;
+	text-overflow: initial !important;
+		white-space: normal !important;
+}
+
+.btnReg{
+	text-overflow: initial !important;
+		white-space: normal !important;
 }
 
 .btnQuiz{
 	width:75% !important;
+	float: none!important; 
+	display:inline !important;
+	color: white !important;
+	text-shadow: none !important;
+	text-overflow: initial !important;
+		white-space: normal !important;
+}
+
+.btnResult{
+	width:55% !important;
 	float: none!important; 
 	display:inline !important;
 	color: white !important;

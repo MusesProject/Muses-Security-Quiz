@@ -18,8 +18,6 @@
 		<pm:content styleClass="jqm-content"
 			rendered="#{quizAppMbean.employee.getMyQuizResults().size() != 0}">
 			<p>
-				<h:outputText value="#{quizAppMbean.quizzChosen.description}" />
-				<br />
 
 
 				<h:outputText
@@ -32,7 +30,7 @@
 				ajax="false">
 
 				<h:form styleClass="center">
-					<p:commandButton action="/qq/qqResult1.xhtml" style="width:60%" styleClass="center btn_inline"  value="#{resultquizz.getQuizz().getDescription()} #{resultquizz.getDate()}" ajax="false" >
+					<p:commandButton action="/qq/qqResult1.xhtml" style="width:60%" styleClass="center btn_inline btnResult"  value="#{resultquizz.getQuizz().getDescription()} #{resultquizz.getDate()}" ajax="false" >
 						<f:setPropertyActionListener value="#{resultquizz}"
 							target="#{quizAppMbean.resultQuizzChosen}" />
 

@@ -29,21 +29,26 @@
             			<br />
             		</p>
             	</pm:field>
+            	
+            	    <p:growl id="growl" showDetail="true" showSummary="false"  />
+            	
 				<pm:field style="text-align: -webkit-center !important;">
-					<p:outputLabel value="Email :" />
+					<p:outputLabel for="username" value="Email :" />
 					<p:inputText id="username" required="true"
-						value="#{authenticationBean.username}" />
+						value="#{authenticationBean.username}"
+						requiredMessage="#{label_required_username}" />
 				</pm:field>
 
 				<pm:field>
-					<p:outputLabel value="Password:" />
+					<p:outputLabel for="password" value="Password:" />
 					<p:password type="password" id="password"
-						value="#{authenticationBean.password}" required="true" />
+						value="#{authenticationBean.password}" required="true" 
+						requiredMessage="#{label_required_psw}" />
 				</pm:field>
 
 				<p style="text-align: center;">
 					<p:commandButton value="#{messages.label_login}"
-					action="#{authenticationBean.doLogin()}" ajax="false" styleClass="ui-btn-inline btnLogin" />		
+					action="#{authenticationBean.doLogin()}" ajax="true" styleClass="ui-btn-inline btnLogin" update="growl" />		
 					<p:button value="#{messages.label_register}" outcome="/public/register" styleClass="ui-btn-inline btnLogin" />
 				</p>
             </pm:content>
