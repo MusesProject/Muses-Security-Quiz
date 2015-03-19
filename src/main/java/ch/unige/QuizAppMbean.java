@@ -1,4 +1,5 @@
 package ch.unige;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -7,7 +8,9 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.NavigationHandler;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.primefaces.context.RequestContext;
 import org.primefaces.model.chart.Axis;
@@ -194,215 +197,7 @@ public class QuizAppMbean {
 		facesContext.getExternalContext().getUserPrincipal().getName();
 		
 		employee = findEmployeebyEmail(facesContext.getExternalContext().getUserPrincipal().getName());	
-		
-		
-		/*Employee emp = new Employee();
-		emp.setFirstname("xavier");emp.setLastname("xavier");
-		emp.setPassword("titi");
-		emp.setEmail("xavier");
-		emp.setJob("testseur");
-		emp.setExperience(2);
-		emp.setAge(30);
-		emp.setSex("1");		
-		emp.persist();
-				
-		QuizzQuestion question1 = new QuizzQuestion();
-		
-		ArrayList<QuizzQuestion> list = new ArrayList<QuizzQuestion>();
-		
-		Quizz quizz = new Quizz();
-		
-		quizz.setDescription("Muses Security quiz");
 
-		Quizz quizz1 = new Quizz();
-		quizz1.setDescription("web");
-		
-		FacesContext facesContext = FacesContext.getCurrentInstance();
-
-		facesContext.getExternalContext().getUserPrincipal().getName();
-		
-		employee = findEmployeebyEmail(facesContext.getExternalContext().getUserPrincipal().getName());	
-		
-		question1.setQuestionText("This is a document that states in writing how a company plans to protect the company's physical and IT assets.");
-		ArrayList<String> option1 = new ArrayList<String>();
-		option1.add("Data Encryption Standard");
-		option1.add("security policy");
-		option1.add("public key certificate");
-		option1.add("access control list");
-		option1.add("copyright");
-		question1.setAnswers(option1);
-		question1.setResponse(1);
-		question1.persist();
-
-		
-		QuizzQuestion question2 = new QuizzQuestion();
-		
-		question2.setQuestionText("This is a program or file that is specifically developed for the purpose of doing harm.");
-		ArrayList<String> option2 = new ArrayList<String>();
-		option2.add("Buffer overflow");
-		option2.add("Bastion host");
-		option2.add("malware");
-		option2.add("Ping Sweep");
-		option2.add("Passphrase");
-		question2.setAnswers(option2);
-		question2.setResponse(2);
-		question2.persist();
-
-		QuizzQuestion question3 = new QuizzQuestion();
-		
-		question3.setQuestionText("This is a set of related programs, usually located at a network gateway server, that protects the resources of a private network from other networks.");
-		ArrayList<String> option3 = new ArrayList<String>();
-		option3.add("Firewall");
-		option3.add("Sandbox");
-		option3.add("Rootkit");
-		option3.add("Password cracker");
-		option3.add("General protection fault");
-		question3.setAnswers(option3);
-		question3.setResponse(0);
-		question3.persist();
-
-		QuizzQuestion question4 = new QuizzQuestion();
-		
-		question4.setQuestionText("This is a class of programs that searches your hard drive and floppy disks for any known or potential viruses.");
-		ArrayList<String> option4 = new ArrayList<String>();
-		option4.add("Instrusion detection");
-		option4.add("Security Identifier");
-		option4.add("Antigen");
-		option4.add("Probe");
-		option4.add("Antivirus software");
-		question4.setAnswers(option4);
-		question4.setResponse(3);
-		question4.persist();
-
-		
-		QuizzQuestion question5 = new QuizzQuestion();
-		
-		question5.setQuestionText("In computer security, this describes a non-technical kind of intrusion that relies heavily on human interaction. It often involves tricking people into breaking their own security procedures. ");
-		ArrayList<String> option5 = new ArrayList<String>();
-		option5.add("Cyberterrorism");
-		option5.add("Debugging");
-		option5.add("Hijacking");
-		option5.add("Nonrepudiation");
-		option5.add("Social engineering");
-		question5.setAnswers(option5);
-		question5.setResponse(4);
-		question5.persist();
-
-		
-		
-		QuizzQuestion question6 = new QuizzQuestion();
-		
-		question6.setQuestionText("This is a program in which malicious or harmful code is contained inside apparently harmless programming or data.");
-		ArrayList<String> option6 = new ArrayList<String>();
-		option6.add("War dialer");
-		option6.add("Spam trap");
-		option6.add("Smurf");
-		option6.add("Trojan horse");
-		option6.add("Walled garden");
-		question6.setAnswers(option6);
-		question6.setResponse(3);
-		question6.persist();
-
-		QuizzQuestion question7 = new QuizzQuestion();
-		
-		question7.setQuestionText("This is the process of determining whether someone or something is, in fact, who or what it is declared to be.");
-		ArrayList<String> option7 = new ArrayList<String>();
-		option7.add("Conditional access");
-		option7.add("Anonymizer");
-		option7.add("Bypass");
-		option7.add("User profile");
-		option7.add("Authentification");
-		question7.setAnswers(option7);
-		question7.setResponse(4);
-		question7.persist();
-
-		
-		
-		QuizzQuestion question8 = new QuizzQuestion();
-		
-		question8.setQuestionText("This is the conversion of data into a ciphertext that cannot be easily understood by unauthorized people.");
-		ArrayList<String> option8 = new ArrayList<String>();
-		option8.add("Brute force cracking");
-		option8.add("Tunneling");
-		option8.add("Encryption");
-		option8.add("Cipertext feedback");
-		option8.add("Cloaking");
-		question8.setAnswers(option8);
-		question8.setResponse(2);
-		question8.persist();
-
-		
-		QuizzQuestion question9 = new QuizzQuestion();
-		
-		question9.setQuestionText("To be effective, this should ideally contain at least one digit and not match a natural language word.");
-		ArrayList<String> option9 = new ArrayList<String>();
-		option9.add("Digital Signature");
-		option9.add("Smart Card");
-		option9.add("Public Key");
-		option9.add("Password");
-		option9.add("Signature File");
-		question9.setAnswers(option9);
-		question9.setResponse(3);
-		question9.persist();
-
-		
-		QuizzQuestion question10 = new QuizzQuestion();
-		
-		question10.setQuestionText("This is an agreement a company may ask an employee to sign that specifies what is considered to be appropriate (or inappropriate) use of e-mail or Web browsing.");
-		ArrayList<String> option10 = new ArrayList<String>();
-		option10.add("RSA");
-		option10.add("AUP");
-		option10.add("SET");
-		option10.add("VPN");
-		option10.add("PKI");
-		question10.setAnswers(option10);
-		question10.setResponse(1);
-		question10.persist();
-		
-		
-		list.add(question1);
-		list.add(question2);
-		list.add(question3);
-		list.add(question4);
-		list.add(question5);
-		list.add(question6);
-		list.add(question7);
-		list.add(question8);
-		list.add(question9);
-		list.add(question10);
-		quizz.setListQuestions(list);
-		//quizz1.setListQuestions(list);
-		
-		
-		
-		quizz.persist();
-		question1.setQuizOwner(quizz);
-		question2.setQuizOwner(quizz);
-		question3.setQuizOwner(quizz);
-		question4.setQuizOwner(quizz);
-		question5.setQuizOwner(quizz);
-		question6.setQuizOwner(quizz);
-		question7.setQuizOwner(quizz);
-		question8.setQuizOwner(quizz);
-		question9.setQuizOwner(quizz);
-		question10.setQuizOwner(quizz);
-		
-		question1.merge();
-		question2.merge();
-		question3.merge();
-		question4.merge();
-		question5.merge();
-		question6.merge();
-		question7.merge();
-		question8.merge();
-		question9.merge();
-		question10.merge();*/
-
-
-
-		//newQuizz.add(quizz);
-		//newQuizz.add(quizz1);
-		
 		newQuizz = Quizz.findAllQuizzes();
 		//newQuizz.add(quizz1);
 	
@@ -429,6 +224,103 @@ public class QuizAppMbean {
 		
 	}
 	
+	public void check (){
+		
+         FacesContext facesContext = FacesContext.getCurrentInstance();
+
+		 FacesContext ctx = FacesContext.getCurrentInstance();
+		 NavigationHandler navigationHandler =
+	                facesContext.getApplication().getNavigationHandler();
+	         
+         String path = ctx.getExternalContext().getRequestContextPath();
+         //System.out.println("xav: "+path +" "+ctx.getExternalContext().getRequestServletPath());
+         String path1 = ctx.getExternalContext().getRequestServletPath();
+         //System.out.println("xav: "+path +" "+ctx.getExternalContext().getRequestServletPath());
+         HttpServletRequest servletRequest = (HttpServletRequest) ctx.getExternalContext().getRequest();
+         //returns something like "/myapplication/home.faces"
+         String fullURI = servletRequest.getRequestURI();
+         //System.out.println("xav1: "+ fullURI);
+         //System.out.println("step: "+ fullURI);
+
+         
+         if( FacesContext.getCurrentInstance().isPostback()){
+        	 //navigationHandler.handleNavigation(facesContext, null, "outcome");
+         }
+		
+ 		if(step.equalsIgnoreCase("1")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_one.jsf")){
+	       navigationHandler.handleNavigation(facesContext, null, "outcome");
+	        System.out.println("etape2");
+	       
+
+		}
+		if(step.equalsIgnoreCase("2")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_two.jsf")){
+	        navigationHandler.handleNavigation(facesContext, null, "outcome");
+	        System.out.println("etape3");
+	       
+
+		
+		}
+		if(step.equalsIgnoreCase("3")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_three.jsf") ){
+			navigationHandler.handleNavigation(facesContext, null, "outcome");
+	        System.out.println("etape3");
+	       
+	        
+
+	
+		}
+		if(step.equalsIgnoreCase("4")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_four.jsf") ){
+	        navigationHandler.handleNavigation(facesContext, null, "outcome");
+	        System.out.println("etape4");
+
+	
+		}
+		if(step.equalsIgnoreCase("5")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_five.jsf") ){
+	        navigationHandler.handleNavigation(facesContext, null, "outcome");
+
+	
+		}
+		if(step.equalsIgnoreCase("6")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_six.jsf") ){
+	        navigationHandler.handleNavigation(facesContext, null, "outcome");
+
+		
+		}
+		if(step.equalsIgnoreCase("7")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_seven.jsf") ){
+	        navigationHandler.handleNavigation(facesContext, null, "outcome");
+
+		
+		}
+		if(step.equalsIgnoreCase("8")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_height.jsf") ){
+	        navigationHandler.handleNavigation(facesContext, null, "outcome");
+
+		
+		}
+		if(step.equalsIgnoreCase("9")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_nine.jsf") ){
+	        navigationHandler.handleNavigation(facesContext, null, "reload9");
+
+		
+		}
+		if(step.equalsIgnoreCase("10")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_ten.jsf") ){
+	        navigationHandler.handleNavigation(facesContext, null, "reload10");
+			
+		}
+    	
+        
+	
+	}
+	
+	public String lunchquizz(){
+		
+		return "step1";
+	}
+	public void start(){
+		
+		System.out.println("zero");
+		
+		totalCorrAnswer = 0;
+		
+		totalWrongAnswer = 0;
+		
+	}
 	public String moveToNextQuestion() {
 		
 		System.out.println("size: "+sampleQuestions.size());

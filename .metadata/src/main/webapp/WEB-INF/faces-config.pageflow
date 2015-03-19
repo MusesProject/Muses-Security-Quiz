@@ -1,26 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14211429627510" configfile="/muses-security-quizz/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_one.xhtml" x="240" y="45" id="pf14222890920410" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" outlinks="pf14222890920441" inlinks="pf142237472787621" path="/qq/step_one.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_two.xhtml" x="396" y="45" id="pf14222890920452" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14223670968673" inlinks="pf14222890920441" path="/qq/step_two.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_three.xhtml" x="552" y="45" id="pf14223670968674" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14223670968675" inlinks="pf14223670968673" path="/qq/step_three.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_four.xhtml" x="684" y="45" id="pf14223670968676" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14223670968677" inlinks="pf14223670968675" path="/qq/step_four.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_five.xhtml" x="840" y="45" id="pf14223670968678" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf14223670968679" inlinks="pf14223670968677" path="/qq/step_five.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_six.xhtml" x="841" y="153" id="pf142236709686710" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf142236709686711" inlinks="pf14223670968679" path="/qq/step_six.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_seven.xhtml" x="676" y="153" id="pf142236709686712" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf142236709686713" inlinks="pf142236709686711" path="/qq/step_seven.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_height.xhtml" x="540" y="153" id="pf142236709686714" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf142236709686715" inlinks="pf142236709686713" path="/qq/step_height.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_nine.xhtml" x="408" y="153" id="pf142236709686716" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf142236709686717" inlinks="pf142236709686715" path="/qq/step_nine.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/step_ten.xhtml" x="242" y="153" id="pf142236709686718" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf142236714629919" inlinks="pf142236709686717" path="/qq/step_ten.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/qqResult.xhtml" x="240" y="276" id="pf142236714629920" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" inlinks="pf142236714629919" path="/qq/qqResult.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="qq/selectQuizzActivity.xhtml" y="45" id="pf142237472787722" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf142237472787621" path="/qq/selectQuizzActivity.xhtml"/>
-  <links id="pf14222890920441" target="pf14222890920452" source="pf14222890920410" outcome="step2" redirect="true"/>
-  <links id="pf14223670968673" target="pf14223670968674" source="pf14222890920452" outcome="step3" redirect="true"/>
-  <links id="pf14223670968675" target="pf14223670968676" source="pf14223670968674" outcome="step4" redirect="true"/>
-  <links id="pf14223670968677" target="pf14223670968678" source="pf14223670968676" outcome="step5" redirect="true"/>
-  <links id="pf14223670968679" target="pf142236709686710" source="pf14223670968678" outcome="step6" redirect="true"/>
-  <links id="pf142236709686711" target="pf142236709686712" source="pf142236709686710" outcome="step7" redirect="true"/>
-  <links id="pf142236709686713" target="pf142236709686714" source="pf142236709686712" outcome="step8" redirect="true"/>
-  <links id="pf142236709686715" target="pf142236709686716" source="pf142236709686714" outcome="step9" redirect="true"/>
-  <links id="pf142236709686717" target="pf142236709686718" source="pf142236709686716" outcome="step10" redirect="true"/>
-  <links id="pf142236714629919" target="pf142236714629920" source="pf142236709686718" outcome="result" redirect="true"/>
-  <links id="pf142237472787621" target="pf14222890920410" source="pf142237472787722" outcome="step1" redirect="true"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_two.xhtml" x="420" y="132" id="pf14222890920452" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf142668610391710" inlinks="pf142668610391710" path="/qq/step_two.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_three.xhtml" x="575" y="132" id="pf14223670968674" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf142668610391711" inlinks="pf142668610391711" path="/qq/step_three.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_four.xhtml" x="707" y="108" id="pf14223670968676" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf142668610391712" inlinks="pf142668610391712" path="/qq/step_four.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_five.xhtml" x="839" y="108" id="pf14223670968678" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf142668610391713" inlinks="pf142668610391713" path="/qq/step_five.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_six.xhtml" x="840" y="216" id="pf142236709686710" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf142668610391714" inlinks="pf142668610391714" path="/qq/step_six.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_seven.xhtml" x="699" y="216" id="pf142236709686712" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf142668610391715" inlinks="pf142668610391715" path="/qq/step_seven.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_height.xhtml" x="563" y="240" id="pf142236709686714" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf142668610391816" inlinks="pf142668610391816" path="/qq/step_height.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_nine.xhtml" x="432" y="252" id="pf142236709686716" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf142668610391817" inlinks="pf142668610391817" path="/qq/step_nine.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_ten.xhtml" x="265" y="279" id="pf142236709686718" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf142668610391818" inlinks="pf142668610391818" path="/qq/step_ten.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/qqResult.xhtml" x="264" y="372" id="pf142236714629920" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" outlinks="pf142668610391819" inlinks="pf142668610391819" path="/qq/qqResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf14266066457996" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf142668737499720" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/main.xhtml" x="104" y="-4" id="pf142668737499721" inlinks="pf142668737499720" path="/pages/main.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/selectQuizzActivity.xhtml" id="pf142669216988422" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf142669216988423" path="/qq/selectQuizzActivity.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qq/step_one.xhtml" id="pf142669216988424" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf142669216988425" inlinks="pf142669216988423 pf142669216988425" path="/qq/step_one.xhtml"/>
+  <links id="pf142668610391710" target="pf14222890920452" source="pf14222890920452" outcome="test">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf142668610391711" target="pf14223670968674" source="pf14223670968674" outcome="reload2">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-65" d1Height="-5" d2Width="-65" d2Height="-5"/>
+    <bendPoints d1Width="-44" d1Height="-8" d2Width="-44" d2Height="-8"/>
+  </links>
+  <links id="pf142668610391712" target="pf14223670968676" source="pf14223670968676" outcome="reload3">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf142668610391713" target="pf14223670968678" source="pf14223670968678" outcome="reload4">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf142668610391714" target="pf142236709686710" source="pf142236709686710" outcome="reload5">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf142668610391715" target="pf142236709686712" source="pf142236709686712" outcome="reload6">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf142668610391816" target="pf142236709686714" source="pf142236709686714" outcome="reload7">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf142668610391817" target="pf142236709686716" source="pf142236709686716" outcome="reload8">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf142668610391818" target="pf142236709686718" source="pf142236709686718" outcome="reload9">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf142668610391819" target="pf142236714629920" source="pf142236714629920" outcome="reloadresult">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf142668737499720" target="pf142668737499721" source="pf14266066457996" outcome="outcome" redirect="true"/>
+  <links id="pf142669216988423" target="pf142669216988424" source="pf142669216988422" outcome="step1" redirect="true"/>
+  <links id="pf142669216988425" target="pf142669216988424" source="pf142669216988424" outcome="reload"/>
 </pageflow:Pageflow>

@@ -7,6 +7,7 @@
         <navigation-handler>
         org.primefaces.mobile.application.MobileNavigationHandler
     </navigation-handler>
+   
         <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver
         </el-resolver>
         <resource-bundle>
@@ -21,6 +22,9 @@
             <supported-locale>fr</supported-locale>
         </locale-config>
     </application>
+     <lifecycle>
+    <phase-listener id="nocache">ch.unige.CacheControlPhaseListener</phase-listener>
+</lifecycle>
     <factory>
         <exception-handler-factory>ch.unige.util.ViewExpiredExceptionExceptionHandlerFactory</exception-handler-factory>
     </factory>
@@ -54,6 +58,21 @@
     	<managed-bean-class>ch.unige.RegisterBean</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>cacheControlPhaseListener</managed-bean-name>
+    	<managed-bean-class>ch.unige.CacheControlPhaseListener</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+      <navigation-rule>
+    	<display-name>qq/selectQuizzActivity.xhtml</display-name>
+    	<from-view-id>/qq/selectQuizzActivity.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>step1</from-outcome>
+    		<to-view-id>/qq/step_one.xhtml</to-view-id>
+    		<redirect/>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
     <navigation-rule>
     	<display-name>qq/step_one.xhtml</display-name>
     	<from-view-id>/qq/step_one.xhtml</from-view-id>
@@ -144,13 +163,101 @@
     		<redirect/>
     	</navigation-case>
     </navigation-rule>
-    <navigation-rule>
-    	<display-name>qq/selectQuizzActivity.xhtml</display-name>
-    	<from-view-id>/qq/selectQuizzActivity.xhtml</from-view-id>
+  
+    	<display-name>qq/step_one.xhtml</display-name>
+    	<from-view-id>/qq/step_one.xhtml</from-view-id>
     	<navigation-case>
-    		<from-outcome>step1</from-outcome>
+    		<from-outcome>reload</from-outcome>
     		<to-view-id>/qq/step_one.xhtml</to-view-id>
-    		<redirect/>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>qq/step_two.xhtml</display-name>
+    	<from-view-id>/qq/step_two.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>test</from-outcome>
+    		<to-view-id>/qq/step_two.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>qq/step_three.xhtml</display-name>
+    	<from-view-id>/qq/step_three.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>reload2</from-outcome>
+    		<to-view-id>/qq/step_three.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>qq/step_four.xhtml</display-name>
+    	<from-view-id>/qq/step_four.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>reload3</from-outcome>
+    		<to-view-id>/qq/step_four.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>qq/step_five.xhtml</display-name>
+    	<from-view-id>/qq/step_five.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>reload4</from-outcome>
+    		<to-view-id>/qq/step_five.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>qq/step_six.xhtml</display-name>
+    	<from-view-id>/qq/step_six.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>reload5</from-outcome>
+    		<to-view-id>/qq/step_six.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>qq/step_seven.xhtml</display-name>
+    	<from-view-id>/qq/step_seven.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>reload6</from-outcome>
+    		<to-view-id>/qq/step_seven.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>qq/step_height.xhtml</display-name>
+    	<from-view-id>/qq/step_height.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>reload7</from-outcome>
+    		<to-view-id>/qq/step_height.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>qq/step_nine.xhtml</display-name>
+    	<from-view-id>/qq/step_nine.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>reload8</from-outcome>
+    		<to-view-id>/qq/step_nine.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>qq/step_ten.xhtml</display-name>
+    	<from-view-id>/qq/step_ten.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>reload9</from-outcome>
+    		<to-view-id>/qq/step_ten.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>qq/qqResult.xhtml</display-name>
+    	<from-view-id>/qq/qqResult.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>reloadresult</from-outcome>
+    		<to-view-id>/qq/qqResult.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>*</display-name>
+    	<from-view-id>*</from-view-id>
+    	<navigation-case>
+    		<from-outcome>outcome</from-outcome>
+    		<to-view-id>/pages/main.xhtml</to-view-id>
+    		 <redirect/>
     	</navigation-case>
     </navigation-rule>
 </faces-config>

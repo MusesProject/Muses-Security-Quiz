@@ -25,7 +25,7 @@
 			<p:dataList value="#{quizAppMbean.newQuizz}"  var="quizz" styleClass="center btnQuiz"  ajax="false" rendered="#{quizAppMbean.employee.getMyQuizzes().size()!= 0}">
 						
 						<h:form styleClass="center" >
-						<p:commandButton action="/qq/step_one.xhtml" style="width:100%" styleClass="center btnQuiz" value="#{quizz.description}"  ajax="false" >
+						<p:commandButton action="/qq/step_one.xhtml" actionListener="#{quizAppMbean.start}" style="width:100%" styleClass="center btnQuiz" value="#{quizz.description}"  >
 						 	<f:setPropertyActionListener value="#{quizz}" target="#{quizAppMbean.quizzChosen}" />
 						 	<f:param name="description" value="#{quizz.description}" />						  		
 						 </p:commandButton>
@@ -38,7 +38,7 @@
 						
 						
 						<h:form styleClass="center" >
-						<p:commandButton action="/qq/step_one.xhtml" style="width:100%" styleClass="center btnQuiz" value="#{quizz.description}" disabled = "false" ajax="false" >
+						<p:commandButton action="/qq/step_one.xhtml" actionListener="#{quizAppMbean.start}" style="width:100%" styleClass="center btnQuiz" value="#{quizz.description}"  >
 						 	<f:setPropertyActionListener value="#{quizz}" target="#{quizAppMbean.quizzChosen}" />
 						 	<f:param name="description" value="#{quizz.description}" />						  		
 						 </p:commandButton>

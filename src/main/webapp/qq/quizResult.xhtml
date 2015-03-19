@@ -32,9 +32,7 @@
 				ajax="false">
 
 				<h:form styleClass="center">
-					<p:commandButton action="/qq/qqResult1.xhtml" style="width:60%"
-						styleClass="center btn_inline"
-						value="#{resultquizz.getQuizz().getDescription()}" ajax="false">
+					<p:commandButton action="/qq/qqResult1.xhtml" style="width:60%" styleClass="center btn_inline"  value="#{resultquizz.getQuizz().getDescription()} #{resultquizz.getDate()}" ajax="false" >
 						<f:setPropertyActionListener value="#{resultquizz}"
 							target="#{quizAppMbean.resultQuizzChosen}" />
 
