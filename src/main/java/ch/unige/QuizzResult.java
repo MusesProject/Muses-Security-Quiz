@@ -17,7 +17,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord
-public class QuizzResult {
+public class QuizzResult implements Comparable<QuizzResult>{
 		
 	@ManyToOne
 	private Quizz quizz;
@@ -33,6 +33,17 @@ public class QuizzResult {
 	private int wrongAnswers;
 	
 	private Date date;
+	
+	
+
+	@Override
+	public int compareTo(QuizzResult quizzresult) {
+		// TODO Auto-generated method stub
+		Date start = quizzresult.getDate();
+		
+		// TODO Auto-generated method stub
+		return start.compareTo(date);	
+		}
 
 	
 
