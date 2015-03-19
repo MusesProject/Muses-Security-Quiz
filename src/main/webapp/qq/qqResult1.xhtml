@@ -17,8 +17,18 @@
 <ui:define name="content">
 
 	<pm:content styleClass="jqm-content" >
-
+<br />
+		<h:outputText value="#{messages.label_result_info_p1} #{quizAppMbean.resultQuizzChosen.correctAnswers} #{messages.label_result_info_p2} 10" styleClass="boldResult" ></h:outputText>
 		
+		<h:panelGroup rendered="#{quizAppMbean.resultQuizzChosen.correctAnswers gt 5}">
+			<br />
+			<h:outputText value="#{messages.label_result_felicitation} #{quizAppMbean.employee.lastname} !!!" styleClass="boldResult" />
+		</h:panelGroup>
+		
+		<h:panelGroup rendered="#{quizAppMbean.resultQuizzChosen.correctAnswers le 5}">
+			<br />
+			<h:outputText value="#{messages.label_result_np} #{quizAppMbean.employee.lastname} !!!" styleClass="boldResult" />
+		</h:panelGroup>
 
 				<p:dataTable value="#{quizAppMbean.resultQuizzChosen.getQuizz().getListQuestions()}" var="question"
 				tableStyleClass="ui-table-columntoggle" rowIndexVar="rowIndex">
