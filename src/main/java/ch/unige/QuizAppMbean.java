@@ -65,9 +65,130 @@ public class QuizAppMbean {
 	private int wrongAnswer = 0;
 	 
 	private int correctAnswer = 0;
+	
+	private boolean  step1Done = false;
+	
+	private boolean  step2Done = false;
+
+	private boolean  step3Done = false;
+
+	private boolean  step4Done = false;
+
+	private boolean  step5Done = false;
+
+	private boolean  step6Done = false;
+
+	private boolean  step7Done = false;
+
+	private boolean  step8Done = false;
+
+	private boolean  step9Done = false;
+
+	private boolean  step10Done = false;
+
 
 		
-	 /**
+	 public boolean isStep1Done() {
+		return step1Done;
+	}
+
+
+	public void setStep1Done(boolean step1Done) {
+		this.step1Done = step1Done;
+	}
+
+
+	public boolean isStep2Done() {
+		return step2Done;
+	}
+
+
+	public void setStep2Done(boolean step2Done) {
+		this.step2Done = step2Done;
+	}
+
+
+	public boolean isStep3Done() {
+		return step3Done;
+	}
+
+
+	public void setStep3Done(boolean step3Done) {
+		this.step3Done = step3Done;
+	}
+
+
+	public boolean isStep4Done() {
+		return step4Done;
+	}
+
+
+	public void setStep4Done(boolean step4Done) {
+		this.step4Done = step4Done;
+	}
+
+
+	public boolean isStep5Done() {
+		return step5Done;
+	}
+
+
+	public void setStep5Done(boolean step5Done) {
+		this.step5Done = step5Done;
+	}
+
+
+	public boolean isStep6Done() {
+		return step6Done;
+	}
+
+
+	public void setStep6Done(boolean step6Done) {
+		this.step6Done = step6Done;
+	}
+
+
+	public boolean isStep7Done() {
+		return step7Done;
+	}
+
+
+	public void setStep7Done(boolean step7Done) {
+		this.step7Done = step7Done;
+	}
+
+
+	public boolean isStep8Done() {
+		return step8Done;
+	}
+
+
+	public void setStep8Done(boolean step8Done) {
+		this.step8Done = step8Done;
+	}
+
+
+	public boolean isStep9Done() {
+		return step9Done;
+	}
+
+
+	public void setStep9Done(boolean step9Done) {
+		this.step9Done = step9Done;
+	}
+
+
+	public boolean isStep10Done() {
+		return step10Done;
+	}
+
+
+	public void setStep10Done(boolean step10Done) {
+		this.step10Done = step10Done;
+	}
+
+
+	/**
 	 * @return the wrongAnswer
 	 */
 	public int getWrongAnswer() {
@@ -226,7 +347,7 @@ public class QuizAppMbean {
 	
 	public void check (){
 		
-         FacesContext facesContext = FacesContext.getCurrentInstance();
+     /*    FacesContext facesContext = FacesContext.getCurrentInstance();
 
 		 FacesContext ctx = FacesContext.getCurrentInstance();
 		 NavigationHandler navigationHandler =
@@ -239,9 +360,9 @@ public class QuizAppMbean {
          HttpServletRequest servletRequest = (HttpServletRequest) ctx.getExternalContext().getRequest();
          //returns something like "/myapplication/home.faces"
          String fullURI = servletRequest.getRequestURI();
-         //System.out.println("xav1: "+ fullURI);
-         //System.out.println("step: "+ fullURI);
-
+         System.out.println("xav1: "+ fullURI);
+         System.out.println("step: "+ path1);
+         System.out.println("step1: "+ step);
          
          if( FacesContext.getCurrentInstance().isPostback()){
         	 //navigationHandler.handleNavigation(facesContext, null, "outcome");
@@ -254,7 +375,7 @@ public class QuizAppMbean {
 
 		}
 		if(step.equalsIgnoreCase("2")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_two.jsf")){
-	        navigationHandler.handleNavigation(facesContext, null, "outcome");
+	        navigationHandler.handleNavigation(facesContext, null, "test");
 	        System.out.println("etape3");
 	       
 
@@ -295,14 +416,14 @@ public class QuizAppMbean {
 		
 		}
 		if(step.equalsIgnoreCase("9")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_nine.jsf") ){
-	        navigationHandler.handleNavigation(facesContext, null, "reload9");
+	        navigationHandler.handleNavigation(facesContext, null, "outcome");
 
 		
 		}
 		if(step.equalsIgnoreCase("10")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_ten.jsf") ){
-	        navigationHandler.handleNavigation(facesContext, null, "reload10");
+	        navigationHandler.handleNavigation(facesContext, null, "outcome");
 			
-		}
+		}*/
     	
         
 	
@@ -346,91 +467,160 @@ public class QuizAppMbean {
 
 		if(step.equalsIgnoreCase("1")){
 			
-			
-			
-			questionslist.add(quizzChosen.getListQuestions().get(0).getQuestionText());
-			quizzChosen.getListQuestions().get(0).setYourresponse(response);
-			responseslist.add(response);
-			if (response == quizzChosen.getListQuestions().get(0).getResponse()) {
-				totalCorrAnswer++;
+			if(step1Done!=true){
+				
+				questionslist.add(quizzChosen.getListQuestions().get(0).getQuestionText());
+				quizzChosen.getListQuestions().get(0).setYourresponse(response);
+				responseslist.add(response);
+				if (response == quizzChosen.getListQuestions().get(0).getResponse()) {
+					totalCorrAnswer++;
+				}
+	
+				step1Done = true;
+	
+				return "step2";
+			}else{
+				return "step2";
 			}
-			return "step2";
 		}
+
 		if(step.equalsIgnoreCase("2")){
 			
-			System.out.println("okk");
-
+			if(step2Done!=true){
 			
-			questionslist.add(quizzChosen.getListQuestions().get(1).getQuestionText());
-			quizzChosen.getListQuestions().get(1).setYourresponse(response);
-			responseslist.add(response);
-			if (response == quizzChosen.getListQuestions().get(1).getResponse()) {
-				totalCorrAnswer++;
+				questionslist.add(quizzChosen.getListQuestions().get(1).getQuestionText());
+				quizzChosen.getListQuestions().get(1).setYourresponse(response);
+				responseslist.add(response);
+				if (response == quizzChosen.getListQuestions().get(1).getResponse()) {
+					totalCorrAnswer++;
+				}
+				System.out.println("bool2: "+step2Done);
+	
+				step2Done = true;
+	
+				return "step3";
+			}else{
+				return "step3";
+
 			}
-			return "step3";
 		}
+
 		if(step.equalsIgnoreCase("3")){
 			
-			questionslist.add(quizzChosen.getListQuestions().get(2).getQuestionText());
-			quizzChosen.getListQuestions().get(2).setYourresponse(response);
-			responseslist.add(response);
-			if (response == quizzChosen.getListQuestions().get(2).getResponse()) {
-				totalCorrAnswer++;
+			if(step3Done!=true){
+
+			
+				questionslist.add(quizzChosen.getListQuestions().get(2).getQuestionText());
+				quizzChosen.getListQuestions().get(2).setYourresponse(response);
+				responseslist.add(response);
+				if (response == quizzChosen.getListQuestions().get(2).getResponse()) {
+					totalCorrAnswer++;
+				}
+				System.out.println("bool3: "+step3Done );
+	
+				step3Done = true;
+	
+				return "step4";
+			}else{
+				return "step4";
+
 			}
-			return "step4";
 		}
+
 		if(step.equalsIgnoreCase("4")){
 			
-			questionslist.add(quizzChosen.getListQuestions().get(3).getQuestionText());
-			quizzChosen.getListQuestions().get(3).setYourresponse(response);
-			responseslist.add(response);
-			if (response == quizzChosen.getListQuestions().get(3).getResponse()) {
-				totalCorrAnswer++;
+			if(step4Done!=true){
+
+				questionslist.add(quizzChosen.getListQuestions().get(3).getQuestionText());
+				quizzChosen.getListQuestions().get(3).setYourresponse(response);
+				responseslist.add(response);
+				if (response == quizzChosen.getListQuestions().get(3).getResponse()) {
+					totalCorrAnswer++;
+				}
+				System.out.println("bool4: "+step4Done );
+				step4Done = true;
+	
+				return "step5";
+			}else{
+				return "step5";
+
 			}
-			return "step5";
 		}
 		if(step.equalsIgnoreCase("5")){
 			
-			questionslist.add(quizzChosen.getListQuestions().get(4).getQuestionText());
-			quizzChosen.getListQuestions().get(4).setYourresponse(response);
-			responseslist.add(response);
-			if (response == quizzChosen.getListQuestions().get(4).getResponse()) {
-				totalCorrAnswer++;
+			if(step5Done!=true){
+
+				questionslist.add(quizzChosen.getListQuestions().get(4).getQuestionText());
+				quizzChosen.getListQuestions().get(4).setYourresponse(response);
+				responseslist.add(response);
+				if (response == quizzChosen.getListQuestions().get(4).getResponse()) {
+					totalCorrAnswer++;
+				}
+				step5Done = true;
+	
+				return "step6";
+			}else{
+				return "step6";
+
 			}
-			
-			return "step6";
 		}
 		if(step.equalsIgnoreCase("6")){
 			
-			questionslist.add(quizzChosen.getListQuestions().get(5).getQuestionText());
-			quizzChosen.getListQuestions().get(5).setYourresponse(response);
-			responseslist.add(response);
-			if (response == quizzChosen.getListQuestions().get(5).getResponse()) {
-				totalCorrAnswer++;
+			if(step6Done!=true){
+			
+				questionslist.add(quizzChosen.getListQuestions().get(5).getQuestionText());
+				quizzChosen.getListQuestions().get(5).setYourresponse(response);
+				responseslist.add(response);
+				if (response == quizzChosen.getListQuestions().get(5).getResponse()) {
+					totalCorrAnswer++;
+				}
+				step6Done = true;
+	
+				return "step7";
+			}else{
+				return "step7";
+
 			}
-			return "step7";
 		}
 		if(step.equalsIgnoreCase("7")){
 			
-			questionslist.add(quizzChosen.getListQuestions().get(6).getQuestionText());
-			quizzChosen.getListQuestions().get(6).setYourresponse(response);
-			responseslist.add(response);
-			if (response == quizzChosen.getListQuestions().get(6).getResponse()) {
-				totalCorrAnswer++;
+			if(step7Done!=true){
+
+				questionslist.add(quizzChosen.getListQuestions().get(6).getQuestionText());
+				quizzChosen.getListQuestions().get(6).setYourresponse(response);
+				responseslist.add(response);
+				if (response == quizzChosen.getListQuestions().get(6).getResponse()) {
+					totalCorrAnswer++;
+				}
+				step7Done = true;
+				
+	
+				return "step8";
+			}else{
+				return "step8";
+
 			}
-			return "step8";
 		}
 		if(step.equalsIgnoreCase("8")){
 			
+			if(step8Done!=true){
+
 			questionslist.add(quizzChosen.getListQuestions().get(7).getQuestionText());
 			quizzChosen.getListQuestions().get(7).setYourresponse(response);
 			responseslist.add(response);
 			if (response == quizzChosen.getListQuestions().get(7).getResponse()) {
 				totalCorrAnswer++;
 			}
+			step8Done = true;
+
 			return "step9";
+			}else{
+				return "step9";
+			}
 		}
 		if(step.equalsIgnoreCase("9")){
+			
+			if(step9Done!=true){
 			
 			questionslist.add(quizzChosen.getListQuestions().get(8).getQuestionText());
 			quizzChosen.getListQuestions().get(8).setYourresponse(response);
@@ -438,17 +628,25 @@ public class QuizAppMbean {
 			if (response == quizzChosen.getListQuestions().get(8).getResponse()) {
 				totalCorrAnswer++;
 			}
-			
+			step9Done = true;
+
 			return "step10";
+			}else{
+				return "step10";
+			}
 		}
 		if(step.equalsIgnoreCase("10")){
 			
+			
+			if(step10Done !=true){
+
 			questionslist.add(quizzChosen.getListQuestions().get(9).getQuestionText());
 			quizzChosen.getListQuestions().get(9).setYourresponse(response);
 			responseslist.add(response);
 			if (response == quizzChosen.getListQuestions().get(9).getResponse()) {
 				totalCorrAnswer++;
 			}
+			step10Done = true;
 			
 			//results.setQuestions(questionslist);
 			results.setResponses(responseslist);
@@ -524,8 +722,12 @@ public class QuizAppMbean {
 			averageWrongAnswer = averageWrongAnswers();
 			
 			
-			
+			step10Done = true;
+
 			return "result";
+			}else{
+				return "result";
+			}
 		}
 		
 		if(step.equalsIgnoreCase("final")){
