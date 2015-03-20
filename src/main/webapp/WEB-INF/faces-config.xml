@@ -136,6 +136,7 @@
     	<navigation-case>
     		<from-outcome>step10</from-outcome>
     		<to-view-id>/qq/step_ten.xhtml</to-view-id>
+    		 <redirect/>	
     	</navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -144,6 +145,7 @@
     	<navigation-case>
     		<from-outcome>result</from-outcome>
     		<to-view-id>/qq/qqResult.xhtml</to-view-id>
+    		 <redirect/>	
     	</navigation-case>
     	
     </navigation-rule>

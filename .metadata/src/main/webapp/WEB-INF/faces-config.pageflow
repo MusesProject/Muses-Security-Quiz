@@ -21,8 +21,8 @@
   <links id="pf14267620232765" target="pf142236709686712" source="pf142236709686710" outcome="step7" redirect="true"/>
   <links id="pf14267620232766" target="pf142236709686714" source="pf142236709686712" outcome="step8" redirect="true"/>
   <links id="pf14267620232767" target="pf142236709686716" source="pf142236709686714" outcome="step9" redirect="true"/>
-  <links id="pf14267620232768" target="pf142236709686718" source="pf142236709686716" outcome="step10"/>
-  <links id="pf14267620232769" target="pf142236714629920" source="pf142236709686718" outcome="result"/>
+  <links id="pf14267620232768" target="pf142236709686718" source="pf142236709686716" outcome="step10" redirect="true"/>
+  <links id="pf14267620232769" target="pf142236714629920" source="pf142236709686718" outcome="result" redirect="true"/>
   <links id="pf14267620232750" target="pf14223670968674" source="pf14222890920452" outcome="step3" redirect="true"/>
   <links id="pf14267620232751" target="pf14222890920452" source="pf142669216988424" outcome="step2" redirect="true"/>
   <links id="pf142669216988423" target="pf142669216988424" source="pf142669216988422" outcome="step1" redirect="true"/>
