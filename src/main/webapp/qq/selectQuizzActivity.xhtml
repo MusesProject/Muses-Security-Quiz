@@ -34,7 +34,7 @@
    						
     			</p:dataList>
     			
-    			<p:dataGrid value="#{quizAppMbean.newQuizz}"  var="quizz" styleClass="center"  ajax="false btnQuiz" rendered="#{quizAppMbean.employee.getMyQuizzes().size() == 0}">
+    			<p:dataList value="#{quizAppMbean.newQuizz}"  var="quizz" styleClass="center btnQuiz"  ajax="false" rendered="#{quizAppMbean.employee.getMyQuizzes().size() == 0}">
 						
 						
 						<h:form styleClass="center" >
@@ -45,7 +45,7 @@
 						
 						</h:form>
    						
-    			</p:dataGrid>
+    			</p:dataList>
 			</p>
 			
 			<p class="center">
