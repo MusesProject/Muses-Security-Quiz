@@ -22,7 +22,7 @@ background-color:#ab227d !important;
              
             <pm:content>
             	<h:form>
-            
+            <p:growl id="growl" showDetail="true" showSummary="false"  />
             	<pm:field >
             		<p style="text-align: center" >
             			<span class="logoDarkTxt" >Register to </span>
@@ -32,33 +32,39 @@ background-color:#ab227d !important;
 
 				<pm:field>
 					<p:outputLabel for="name" value="#{messages.label_name} :" />
-					<p:inputText id="name" value="#{registerBean.firstname}" />
+					<p:inputText id="name" value="#{registerBean.firstname}" 
+					required="true" requiredMessage="#{messages.label_required_name}"  />
 				</pm:field>
 				
 				<pm:field>
 					<p:outputLabel for="surname" value="#{messages.label_surname} :" />
-					<p:inputText id="surname" value="#{registerBean.lastname}" />
+					<p:inputText id="surname" value="#{registerBean.lastname}"
+					required="true" requiredMessage="#{messages.label_required_surname}"  />
 				</pm:field>
 				
 				
 				<pm:field>
 					<p:outputLabel for="password" value="#{messages.label_Password} :" />
-					<p:password id="password" value="#{registerBean.password}"/>
+					<p:password id="password" value="#{registerBean.password}"
+					required="true" requiredMessage="#{messages.label_required_psw}" />
 				</pm:field>
 				
 				<pm:field>
 					<p:outputLabel for="cpassword" value="#{messages.label_confirm_psw} :" />
-					<p:password id="cpassword" value="#{registerBean.confirmpassword}"/>
+					<p:password id="cpassword" value="#{registerBean.confirmpassword}"
+					required="true" requiredMessage="#{messages.label_required_psw}"  />
 				</pm:field>
 				
 				<pm:field>
 					<p:outputLabel for="email" value="Email :" />
-					<p:inputText id="email" value="#{registerBean.email}"/>
+					<p:inputText id="email" value="#{registerBean.email}"
+					required="true" requiredMessage="#{messages.label_required_username}"  />
 				</pm:field>
 				
 				<pm:field>
 					<p:outputLabel for="profession" value="#{messages.label_job} :" />
-					<p:inputText id="profession" value="#{registerBean.job}"/>
+					<p:inputText id="profession" value="#{registerBean.job}"
+					required="true" requiredMessage="#{messages.label_required_job}" />
 				</pm:field>
 
 				<pm:field>
@@ -81,7 +87,7 @@ background-color:#ab227d !important;
 				
 				
 				<p style="text-align: center;">
-				<p:commandButton  value="#{messages.label_save}"  styleClass="ui-btn-inline btnInline btnReg"  action="#{registerBean.createEmployeeAccount}" />
+				<p:commandButton  value="#{messages.label_save}"  styleClass="ui-btn-inline btnInline btnReg"  action="#{registerBean.createEmployeeAccount}" update="growl" />
 				<p:button  value="#{messages.label_cancel}"  styleClass="ui-btn-inline btnInline btnReg" outcome="/public/loginActivity" />
 				</p>
 					</h:form>
