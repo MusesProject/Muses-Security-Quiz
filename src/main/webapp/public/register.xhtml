@@ -79,7 +79,7 @@ background-color:#ab227d !important;
 
 				<pm:field>
 					<p:outputLabel for="sexe" value="#{messages.label_sex}" />
-					<p:selectOneButton id="sexe" value="#{registerBean.sex}" style="text-align: center;" >
+					<p:selectOneButton id="sexe" value="#{registerBean.sex}" style="text-align: center;" required="true" >
 						<f:selectItem itemLabel="#{messages.label_man}" itemValue="1" />
 						<f:selectItem itemLabel="#{messages.label_woman}" itemValue="2" />
 					</p:selectOneButton>

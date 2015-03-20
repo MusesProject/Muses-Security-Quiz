@@ -22,7 +22,7 @@
 
 	<pm:content styleClass="jqm-content" >
 		
-		<h1>Profile :</h1>
+		<h1>#{messages.label_profile} :</h1>
 			
 			<h2>#{quizAppMbean.employee.lastname} #{quizAppMbean.employee.firstname}</h2>
 						<div>
@@ -43,7 +43,7 @@
 				<p:outputLabel value="#{messages.label_age} : " />
 				<p:outputLabel value="#{quizAppMbean.employee.age}" styleClass="textEnd" />
 				
-				<p:outputLabel value="#{messages.label_sex} : "  />
+				<p:outputLabel value="#{messages.label_sex} : "  rendered="#{!quizAppMbean.employee.sex == null}" />
 
 				<p:outputLabel value="#{messages.label_woman}" rendered="#{quizAppMbean.employee.sex == 2}" styleClass="textEnd" />
 				<p:outputLabel value="#{messages.label_man}" rendered="#{quizAppMbean.employee.sex == 1}" styleClass="textEnd" />
