@@ -1019,6 +1019,9 @@ input{font-size:1em !important}
 	color: #ab227d;
 	font-weight: bold;
 }
+.numberQQ{
+	float: right;
+}
 
 .logoDarkTxt{
 	font-size: 1.3em;
@@ -1399,4 +1402,8 @@ text-shadow: none !important;
 
 .listQuiz{
 	margin-top:5% ;
+}
+
+.textEnd{
+	text-align: center;
 }

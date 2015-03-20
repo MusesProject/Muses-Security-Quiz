@@ -25,8 +25,11 @@
 	<pm:content styleClass="jqm-content" >
 
 				<br />
+				<p>
 				<h:outputText value="#{quizAppMbean.quizzChosen.listQuestions.get(1).questionText}"
 					styleClass="questionStyle" />
+				<span class="numberQQ"><span class="logoPinkTxt">2</span><span class="questionStyle">/10</span></span>
+				</p>	
 
 
 		<p:dataGrid columns="1" value="#{quizAppMbean.quizzChosen.listQuestions.get(1).answers}"

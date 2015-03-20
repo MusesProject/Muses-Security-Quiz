@@ -13,7 +13,6 @@
     <style>
 		body{font-size:1.5em;}
 		.ui-block-a{text-align: end;}
-		.ui-block-b{width:10%!important;}
     </style>
     
     
@@ -23,41 +22,40 @@
 
 	<pm:content styleClass="jqm-content" >
 		
-		<h1>#{quizAppMbean.employee.firstname} Profile</h1>
-			<div>
-			<p:panelGrid columns="3" >
-				<p:outputLabel value="#{messages.label_surname} :" />
-				<p:outputLabel value="" />
-				<p:outputLabel value="#{quizAppMbean.employee.lastname}" />
+		<h1>Profile :</h1>
+			
+			<h2>#{quizAppMbean.employee.lastname} #{quizAppMbean.employee.firstname}</h2>
+						<div>
+			
+			<p:panelGrid columns="2" >
 				
 				<p:outputLabel value="Email :" />
-				<p:outputLabel value="" />
-				<p:outputLabel value="#{quizAppMbean.employee.email}" />
+				
+				<p:outputLabel value="#{quizAppMbean.employee.email}" styleClass="textEnd" />
 				
 				
 				<p:outputLabel value="#{messages.label_job} : " />
-				<p:outputLabel value="" />
-				<p:outputLabel value="#{quizAppMbean.employee.job}" />
+				<p:outputLabel value="#{quizAppMbean.employee.job}" styleClass="textEnd" />
 				
 				<p:outputLabel value="#{messages.label_anciennete} : " />
-				<p:outputLabel value="" />
-				<p:outputLabel value="#{quizAppMbean.employee.experience}" />
+				<p:outputLabel value="#{quizAppMbean.employee.experience}" styleClass="textEnd" />
 				
 				<p:outputLabel value="#{messages.label_age} : " />
-				<p:outputLabel value="" />
-				<p:outputLabel value="#{quizAppMbean.employee.age}" />
+				<p:outputLabel value="#{quizAppMbean.employee.age}" styleClass="textEnd" />
 				
-				<p:outputLabel value="#{messages.label_sex} : " />
-				<p:outputLabel value="" />
-				<p:outputLabel value="#{messages.label_woman}" rendered="#{quizAppMbean.employee.sex == 2}" />
-				<p:outputLabel value="#{messages.label_man}" rendered="#{quizAppMbean.employee.sex == 1}" />
+				<p:outputLabel value="#{messages.label_sex} : "  />
+
+				<p:outputLabel value="#{messages.label_woman}" rendered="#{quizAppMbean.employee.sex == 2}" styleClass="textEnd" />
+				<p:outputLabel value="#{messages.label_man}" rendered="#{quizAppMbean.employee.sex == 1}" styleClass="textEnd" />
 				
 				<p:outputLabel value="#{messages.label_quizz} : " />
-				<p:outputLabel value="" />
-				<p:outputLabel value="#{quizAppMbean.employee.getMyQuizzes().size()}" />
+				<p:outputLabel value="#{quizAppMbean.employee.getMyQuizzes().size()}" styleClass="textEnd" />
 				
 			</p:panelGrid>
 </div>
+
+
+
 		</pm:content>
 	
 </ui:define>
