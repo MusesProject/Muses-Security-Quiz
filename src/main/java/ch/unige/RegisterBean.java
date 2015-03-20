@@ -160,28 +160,28 @@ public class RegisterBean {
             return;
         }
    	 
-   	 	if (age == 0) {
+   	 	/*if (age == 0) {
             FacesContext facesContext = FacesContext.getCurrentInstance();
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "You must specify a valid age", null);
             facesContext.addMessage(null, msg);
             return;
         }
    	 	
-   	 if (sex == null) {
+   	 	if (sex == null) {
          FacesContext facesContext = FacesContext.getCurrentInstance();
          FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "You must specify your sex", null);
          facesContext.addMessage(null, msg);
          return;
-     }
+     	}*/
    	 
-   	 if (confirmpassword == "") {
+   	 	if (confirmpassword == "") {
             FacesContext facesContext = FacesContext.getCurrentInstance();
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "You must confirm your password", null);
             facesContext.addMessage(null, msg);
             return;
         }
    	 
-   	 if (confirmpassword == password) {
+   	 	if (confirmpassword == password) {
             FacesContext facesContext = FacesContext.getCurrentInstance();
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Password Must be identique", null);
             facesContext.addMessage(null, msg);
