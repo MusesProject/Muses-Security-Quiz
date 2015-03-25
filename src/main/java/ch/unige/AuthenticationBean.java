@@ -54,63 +54,6 @@ public void setAuthenticationManager(AuthenticationManager authenticationManager
 }
 
 public String doLogin() throws IOException, ServletException {
-	  /*ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
-	    RequestDispatcher dispatcher = ((ServletRequest) context.getRequest()).getRequestDispatcher("/j_spring_security_check");
-	    FacesContext facesContext = FacesContext.getCurrentInstance();
-
-	    dispatcher.forward((ServletRequest) context.getRequest(), (ServletResponse) context.getResponse());
-	    FacesContext.getCurrentInstance().responseComplete();
-	   // HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-		//session.setAttribute("islogged", true);
-	 
-		return "login";
-	  
-	  System.out.println("Please enter your username:");
-      System.out.println("Please enter your password:");
-     
-      
-      Authentication authentication = SecurityContextHolder.
-              getContext().getAuthentication();
-      
-        Authentication request = new UsernamePasswordAuthenticationToken("xavier", "titi");
-        Authentication result = am.authenticate(request);
-        SecurityContextHolder.getContext().setAuthentication(result);
-        ;
-      
-    System.out.println("Successfully authenticated. Security context contains: " +
-              SecurityContextHolder.getContext().getAuthentication());
- 
-	  ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();  
-      HttpServletRequest request = ((HttpServletRequest)context.getRequest());
-            
-      ServletResponse resposnse = ((ServletResponse)context.getResponse());
-      RequestDispatcher dispatcher = request.getRequestDispatcher("/j_spring_security_check");
-      dispatcher.forward(request, resposnse);
-      FacesContext.getCurrentInstance().responseComplete();
-      System.out.println("test");
-      
-      return "login";
-	  
-	ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
-    RequestDispatcher dispatcher = ((ServletRequest) context.getRequest()).getRequestDispatcher("/j_spring_security_check");
-    FacesContext facesContext = FacesContext.getCurrentInstance();
-
-    dispatcher.forward((ServletRequest) context.getRequest(), (ServletResponse) context.getResponse());
-    FacesContext.getCurrentInstance().responseComplete();*/
-	  
-
-	   /*ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
-	   RequestDispatcher dispatcher = ((ServletRequest) context.getRequest()).getRequestDispatcher("/j_spring_security_check");
-	   System.out.println(context.getRequest().toString());
-	   System.out.println(context.getResponse().toString());
-
-	   
-	   dispatcher.forward((ServletRequest) context.getRequest(), (ServletResponse) context.getResponse());
-	   FacesContext.getCurrentInstance().responseComplete();*/
-	    
-	        //HttpServletRequest req = (HttpServletRequest) context.getRequest();
-
-	        //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	    
 	ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
 
@@ -140,41 +83,7 @@ public String doLogin() throws IOException, ServletException {
 	    	return null;
 	    }
             
-	       	        
-	        //dispatcher.forward((ServletRequest) context.getRequest(), (ServletResponse) context.getResponse());
-	        
-	       // try {
-	            //HttpSession session = req.getSession(true);
-	           // System.out.println("ok: "+result.getName());
-	            //System.out.println("ok: "+result.isAuthenticated());
-	            //System.out.println("ko: "+request.isAuthenticated());
-
-
-	           /* String cp = context.getRequestContextPath();
-	            String redirectUrl = cp;
-
-	            //performing some filtering depending on Roles and target-urls
-	            
-	            
-	            String encodedURL = context.encodeResourceURL(redirectUrl);
-	            System.out.println("URL:"+redirectUrl);
-
-	            System.out.println("URL:"+encodedURL);
-	            if(result.isAuthenticated()){
-	            //context.redirect(encodedURL);
-	            	return "pm:success"; 
-	            }else{
-	            	return "pm:success"; 
-
-		            //context.redirect("../public/loginfailed.xhtml");//055712968
-
-	            }
-	           // FacesContext.getCurrentInstance().responseComplete();
-	            } catch (AuthenticationException ae) {
-	           // UtilBean.addErrorMessage("bad_credential");
-	        }*/ 
-	        
-	return "pm:success"; //CONSEILLER JURIDIQUE, députés locaux,
+	return "pm:success"; 
   }
 
   public String doLogout() throws IOException, ServletException {
