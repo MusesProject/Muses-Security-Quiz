@@ -23,14 +23,17 @@
             		<p style="text-align: center" >
             			<h:graphicImage style="width:35%" library="images" name="logo.png" ></h:graphicImage>
             			<br />
-            			<span class="logoDarkTxt" >What is the MUSES Project about?</span>
+            			<span class="logoDarkTxt" >#{messages.label_main_h1}</span>
             			<br />
-            			<span>MUSES stands for<span class="logoPinkTxt" > Multiplatform Usable Endpoint Security.</span> In this section we provide the most relevant facts about the project.</span>
+            			<span>#{messages.label_main_h4}<span class="logoPinkTxt" > #{messages.label_main_h2}</span> #{messages.label_main_h3}</span>
             			<br />
             		</p>
             	</pm:field>
+         
+         <h:form action="login" method="POST">
             	
             	    <p:growl id="growl" showDetail="true" showSummary="false"  />
+            	    
             	
 				<pm:field style="text-align: -webkit-center !important;">
 					<p:outputLabel for="username" value="Email :" />
@@ -51,8 +54,9 @@
 					action="#{authenticationBean.doLogin()}" ajax="true" styleClass="ui-btn-inline btnLogin" update="growl" />		
 					<p:button value="#{messages.label_register}" outcome="/public/register" styleClass="ui-btn-inline btnLogin" />
 				</p>
+            </h:form>
             </pm:content>
- 
+            
             <pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false" title="Muses Security Quizz™"></pm:footer>
         </pm:page>
 

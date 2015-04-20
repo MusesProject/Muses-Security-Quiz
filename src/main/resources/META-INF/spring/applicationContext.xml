@@ -70,4 +70,6 @@
         <property name="persistenceUnitName" value="persistenceUnit"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
+    <bean class="ch.unige.LoginServlet"></bean>
+    
 </beans>

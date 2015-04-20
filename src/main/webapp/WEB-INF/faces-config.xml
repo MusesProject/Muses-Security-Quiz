@@ -27,6 +27,11 @@
         <exception-handler-factory>ch.unige.util.ViewExpiredExceptionExceptionHandlerFactory</exception-handler-factory>
     </factory>
     <managed-bean>
+    	<managed-bean-name>loginServlet</managed-bean-name>
+    	<managed-bean-class>ch.unige.LoginServlet</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
     	<managed-bean-name>addMarkersView</managed-bean-name>
     	<managed-bean-class>ch.unige.AddMarkersView</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>

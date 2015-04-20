@@ -83,4 +83,14 @@
     <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
    
+   <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>ch.unige.LoginServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+  <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+   
 </web-app>
