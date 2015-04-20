@@ -11,7 +11,7 @@
         <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver
         </el-resolver>
         <resource-bundle>
-            <base-name>ch.unige.i18n.messages</base-name>
+            <base-name>musesproject.eu.i18n.messages</base-name>
             <var>messages</var>
         </resource-bundle>
         <locale-config>
@@ -24,46 +24,46 @@
     </application>
      
     <factory>
-        <exception-handler-factory>ch.unige.util.ViewExpiredExceptionExceptionHandlerFactory</exception-handler-factory>
+        <exception-handler-factory>musesproject.eu.util.ViewExpiredExceptionExceptionHandlerFactory</exception-handler-factory>
     </factory>
     <managed-bean>
     	<managed-bean-name>loginServlet</managed-bean-name>
-    	<managed-bean-class>ch.unige.LoginServlet</managed-bean-class>
+    	<managed-bean-class>musesproject.eu.LoginServlet</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
     	<managed-bean-name>addMarkersView</managed-bean-name>
-    	<managed-bean-class>ch.unige.AddMarkersView</managed-bean-class>
+    	<managed-bean-class>musesproject.eu.AddMarkersView</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
     	<managed-bean-name>circleCollectorView1</managed-bean-name>
-    	<managed-bean-class>ch.unige.CircleCollectorView</managed-bean-class>
+    	<managed-bean-class>musesproject.eu.CircleCollectorView</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
     	<managed-bean-name>quizAppMbean</managed-bean-name>
-    	<managed-bean-class>ch.unige.QuizAppMbean</managed-bean-class>
+    	<managed-bean-class>musesproject.eu.QuizAppMbean</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
     	<managed-bean-name>authenticationBean</managed-bean-name>
-    	<managed-bean-class>ch.unige.AuthenticationBean</managed-bean-class>
+    	<managed-bean-class>musesproject.eu.AuthenticationBean</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
     	<managed-bean-name>mobileManagedBean</managed-bean-name>
-    	<managed-bean-class>ch.unige.MobileManagedBean</managed-bean-class>
+    	<managed-bean-class>musesproject.eu.MobileManagedBean</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
     	<managed-bean-name>registerBean</managed-bean-name>
-    	<managed-bean-class>ch.unige.RegisterBean</managed-bean-class>
+    	<managed-bean-class>musesproject.eu.RegisterBean</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
     	<managed-bean-name>cacheControlPhaseListener</managed-bean-name>
-    	<managed-bean-class>ch.unige.CacheControlPhaseListener</managed-bean-class>
+    	<managed-bean-class>musesproject.eu.CacheControlPhaseListener</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <navigation-rule>

@@ -103,8 +103,8 @@
       <authentication-provider user-service-ref="cleancodeUserService" >
       </authentication-provider>
   </authentication-manager>
-    <beans:bean id="cleancodeUserService" class="ch.unige.UserServiceImpl"/>
-    <beans:bean id="authenticationBean" name="authenticationBean" class="ch.unige.AuthenticationBean" scope="session">
+    <beans:bean id="cleancodeUserService" class="musesproject.eu.UserServiceImpl"/>
+    <beans:bean id="authenticationBean" name="authenticationBean" class="musesproject.eu.AuthenticationBean" scope="session">
         <beans:property name="authenticationManager" ref="authenticationManager"></beans:property>
     </beans:bean>
   

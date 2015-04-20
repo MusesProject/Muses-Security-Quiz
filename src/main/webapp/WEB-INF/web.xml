@@ -85,7 +85,7 @@
    
    <servlet>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>ch.unige.LoginServlet</servlet-class>
+    <servlet-class>musesproject.eu.LoginServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
