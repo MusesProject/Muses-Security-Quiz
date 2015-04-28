@@ -36,7 +36,7 @@
 			</div>
 			<p:menu>
 				<p:menuitem value="#{messages.label_menu_main}" outcome="/pages/main" />
-				<p:menuitem value="#{messages.label_menu_quiz}" outcome="/qq/selectQuizzActivity" />
+				<p:menuitem value="#{messages.label_menu_quiz}" outcome="/qq/selectQuizzActivity"  />
 				<p:menuitem value="#{messages.label_menu_result}" outcome="/qq/quizResult" />
 				<p:menuitem value="#{messages.label_menu_profile}" outcome="/pages/profileActivity"  />
 				<p:menuitem action="#{authenticationBean.doLogout()}" value="#{messages.label_logout}" ajax="false" />
@@ -47,7 +47,7 @@
 			
 
 				<p:panelGrid columns="2" cellspacing="0" cellpadding="0"
-						styleClass="S-hidden">
+						styleClass="S-hidden, pmFlag">
 						<p:panelGrid cellspacing="0" cellpadding="0" >
 							<p:panelGrid columns="4" >
 

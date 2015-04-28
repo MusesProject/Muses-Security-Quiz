@@ -242,7 +242,6 @@ html body .ui-group-theme-a .ui-bar-inherit {
 	background-color: #f9f9f9 /*{a-page-background-color}*/;
 	border-color: #bbbbbb /*{a-page-border}*/;
 	color: #333333 /*{a-page-color}*/;
-	text-shadow: 0 /*{a-page-shadow-x}*/ 1px /*{a-page-shadow-y}*/ 0 /*{a-page-shadow-radius}*/ #f3f3f3 /*{a-page-shadow-color}*/;
 }
 /* Body: Read-only lists, text inputs, collapsible content */
 .ui-body-a,
@@ -1390,6 +1389,10 @@ text-shadow: none !important;
 	background-color:#ab227d !important;
 }
 
+.ui-btn-active{
+	opacity: .4;
+}
+
 .btnInline:ACTIVE{
 	
 	background-color:#ab227d !important;
@@ -1406,4 +1409,31 @@ text-shadow: none !important;
 
 .textEnd{
 	text-align: center;
+}
+.ui-loader{
+	display: none !important;
+}
+
+.loginField{
+display: block;
+text-align: center;
+margin-left: 2% !important;
+}
+.labelLogin{
+	display: block;
+text-align: right;
+}
+
+.pmFlag{
+	margin-top:3%;
+}
+
+
+.bgAnswertrue{
+	background-color: #1fff02;
+}
+
+.bgAnswerfalse{
+	background-color: #ff312e;
+	
 }

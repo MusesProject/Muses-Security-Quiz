@@ -12,40 +12,77 @@
 
  	<pm:header title="#{quizAppMbean.resultQuizzChosen.getQuizz().getDescription()} #{quizAppMbean.resultQuizzChosen.getDate()}" >
             </pm:header>
+             <style>
+th {
+    border-bottom: 1px solid lightgrey;
+    border-left:1px solid lightgrey;
+    border-right:1px solid lightgrey;
+    border-top:1px solid lightgrey;
+}
+
+tr:nth-child(even) {
+    background: #e9e9e9;
+}
+td {
+    border-bottom: 1px solid lightgrey;
+     border-left:1px solid lightgrey;
+    border-right:1px solid lightgrey;
+}
+</style>
 </ui:define>
 
 <ui:define name="content">
 
-	<pm:content styleClass="jqm-content" >
-<br />
-		<h:outputText value="#{messages.label_result_info_p1} #{quizAppMbean.resultQuizzChosen.correctAnswers} #{messages.label_result_info_p2} 10" styleClass="boldResult" ></h:outputText>
-		
-		<h:panelGroup rendered="#{quizAppMbean.resultQuizzChosen.correctAnswers gt 5}">
+		<pm:content styleClass="jqm-content">
 			<br />
-			<h:outputText value="#{messages.label_result_felicitation} #{quizAppMbean.employee.lastname} !!!" styleClass="boldResult" />
-		</h:panelGroup>
-		
-		<h:panelGroup rendered="#{quizAppMbean.resultQuizzChosen.correctAnswers le 5}">
-			<br />
-			<h:outputText value="#{messages.label_result_np} #{quizAppMbean.employee.lastname} !!!" styleClass="boldResult" />
-		</h:panelGroup>
+			<h:outputText
+				value="#{messages.label_result_info_p1} #{quizAppMbean.resultQuizzChosen.correctAnswers} #{messages.label_result_info_p2} 10"
+				styleClass="boldResult" />
 
-				<p:dataTable value="#{quizAppMbean.resultQuizzChosen.getQuizz().getListQuestions()}" var="question"
-				tableStyleClass="ui-table-columntoggle" rowIndexVar="rowIndex">
+			<h:panelGroup
+				rendered="#{quizAppMbean.resultQuizzChosen.correctAnswers gt 5}">
+				<br />
+				<h:outputText
+					value="#{messages.label_result_felicitation} #{quizAppMbean.employee.lastname} !!!"
+					styleClass="boldResult" />
+			</h:panelGroup>
 
+			<h:panelGroup
+				rendered="#{quizAppMbean.resultQuizzChosen.correctAnswers le 5}">
+				<br />
+				<h:outputText
+					value="#{messages.label_result_np} #{quizAppMbean.employee.lastname} !!!"
+					styleClass="boldResult" />
+			</h:panelGroup>
 
-			   <p:column headerText="">
-			   
-					<h:outputText styleClass="boldResult" value="#{messages.label_qq_question}: " />				
-					<h:outputText value="#{question.questionText}" />
-					<br/>
-					<h:outputText styleClass="boldResult" value="#{messages.label_qq_reponse}: " />					
-					<h:outputText value="#{question.answers.get(question.response)}" />
-					<br/>
-					<h:outputText styleClass="boldResult" value="#{messages.label_qq_Yreponse}: " />					
-					<h:outputText value="#{question.answers.get(quizAppMbean.resultQuizzChosen.getResponses().get(rowIndex))}" />
-					<br/>
+			<p:dataTable value="#{quizAppMbean.quizzChosen.getListQuestions()}"
+				var="question" tableStyleClass="ui-table-columntoggle">
+
+				<p:column headerText="Status">
+					<div
+						style="height: 30px; background-image: url('#{request.contextPath}/resources/images/#{question.answers.get(question.response) == question.answers.get(question.yourresponse)}.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
 				</p:column>
+
+				<p:column headerText="Quiz">
+					<h:outputText
+						styleClass="boldResult, bgAnswer#{question.answers.get(question.response) == question.answers.get(question.yourresponse)}"
+						value="#{messages.label_qq_question}: " />
+					<h:outputText
+						styleClass="bgAnswer#{question.answers.get(question.response) == question.answers.get(question.yourresponse)}"
+						value="#{question.questionText}" />
+					<br />
+					<h:outputText styleClass="boldResult"
+						value="#{messages.label_qq_reponse}: " />
+					<h:outputText value="#{question.answers.get(question.response)}" />
+					<br />
+					<h:outputText styleClass="boldResult"
+						value="#{messages.label_qq_Yreponse}: " />
+					<h:outputText
+						value="#{question.answers.get(question.yourresponse)}" />
+					<br />
+
+				</p:column>
+
 
 
 
@@ -57,13 +94,13 @@
 
 
 		</pm:content>
-		
-			
 
 
 
-	
-</ui:define>
+
+
+
+	</ui:define>
 
 </ui:composition>
 
