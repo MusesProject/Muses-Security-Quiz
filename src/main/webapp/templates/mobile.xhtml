@@ -35,10 +35,10 @@
 				<h2 style="color: white; text-shadow: none;">#{messages.label_Quick_menu}</h2>
 			</div>
 			<p:menu>
-				<p:menuitem value="#{messages.label_menu_main}" outcome="/pages/main" />
-				<p:menuitem value="#{messages.label_menu_quiz}" outcome="/qq/selectQuizzActivity"  />
-				<p:menuitem value="#{messages.label_menu_result}" outcome="/qq/quizResult" />
-				<p:menuitem value="#{messages.label_menu_profile}" outcome="/pages/profileActivity"  />
+				<p:menuitem value="#{messages.label_menu_main}" outcome="/pages/main" styleClass="#{view.viewId == '/pages/main.xhtml' ? 'ui-state-active' : ''}" />
+				<p:menuitem value="#{messages.label_menu_quiz}" outcome="/qq/selectQuizzActivity" styleClass="#{view.viewId == '/qq/selectQuizzActivity.xhtml' ? 'ui-state-active' : ''}" />
+				<p:menuitem value="#{messages.label_menu_result}" outcome="/qq/quizResult" styleClass="#{view.viewId == '/qq/quizResult.xhtml' ? 'ui-state-active' : ''}" />
+				<p:menuitem value="#{messages.label_menu_profile}" outcome="/pages/profileActivity" styleClass="#{view.viewId == '/pages/profileActivity.xhtml' ? 'ui-state-active' : ''}"  />
 				<p:menuitem action="#{authenticationBean.doLogout()}" value="#{messages.label_logout}" ajax="false" />
 				
 			</p:menu>
@@ -114,7 +114,7 @@
 
 			</div>
 	
-		<pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false" title="Muses Security Quizz™" >
+		<pm:footer styleClass="jqm-footer jqm-footerTxt" fixed="true" tapToggle="false" title="© Copyright - The MUSES Project Security Quizz" >
 	
 		</pm:footer>
 	
