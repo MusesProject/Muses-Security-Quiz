@@ -34,6 +34,8 @@
 					<p:commandButton action="/qq/qqResult1.xhtml" style="width:60%" styleClass="center btn_inline btnResult"  value="#{resultquizz.getQuizz().getDescription()} #{resultquizz.getDate()}" ajax="false" >
 						<f:setPropertyActionListener value="#{resultquizz}"
 							target="#{quizAppMbean.resultQuizzChosen}" />
+							
+							
 
 						<f:param name="description"
 							value="#{results.getQuizz().getDescription()}" />

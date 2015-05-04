@@ -55,32 +55,25 @@ td {
 					styleClass="boldResult" />
 			</h:panelGroup>
 
-			<p:dataTable value="#{quizAppMbean.quizzChosen.getListQuestions()}"
-				var="question" tableStyleClass="ui-table-columntoggle">
+			<p:dataTable value="#{quizAppMbean.resultQuizzChosen.getQuizz().getListQuestions()}"
+				var="question" tableStyleClass="ui-table-columntoggle" rowIndexVar="rowIndex">
 
 				<p:column headerText="Status">
 					<div
-						style="height: 30px; background-image: url('#{request.contextPath}/resources/images/#{question.answers.get(question.response) == question.answers.get(question.yourresponse)}.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+						style="height: 30px; background-image: url('#{request.contextPath}/resources/images/#{question.answers.get(question.response) == question.answers.get(quizAppMbean.resultQuizzChosen.getResponses().get(rowIndex))}.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
 				</p:column>
 
 				<p:column headerText="Quiz">
-					<h:outputText
-						styleClass="boldResult, bgAnswer#{question.answers.get(question.response) == question.answers.get(question.yourresponse)}"
-						value="#{messages.label_qq_question}: " />
-					<h:outputText
-						styleClass="bgAnswer#{question.answers.get(question.response) == question.answers.get(question.yourresponse)}"
-						value="#{question.questionText}" />
-					<br />
-					<h:outputText styleClass="boldResult"
-						value="#{messages.label_qq_reponse}: " />
+			   
+					<h:outputText styleClass="boldResult" value="#{messages.label_qq_question}: " />				
+					<h:outputText value="#{question.questionText}" />
+					<br/>
+					<h:outputText styleClass="boldResult" value="#{messages.label_qq_reponse}: " />					
 					<h:outputText value="#{question.answers.get(question.response)}" />
-					<br />
-					<h:outputText styleClass="boldResult"
-						value="#{messages.label_qq_Yreponse}: " />
-					<h:outputText
-						value="#{question.answers.get(question.yourresponse)}" />
-					<br />
-
+					<br/>
+					<h:outputText styleClass="boldResult" value="#{messages.label_qq_Yreponse}: " />					
+					<h:outputText value="#{question.answers.get(quizAppMbean.resultQuizzChosen.getResponses().get(rowIndex))}" />
+					<br/>
 				</p:column>
 
 
