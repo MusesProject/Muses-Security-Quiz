@@ -49,7 +49,7 @@
 						requiredMessage="#{messages.label_required_psw}" />
 				</pm:field>
 
-				<p style="text-align: center;">
+				<p style="text-align: center;" class="lgn">
 					<p:commandButton value="#{messages.label_login}"
 					action="#{authenticationBean.doLogin()}" ajax="true" styleClass="ui-btn-inline btnLogin" update="growl" />		
 					<p:button value="#{messages.label_register}" outcome="/public/register" styleClass="ui-btn-inline btnLogin" />

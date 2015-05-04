@@ -1194,13 +1194,20 @@ font-size: 1.3em;
 
 @media ( min-width : 60em) {
 	
+	.labelLogin{
+	display: block;
+text-align: right;
+}
+	
 		.btnLogin{
 	width: 35% !important;
 	color: white !important;
 	text-shadow: none !important;
 	}
 	
-
+.lgn{
+	margin-left: -10px;
+}
 	
 	.L-hidden{
 	display: none !important;
@@ -1226,6 +1233,7 @@ font-size: 1.3em;
 	
 	.jqm-demos .jqm-navmenu-panel {
 		visibility: visible;
+		position:static;
 		left: 0;
 		float: left;
 		width: 25%;
@@ -1450,7 +1458,6 @@ margin-left: 2% !important;
 }
 .labelLogin{
 	display: block;
-text-align: right;
 }
 
 .pmFlag{

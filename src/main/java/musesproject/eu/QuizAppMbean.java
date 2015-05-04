@@ -466,9 +466,9 @@ public class QuizAppMbean {
 		//results.setDescription(quizzChosen.getDescription());
 		
 		
-		totalfinalCorrAnswer = 0;
+		/*totalfinalCorrAnswer = 0;
 		
-		totalFinalWrongAnswer = 0;
+		totalFinalWrongAnswer = 0;*/
 		
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 
@@ -672,10 +672,10 @@ public class QuizAppMbean {
 				
 				totalFinalWrongAnswer = totalWrongAnswer;
 				
-				
+				/*
 				totalCorrAnswer = 0;
 				
-				totalWrongAnswer = 0;
+				totalWrongAnswer = 0; */
 				
 				//quizzChosen.persist();
 				

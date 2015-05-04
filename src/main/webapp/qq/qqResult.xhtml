@@ -34,7 +34,7 @@ td {
 
 	<pm:content styleClass="jqm-content" >
 	<br />
-		<h:outputText value="#{messages.label_result_info_p1} #{quizAppMbean.resultQuizzChosen.correctAnswers} #{messages.label_result_info_p2} 10" styleClass="boldResult" />
+		<h:outputText value="#{messages.label_result_info_p1} #{quizAppMbean.totalfinalCorrAnswer} #{messages.label_result_info_p2} 10" styleClass="boldResult" />
 		
 		<h:panelGroup rendered="#{quizAppMbean.resultQuizzChosen.correctAnswers gt 5}">
 			<br />
