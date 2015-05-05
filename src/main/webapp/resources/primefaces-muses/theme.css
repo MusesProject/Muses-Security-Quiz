@@ -970,6 +970,9 @@ input{font-size:1em !important}
 	padding-top:0em !important;
 }
 
+.ui-popup-active{
+	background-color: white;
+}
 
 /* Custom Chart button 
 -----------------------------------------------------------------------------------------------------------*/
@@ -1028,6 +1031,17 @@ input{font-size:1em !important}
 
 .btnInline{
 	width: 35% !important;	
+}
+
+.ui-icon-delete{
+	display: none !important;
+}
+
+.ui-popup > .ui-header{
+	background-image: url('#{request.contextPath}/resources/images/museCircle.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size:contain;
 }
 
 .btnQuiz{
@@ -1191,6 +1205,41 @@ border-bottom: 0px !important;
 font-weight: bold;
 font-size: 1.3em;
 }
+
+.dlgResponsefalse{
+	background-color:#ff0000!important;
+	background-image: url('#{request.contextPath}/resources/images/false.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size:contain;
+	margin-top: 10px;
+	text-align: center;
+	color:white;
+	font-size: 1.5em;
+    text-shadow: none;
+      width: 300px;
+}
+
+.dlgResponsetrue{
+	background-color:#00ff00!important;
+	background-image: url('#{request.contextPath}/resources/images/true.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size:contain;
+	margin-top: 10px;
+	text-align: center;
+	color:white;
+	font-size: 1.5em;
+  	text-shadow: none;
+  	  width: 300px;
+	
+}
+
+.btnNextQQ{
+	  margin-left: 25%;
+	  width: 50%; 
+}
+
 
 @media ( min-width : 60em) {
 	

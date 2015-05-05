@@ -6,52 +6,96 @@
 	xmlns:pm="http://primefaces.org/mobile"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="/templates/mobile.xhtml">
-	
-<ui:define name="head">
- 	<pm:header title="Security Quiz" >
-    </pm:header>
-    <style>
-    	.ui-datagrid-data{width:100%;height:100%;text-align: center;}
-    	.btnQuiz{height:150%; width:75%;}
-    	table.ui-datagrid-data{border-spacing: 8;}
-    	.ui-content.jqm-content{text-align: center;}
-    </style>
-    
-    
-</ui:define>
 
-<ui:define name="content">
+	<ui:define name="head">
+		<pm:header title="Security Quiz">
+		</pm:header>
+		<style>
+.ui-datagrid-data {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
 
-	<pm:content styleClass="jqm-content" >
-				<span class="numberQQ"><span class="logoPinkTxt">2</span><span class="questionStyle">/10</span></span>
+.btnQuiz {
+	height: 150%;
+	width: 75%;
+}
 
-				<br />
-				<p>
-				<h:outputText value="#{quizAppMbean.quizzChosen.listQuestions.get(1).questionText}"
+table.ui-datagrid-data {
+	border-spacing: 8;
+}
+
+.ui-content.jqm-content {
+	text-align: center;
+}
+</style>
+
+
+	</ui:define>
+
+	<ui:define name="content">
+
+		<pm:content styleClass="jqm-content">
+			<span class="numberQQ"><span class="logoPinkTxt">2</span><span
+				class="questionStyle">/10</span></span>
+
+			<br />
+			<p>
+				<h:outputText
+					value="#{quizAppMbean.quizzChosen.listQuestions.get(1).questionText}"
 					styleClass="questionStyle" />
-				</p>	
+			</p>
 
+			<h:form>
+				<p:dataGrid columns="1"
+					value="#{quizAppMbean.quizzChosen.listQuestions.get(1).answers}"
+					var="option" rowIndexVar="rowIndex">
 
-		<p:dataGrid columns="1" value="#{quizAppMbean.quizzChosen.listQuestions.get(1).answers}"
-					var="option"  rowIndexVar="rowIndex">
-					
-					<p:commandButton value="#{option}" styleClass="btnQuiz"
-						action="#{quizAppMbean.moveToNextQuestion}">
+					<p:commandButton value="#{option}" styleClass="btnQuiz, btnResponse#{rowIndex == quizAppMbean.quizzChosen.listQuestions.get(1).response}" >
 						<f:setPropertyActionListener target="#{quizAppMbean.response}"
 							value="#{rowIndex}" />
-							
+
 						<f:setPropertyActionListener target="#{quizAppMbean.step}"
 							value="#{2}" />
 					</p:commandButton>
 
 
 				</p:dataGrid>
+				<p:dialog showEffect="bounce" widgetVar="dlg1" header=""
+					severity="alert">
 
+					<div class="dlgResponsetrue">
+
+						<h:outputText value="Correct" />
+					</div>
+					<div class="btnNextQQ">
+						<p:commandButton value="#{messages.label_next} "
+							icon="ui-icon-arrow-r" iconPos="right"
+							action="#{quizAppMbean.moveToNextQuestion}" />
+					</div>
+				</p:dialog>
+
+
+				<p:dialog showEffect="bounce" widgetVar="dlg2" header=""
+					severity="alert">
+
+					<div class="dlgResponsefalse">
+
+						<h:outputText value="Incorrect" />
+					</div>
+					<div class="btnNextQQ">
+						<p:commandButton value="#{messages.label_next}"
+							icon="ui-icon-arrow-r" iconPos="right"
+							action="#{quizAppMbean.moveToNextQuestion}" />
+					</div>
+				</p:dialog>
+
+			</h:form>
 
 		</pm:content>
-	
-</ui:define>
+
+	</ui:define>
 
 </ui:composition>
 
-        

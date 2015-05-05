@@ -9,6 +9,17 @@
 	
 <f:view renderKitId="PRIMEFACES_MOBILE" locale="#{localeBean.locale}"  contentType="text/html" />
 <h:head>
+<script type="text/javascript">
+$(document).on("click", '.btnResponsetrue', function(){
+
+	 PrimeFaces.widgets.dlg1.show() 
+	 });
+	$(document).on("click", '.btnResponsefalse', function(){
+
+		PrimeFaces.widgets.dlg2.show()
+		});
+
+</script>
 </h:head>
 <f:metadata>
     <f:event type="preRenderView"  listener="#{quizAppMbean.check}" >
