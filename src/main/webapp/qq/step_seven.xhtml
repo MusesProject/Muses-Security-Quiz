@@ -89,6 +89,35 @@ table.ui-datagrid-data {
 				</p:dialog>
 
 			</h:form>
+			
+			<script>
+				if (Cookies.get('dlgIdStep7') === null
+						|| Cookies.get('dlgIdStep7') === ""
+						|| Cookies.get('dlgIdStep7') === "null"
+						|| Cookies.get('dlgIdStep7') === undefined) {
+					//no cookie
+				} else {
+					var el = document.getElementById(Cookies.get('dlgIdStep7'));
+					setTimeout(function() {
+						$(el).click();
+					}, 10)
+
+				}
+
+				$(document).on("click", '.btnResponsetrue', function() {
+
+					Cookies('dlgIdStep7', this.id, {
+						expires : 7, path: '/'
+					});
+
+				});
+				$(document).on("click", '.btnResponsefalse', function() {
+
+					Cookies('dlgIdStep7', this.id, {
+						expires : 7, path: '/'
+					});
+				});
+			</script>
 		</pm:content>
 
 	</ui:define>

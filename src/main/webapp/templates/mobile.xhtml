@@ -9,15 +9,53 @@
 	
 <f:view renderKitId="PRIMEFACES_MOBILE" locale="#{localeBean.locale}"  contentType="text/html" />
 <h:head>
+<script type="text/javascript" src="#{request.contextPath}/resources/js/jquery.corner.js"> </script>
+<script type="text/javascript" src="#{request.contextPath}/resources/js/js.cookie.js"> </script>
+
 <script type="text/javascript">
+
 $(document).on("click", '.btnResponsetrue', function(){
+PrimeFaces.widgets.dlg1.show();
+});
+$(document).on("click", '.btnResponsefalse', function(){
+PrimeFaces.widgets.dlg2.show();
+});
 
-	 PrimeFaces.widgets.dlg1.show() 
-	 });
-	$(document).on("click", '.btnResponsefalse', function(){
+$('.jqm_corner').corner().css('background-color:red');
 
-		PrimeFaces.widgets.dlg2.show()
-		});
+function clearCookies() {
+	
+	Cookies.remove('dlgIdStep1', {
+		path : '/'
+	});
+	Cookies.remove('dlgIdStep2', {
+		path : '/'
+	});
+	Cookies.remove('dlgIdStep3', {
+		path : '/'
+	});
+	Cookies.remove('dlgIdStep4', {
+		path : '/'
+	});
+	Cookies.remove('dlgIdStep5', {
+		path : '/'
+	});
+	Cookies.remove('dlgIdStep6', {
+		path : '/'
+	});
+	Cookies.remove('dlgIdStep7', {
+		path : '/'
+	});
+	Cookies.remove('dlgIdStep8', {
+		path : '/'
+	});
+	Cookies.remove('dlgIdStep9', {
+		path : '/'
+	});
+	Cookies.remove('dlgIdStep10', {
+		path : '/'
+	});
+}
 
 </script>
 </h:head>
@@ -46,11 +84,11 @@ $(document).on("click", '.btnResponsetrue', function(){
 				<h2 style="color: white; text-shadow: none;">#{messages.label_Quick_menu}</h2>
 			</div>
 			<p:menu>
-				<p:menuitem value="#{messages.label_menu_main}" outcome="/pages/main" styleClass="#{view.viewId == '/pages/main.xhtml' ? 'ui-state-active' : ''}" />
-				<p:menuitem value="#{messages.label_menu_quiz}" outcome="/qq/selectQuizzActivity" styleClass="#{view.viewId == '/qq/selectQuizzActivity.xhtml' ? 'ui-state-active' : ''}" />
-				<p:menuitem value="#{messages.label_menu_result}" outcome="/qq/quizResult" styleClass="#{view.viewId == '/qq/quizResult.xhtml' ? 'ui-state-active' : ''}" />
-				<p:menuitem value="#{messages.label_menu_profile}" outcome="/pages/profileActivity" styleClass="#{view.viewId == '/pages/profileActivity.xhtml' ? 'ui-state-active' : ''}"  />
-				<p:menuitem action="#{authenticationBean.doLogout()}" value="#{messages.label_logout}" ajax="false" />
+				<p:menuitem onclick="clearCookies()" value="#{messages.label_menu_main}" outcome="/pages/main" styleClass="#{view.viewId == '/pages/main.xhtml' ? 'ui-state-active' : ''}" />
+				<p:menuitem onclick="clearCookies()" value="#{messages.label_menu_quiz}" outcome="/qq/selectQuizzActivity" styleClass="#{view.viewId == '/qq/selectQuizzActivity.xhtml' ? 'ui-state-active' : ''}" />
+				<p:menuitem onclick="clearCookies()" value="#{messages.label_menu_result}" outcome="/qq/quizResult" styleClass="#{view.viewId == '/qq/quizResult.xhtml' ? 'ui-state-active' : ''}" />
+				<p:menuitem onclick="clearCookies()" value="#{messages.label_menu_profile}" outcome="/pages/profileActivity" styleClass="#{view.viewId == '/pages/profileActivity.xhtml' ? 'ui-state-active' : ''}"  />
+				<p:menuitem onclick="clearCookies()" action="#{authenticationBean.doLogout()}" value="#{messages.label_logout}" ajax="false" />
 				
 			</p:menu>
 			

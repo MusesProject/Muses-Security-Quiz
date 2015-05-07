@@ -52,7 +52,8 @@ table.ui-datagrid-data {
 					value="#{quizAppMbean.quizzChosen.listQuestions.get(1).answers}"
 					var="option" rowIndexVar="rowIndex">
 
-					<p:commandButton value="#{option}" styleClass="btnQuiz, btnResponse#{rowIndex == quizAppMbean.quizzChosen.listQuestions.get(1).response}" >
+					<p:commandButton value="#{option}"
+						styleClass="btnQuiz, btnResponse#{rowIndex == quizAppMbean.quizzChosen.listQuestions.get(1).response}">
 						<f:setPropertyActionListener target="#{quizAppMbean.response}"
 							value="#{rowIndex}" />
 
@@ -92,6 +93,37 @@ table.ui-datagrid-data {
 				</p:dialog>
 
 			</h:form>
+			<script>
+				if (Cookies.get('dlgIdStep2') === null
+						|| Cookies.get('dlgIdStep2') === ""
+						|| Cookies.get('dlgIdStep2') === "null"
+						|| Cookies.get('dlgIdStep2') === undefined) {
+					//no cookie
+				} else {
+					var el = document.getElementById(Cookies.get('dlgIdStep2'));
+					setTimeout(function() {
+						$(el).click();
+					}, 10)
+
+				}
+
+				$(document).on("click", '.btnResponsetrue', function() {
+
+					Cookies('dlgIdStep2', this.id, {
+						expires : 7,
+						path : '/'
+					});
+
+				});
+				$(document).on("click", '.btnResponsefalse', function() {
+
+					Cookies('dlgIdStep2', this.id, {
+						expires : 7,
+						path : '/'
+					});
+				});
+			</script>
+
 
 		</pm:content>
 

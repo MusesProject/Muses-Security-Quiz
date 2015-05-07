@@ -79,6 +79,8 @@ label.ui-btn {
 }
 .ui-btn {
 	text-decoration: none !important;
+	overflow: visible !important;
+	
 }
 .ui-btn-active {
 	cursor: pointer;
@@ -970,9 +972,11 @@ input{font-size:1em !important}
 	padding-top:0em !important;
 }
 
-.ui-popup-active{
+.ui-popup{
 	background-color: white;
 }
+
+
 
 /* Custom Chart button 
 -----------------------------------------------------------------------------------------------------------*/
@@ -1040,8 +1044,11 @@ input{font-size:1em !important}
 .ui-popup > .ui-header{
 	background-image: url('#{request.contextPath}/resources/images/museCircle.png');
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: c;
 	background-size:contain;
+	-webkit-box-shadow: inset 12px -20px 30px -20px rgba(0,0,0,0.56);
+	-moz-box-shadow: inset 12px -20px 30px -20px rgba(0,0,0,0.56);
+	box-shadow: inset 12px -20px 30px -20px rgba(0,0,0,0.56);
 }
 
 .btnQuiz{
@@ -1206,18 +1213,26 @@ font-weight: bold;
 font-size: 1.3em;
 }
 
+.popUpStyle{
+	font-weight: bold;
+	
+}
+
 .dlgResponsefalse{
-	background-color:#ff0000!important;
 	background-image: url('#{request.contextPath}/resources/images/false.png');
 	background-repeat: no-repeat;
 	background-position: right;
 	background-size:contain;
 	margin-top: 10px;
 	text-align: center;
-	color:white;
+	color:#34373b;
 	font-size: 1.5em;
     text-shadow: none;
       width: 300px;
+}
+
+.dlgResponseTextFalse{
+	color: #ff0000; 
 }
 
 .dlgResponsetrue{
@@ -1272,8 +1287,7 @@ text-align: right;
 	
 
 	.ui-btn {
-		text-align: center !important;
-		
+		text-align: center !important;		
 	}
 	
 	.ui-panel-display-overlay{
@@ -1486,7 +1500,6 @@ text-shadow: none !important;
 
 .ui-header .ui-title, .ui-footer .ui-title{
 	overflow: visible !important;
-	white-space:normal !important;
 }
 
 .listQuiz{
