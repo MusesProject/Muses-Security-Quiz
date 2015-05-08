@@ -1151,12 +1151,7 @@ input{font-size:1em !important}
 	width: 100%;
 text-align: center;
 }
-.ui-grid-a > .ui-block-a{
-width: 100% !important;
 
-	
-
-}
 
 .ui-state-active{
 border-width: 1px 10px 0px 0px !important;
@@ -1257,6 +1252,11 @@ font-size: 1.3em;
 
 
 @media ( min-width : 60em) {
+	
+	
+	.jqm_corner{
+	  width: 500px;
+	}
 	
 	.labelLogin{
 	display: block;
@@ -1472,6 +1472,7 @@ text-shadow: none !important;
 	text-shadow: none !important;
 	text-overflow: initial !important;
 		white-space: normal !important;
+		  margin: 0 0 !important;
 }
 
 .btnResult{

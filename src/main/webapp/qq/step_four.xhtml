@@ -51,7 +51,7 @@ table.ui-datagrid-data {
 					value="#{quizAppMbean.quizzChosen.listQuestions.get(3).answers}"
 					var="option" rowIndexVar="rowIndex">
 
-					<p:commandButton value="#{option}" styleClass="btnQuiz, btnResponse#{rowIndex == quizAppMbean.quizzChosen.listQuestions.get(3).response}">
+					<p:commandButton value="#{option}" styleClass="btnQuiz btnResponse#{rowIndex == quizAppMbean.quizzChosen.listQuestions.get(3).response}">
 						<f:setPropertyActionListener target="#{quizAppMbean.response}"
 							value="#{rowIndex}" />
 
@@ -62,28 +62,49 @@ table.ui-datagrid-data {
 
 				</p:dataGrid>
 
-				<p:dialog showEffect="bounce" widgetVar="dlg1" header=""
+				<p:dialog showEffect="bounce" widgetVar="dlg1" header="Correct"
 					severity="alert">
 
-					<div class="dlgResponsetrue">
-
-						<h:outputText value="Correct" />
+					<div>
+					
+					<p:panelGrid columns="2" styleClass="ui-responsive, jqm_corner" style="margin-top:2%;background-color: lightgrey">
+					    <h:outputText value="#{messages.label_label_answer_yours} " styleClass="popUpStyle" />
+						<h:outputText id="qqChoiceT" value="" />
+					   
+					   <h:outputText value="#{messages.label_label_answer_true} " styleClass="popUpStyle" />
+					   <h:outputText id="qqBonneRe" value="#{quizAppMbean.quizzChosen.getListQuestions().get(3).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(3).response)}" />
+					 
+					</p:panelGrid>
+					
 					</div>
+					
+					
 					<div class="btnNextQQ">
-						<p:commandButton value="#{messages.label_next} "
+						<p:commandButton value="#{messages.label_next}"
 							icon="ui-icon-arrow-r" iconPos="right"
 							action="#{quizAppMbean.moveToNextQuestion}" />
 					</div>
+					
 				</p:dialog>
 
 
-				<p:dialog showEffect="bounce" widgetVar="dlg2" header=""
-					severity="alert">
-
-					<div class="dlgResponsefalse">
-
-						<h:outputText value="Incorrect" />
+				<p:dialog showEffect="bounce" widgetVar="dlg2" header="Incorrect"
+					severity="alert" >
+					
+					<div>
+					
+					<p:panelGrid columns="2" styleClass="ui-responsive, jqm_corner" style="margin-top:2%;background-color: lightgrey">
+					    <h:outputText value="#{messages.label_label_answer_yours} " styleClass="popUpStyle" />
+						<h:outputText id="qqChoice" value="" />
+					   
+					   <h:outputText value="#{messages.label_label_answer_true} " styleClass="popUpStyle" />
+					   <h:outputText id="qqBonneR" value="#{quizAppMbean.quizzChosen.getListQuestions().get(3).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(3).response)}" />
+					 
+					</p:panelGrid>
+					
 					</div>
+					
+					
 					<div class="btnNextQQ">
 						<p:commandButton value="#{messages.label_next}"
 							icon="ui-icon-arrow-r" iconPos="right"
@@ -111,6 +132,9 @@ table.ui-datagrid-data {
 					Cookies('dlgIdStep4', this.id, {
 						expires : 7, path: '/'
 					});
+					
+					var value = document.getElementById(this.id).textContent;
+					document.getElementById('j_idt6:j_idt15:qqChoiceT').innerHTML = value;
 
 				});
 				$(document).on("click", '.btnResponsefalse', function() {
@@ -118,6 +142,8 @@ table.ui-datagrid-data {
 					Cookies('dlgIdStep4', this.id, {
 						expires : 7, path: '/'
 					});
+					var value = document.getElementById(this.id).textContent;
+					document.getElementById('j_idt6:j_idt15:qqChoice').innerHTML = value;
 				});
 			</script>
 
