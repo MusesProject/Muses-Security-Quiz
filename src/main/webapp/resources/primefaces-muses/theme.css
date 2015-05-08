@@ -1296,7 +1296,6 @@ text-align: right;
 	
 	.jqm-demos .jqm-navmenu-panel {
 		visibility: visible;
-		position:static;
 		left: 0;
 		float: left;
 		width: 25%;
