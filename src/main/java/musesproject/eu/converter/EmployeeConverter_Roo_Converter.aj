@@ -7,7 +7,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
-
 import musesproject.eu.Employee;
 import musesproject.eu.converter.EmployeeConverter;
 
@@ -15,7 +14,7 @@ privileged aspect EmployeeConverter_Roo_Converter {
     
     declare parents: EmployeeConverter implements Converter;
     
-    declare @type: EmployeeConverter: @FacesConverter("ch.unige.converter.EmployeeConverter");
+    declare @type: EmployeeConverter: @FacesConverter("musesproject.eu.converter.EmployeeConverter");
     
     public Object EmployeeConverter.getAsObject(FacesContext context, UIComponent component, String value) {
         if (value == null || value.length() == 0) {

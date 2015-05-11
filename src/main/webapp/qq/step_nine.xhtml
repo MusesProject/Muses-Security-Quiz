@@ -78,7 +78,7 @@ table.ui-datagrid-data {
 								value="#{quizAppMbean.quizzChosen.getListQuestions().get(8).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(8).response)}" />
 
 							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
-							<h:outputText value="" id="ClarificationTrue" />
+							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(8).getExplanation()}" id="ClarificationTrue" />
 						</p:panelGrid>
 
 					</div>
@@ -110,7 +110,7 @@ table.ui-datagrid-data {
 								value="#{quizAppMbean.quizzChosen.getListQuestions().get(8).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(8).response)}" />
 
 							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
-							<h:outputText value="" id="ClarificationFalse" />
+							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(8).getExplanation()}" id="ClarificationFalse" />
 						</p:panelGrid>
 
 					</div>

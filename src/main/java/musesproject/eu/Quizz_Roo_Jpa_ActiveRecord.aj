@@ -4,18 +4,17 @@
 package musesproject.eu;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import musesproject.eu.Quizz;
-
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Quizz_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
     transient EntityManager Quizz.entityManager;
+    
+    public static final List<String> Quizz.fieldNames4OrderClauseFilter = java.util.Arrays.asList("description", "listQuestions");
     
     public static final EntityManager Quizz.entityManager() {
         EntityManager em = new Quizz().entityManager;
@@ -31,6 +30,17 @@ privileged aspect Quizz_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM Quizz o", Quizz.class).getResultList();
     }
     
+    public static List<Quizz> Quizz.findAllQuizzes(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Quizz o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, Quizz.class).getResultList();
+    }
+    
     public static Quizz Quizz.findQuizz(Long id) {
         if (id == null) return null;
         return entityManager().find(Quizz.class, id);
@@ -38,6 +48,17 @@ privileged aspect Quizz_Roo_Jpa_ActiveRecord {
     
     public static List<Quizz> Quizz.findQuizzEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM Quizz o", Quizz.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    public static List<Quizz> Quizz.findQuizzEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Quizz o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, Quizz.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional

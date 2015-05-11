@@ -4,7 +4,6 @@
 package musesproject.eu;
 
 import java.util.List;
-
 import musesproject.eu.Employee;
 import musesproject.eu.Quizz;
 import musesproject.eu.QuizzResult;

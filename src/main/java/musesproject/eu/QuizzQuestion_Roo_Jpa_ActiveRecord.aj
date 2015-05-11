@@ -4,18 +4,17 @@
 package musesproject.eu;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import musesproject.eu.QuizzQuestion;
-
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect QuizzQuestion_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
     transient EntityManager QuizzQuestion.entityManager;
+    
+    public static final List<String> QuizzQuestion.fieldNames4OrderClauseFilter = java.util.Arrays.asList("questionText", "answers", "response", "yourresponse", "quizOwner", "explanation");
     
     public static final EntityManager QuizzQuestion.entityManager() {
         EntityManager em = new QuizzQuestion().entityManager;
@@ -31,6 +30,17 @@ privileged aspect QuizzQuestion_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM QuizzQuestion o", QuizzQuestion.class).getResultList();
     }
     
+    public static List<QuizzQuestion> QuizzQuestion.findAllQuizzQuestions(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM QuizzQuestion o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, QuizzQuestion.class).getResultList();
+    }
+    
     public static QuizzQuestion QuizzQuestion.findQuizzQuestion(Long id) {
         if (id == null) return null;
         return entityManager().find(QuizzQuestion.class, id);
@@ -38,6 +48,17 @@ privileged aspect QuizzQuestion_Roo_Jpa_ActiveRecord {
     
     public static List<QuizzQuestion> QuizzQuestion.findQuizzQuestionEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM QuizzQuestion o", QuizzQuestion.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    public static List<QuizzQuestion> QuizzQuestion.findQuizzQuestionEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM QuizzQuestion o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, QuizzQuestion.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional

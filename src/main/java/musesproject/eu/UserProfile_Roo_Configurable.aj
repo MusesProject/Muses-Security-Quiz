@@ -4,7 +4,6 @@
 package musesproject.eu;
 
 import musesproject.eu.UserProfile;
-
 import org.springframework.beans.factory.annotation.Configurable;
 
 privileged aspect UserProfile_Roo_Configurable {

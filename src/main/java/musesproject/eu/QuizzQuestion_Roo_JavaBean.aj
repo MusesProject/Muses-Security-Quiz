@@ -4,7 +4,6 @@
 package musesproject.eu;
 
 import java.util.ArrayList;
-
 import musesproject.eu.Quizz;
 import musesproject.eu.QuizzQuestion;
 
@@ -48,6 +47,14 @@ privileged aspect QuizzQuestion_Roo_JavaBean {
     
     public void QuizzQuestion.setQuizOwner(Quizz quizOwner) {
         this.quizOwner = quizOwner;
+    }
+    
+    public String QuizzQuestion.getExplanation() {
+        return this.explanation;
+    }
+    
+    public void QuizzQuestion.setExplanation(String explanation) {
+        this.explanation = explanation;
     }
     
 }

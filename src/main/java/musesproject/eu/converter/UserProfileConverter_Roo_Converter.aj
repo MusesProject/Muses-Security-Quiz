@@ -7,7 +7,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
-
 import musesproject.eu.UserProfile;
 import musesproject.eu.converter.UserProfileConverter;
 
@@ -15,7 +14,7 @@ privileged aspect UserProfileConverter_Roo_Converter {
     
     declare parents: UserProfileConverter implements Converter;
     
-    declare @type: UserProfileConverter: @FacesConverter("ch.unige.converter.UserProfileConverter");
+    declare @type: UserProfileConverter: @FacesConverter("musesproject.eu.converter.UserProfileConverter");
     
     public Object UserProfileConverter.getAsObject(FacesContext context, UIComponent component, String value) {
         if (value == null || value.length() == 0) {

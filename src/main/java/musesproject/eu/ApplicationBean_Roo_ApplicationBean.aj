@@ -3,17 +3,21 @@
 
 package musesproject.eu;
 
+import javax.annotation.PostConstruct;
+import javax.el.ELContext;
+import javax.el.ExpressionFactory;
+import javax.faces.application.Application;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-
+import javax.faces.context.FacesContext;
 import musesproject.eu.ApplicationBean;
-
 
 privileged aspect ApplicationBean_Roo_ApplicationBean {
     
     declare @type: ApplicationBean: @ManagedBean;
     
     declare @type: ApplicationBean: @RequestScoped;
-
+    
+    
     
 }

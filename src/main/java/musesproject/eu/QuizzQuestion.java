@@ -3,6 +3,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+import javax.persistence.Column;
 import javax.persistence.ManyToOne;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -24,5 +25,9 @@ public class QuizzQuestion implements Serializable{
 	
 	@ManyToOne
     private Quizz quizOwner;
+	
+	
+	@Column (length = 100000)
+	private String explanation;
 
 }

@@ -22,6 +22,6 @@ public class ApplicationBean {
     }
     
     public String getAppName() {
-        return "Security-quizz";
+        return "Muses-security-quizz";
     }
 }

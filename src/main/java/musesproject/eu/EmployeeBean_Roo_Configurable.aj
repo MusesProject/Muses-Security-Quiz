@@ -4,7 +4,6 @@
 package musesproject.eu;
 
 import musesproject.eu.EmployeeBean;
-
 import org.springframework.beans.factory.annotation.Configurable;
 
 privileged aspect EmployeeBean_Roo_Configurable {

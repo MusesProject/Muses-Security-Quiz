@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
-
 import musesproject.eu.Employee;
 
 privileged aspect Employee_Roo_Jpa_Entity {

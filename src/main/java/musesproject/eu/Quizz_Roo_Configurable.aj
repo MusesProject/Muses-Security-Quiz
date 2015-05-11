@@ -4,7 +4,6 @@
 package musesproject.eu;
 
 import musesproject.eu.Quizz;
-
 import org.springframework.beans.factory.annotation.Configurable;
 
 privileged aspect Quizz_Roo_Configurable {

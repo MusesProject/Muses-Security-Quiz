@@ -4,18 +4,17 @@
 package musesproject.eu;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import musesproject.eu.Employee;
-
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Employee_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
     transient EntityManager Employee.entityManager;
+    
+    public static final List<String> Employee.fieldNames4OrderClauseFilter = java.util.Arrays.asList("firstname", "lastname", "email", "password", "job", "experience", "age", "sex", "myQuizzes", "myQuizResults");
     
     public static final EntityManager Employee.entityManager() {
         EntityManager em = new Employee().entityManager;
@@ -31,6 +30,17 @@ privileged aspect Employee_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM Employee o", Employee.class).getResultList();
     }
     
+    public static List<Employee> Employee.findAllEmployees(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Employee o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, Employee.class).getResultList();
+    }
+    
     public static Employee Employee.findEmployee(Long id) {
         if (id == null) return null;
         return entityManager().find(Employee.class, id);
@@ -38,6 +48,17 @@ privileged aspect Employee_Roo_Jpa_ActiveRecord {
     
     public static List<Employee> Employee.findEmployeeEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM Employee o", Employee.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    public static List<Employee> Employee.findEmployeeEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Employee o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, Employee.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional

@@ -4,18 +4,17 @@
 package musesproject.eu;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import musesproject.eu.QuizzResult;
-
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect QuizzResult_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
     transient EntityManager QuizzResult.entityManager;
+    
+    public static final List<String> QuizzResult.fieldNames4OrderClauseFilter = java.util.Arrays.asList("quizz", "employee", "responses", "correctAnswers", "wrongAnswers", "date");
     
     public static final EntityManager QuizzResult.entityManager() {
         EntityManager em = new QuizzResult().entityManager;
@@ -31,6 +30,17 @@ privileged aspect QuizzResult_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM QuizzResult o", QuizzResult.class).getResultList();
     }
     
+    public static List<QuizzResult> QuizzResult.findAllQuizzResults(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM QuizzResult o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, QuizzResult.class).getResultList();
+    }
+    
     public static QuizzResult QuizzResult.findQuizzResult(Long id) {
         if (id == null) return null;
         return entityManager().find(QuizzResult.class, id);
@@ -38,6 +48,17 @@ privileged aspect QuizzResult_Roo_Jpa_ActiveRecord {
     
     public static List<QuizzResult> QuizzResult.findQuizzResultEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM QuizzResult o", QuizzResult.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    public static List<QuizzResult> QuizzResult.findQuizzResultEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM QuizzResult o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, QuizzResult.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional

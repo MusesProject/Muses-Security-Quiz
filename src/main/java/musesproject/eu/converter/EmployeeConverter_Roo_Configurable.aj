@@ -4,7 +4,6 @@
 package musesproject.eu.converter;
 
 import musesproject.eu.converter.EmployeeConverter;
-
 import org.springframework.beans.factory.annotation.Configurable;
 
 privileged aspect EmployeeConverter_Roo_Configurable {

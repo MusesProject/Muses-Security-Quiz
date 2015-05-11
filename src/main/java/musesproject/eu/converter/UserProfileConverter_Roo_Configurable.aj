@@ -4,7 +4,6 @@
 package musesproject.eu.converter;
 
 import musesproject.eu.converter.UserProfileConverter;
-
 import org.springframework.beans.factory.annotation.Configurable;
 
 privileged aspect UserProfileConverter_Roo_Configurable {

@@ -4,7 +4,6 @@
 package musesproject.eu;
 
 import java.io.Serializable;
-
 import musesproject.eu.UserProfileBean;
 
 privileged aspect UserProfileBean_Roo_Serializable {
