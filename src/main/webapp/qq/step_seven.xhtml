@@ -74,6 +74,9 @@ table.ui-datagrid-data {
 								styleClass="popUpStyle" />
 							<h:outputText id="qqBonneRe"
 								value="#{quizAppMbean.quizzChosen.getListQuestions().get(6).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(6).response)}" />
+								
+								<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
+							<h:outputText value="" id="ClarificationTrue" />
 
 						</p:panelGrid>
 
@@ -105,6 +108,8 @@ table.ui-datagrid-data {
 							<h:outputText id="qqBonneR"
 								value="#{quizAppMbean.quizzChosen.getListQuestions().get(6).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(6).response)}" />
 
+							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
+							<h:outputText value="" id="ClarificationFalse" />
 						</p:panelGrid>
 
 					</div>
@@ -121,6 +126,7 @@ table.ui-datagrid-data {
 			</h:form>
 
 			<script>
+			onload = function() { 
 				if (Cookies.get('dlgIdStep7') === null
 						|| Cookies.get('dlgIdStep7') === ""
 						|| Cookies.get('dlgIdStep7') === "null"
@@ -133,7 +139,7 @@ table.ui-datagrid-data {
 					}, 10)
 
 				}
-
+			}
 				$(document).on("click", '.btnResponsetrue', function() {
 
 					Cookies('dlgIdStep7', this.id, {

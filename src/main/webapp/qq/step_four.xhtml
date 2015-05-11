@@ -73,6 +73,9 @@ table.ui-datagrid-data {
 					   <h:outputText value="#{messages.label_answer_true} " styleClass="popUpStyle" />
 					   <h:outputText id="qqBonneRe" value="#{quizAppMbean.quizzChosen.getListQuestions().get(3).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(3).response)}" />
 					 
+					 	
+					 	<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
+						<h:outputText value="" id="ClarificationTrue" />
 					</p:panelGrid>
 					
 					</div>
@@ -99,6 +102,8 @@ table.ui-datagrid-data {
 					   <h:outputText value="#{messages.label_answer_true} " styleClass="popUpStyle" />
 					   <h:outputText id="qqBonneR" value="#{quizAppMbean.quizzChosen.getListQuestions().get(3).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(3).response)}" />
 					 
+					 	<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
+							<h:outputText value="" id="ClarificationFalse" />
 					</p:panelGrid>
 					
 					</div>
