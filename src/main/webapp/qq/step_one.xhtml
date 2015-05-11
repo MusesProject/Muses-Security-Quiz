@@ -123,6 +123,8 @@ table.ui-datagrid-data {
 			</h:form>
 
 			<script>
+			onload = function() { 
+			
 				if (Cookies.get('dlgIdStep1') === null
 						|| Cookies.get('dlgIdStep1') === ""
 						|| Cookies.get('dlgIdStep1') === "null"
@@ -135,6 +137,7 @@ table.ui-datagrid-data {
 					}, 10)
 
 				}
+			}
 
 				$(document).on("click", '.btnResponsetrue', function() {
 
@@ -155,6 +158,9 @@ table.ui-datagrid-data {
 					document.getElementById('j_idt6:j_idt15:qqChoice').innerHTML = value;
 					
 				});
+				
+			
+			
 			</script>
 
 		</pm:content>

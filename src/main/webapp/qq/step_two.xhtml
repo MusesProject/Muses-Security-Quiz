@@ -123,6 +123,7 @@ table.ui-datagrid-data {
 
 			</h:form>
 			<script>
+			onload = function() { 
 				if (Cookies.get('dlgIdStep2') === null
 						|| Cookies.get('dlgIdStep2') === ""
 						|| Cookies.get('dlgIdStep2') === "null"
@@ -135,7 +136,7 @@ table.ui-datagrid-data {
 					}, 10)
 
 				}
-
+			}
 				$(document).on("click", '.btnResponsetrue', function() {
 
 					Cookies('dlgIdStep2', this.id, {
