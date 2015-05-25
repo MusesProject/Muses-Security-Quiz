@@ -23,9 +23,6 @@ import org.primefaces.model.chart.HorizontalBarChartModel;
 import org.primefaces.model.chart.PieChartModel;
 
 
-
-
-
 public class QuizAppMbean {
 	
 	private  List<Question> sampleQuestions = new ArrayList<Question>();

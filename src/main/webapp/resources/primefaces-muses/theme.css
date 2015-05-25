@@ -1253,10 +1253,7 @@ font-size: 1.3em;
 
 @media ( min-width : 60em) {
 	
-	
-	.jqm_corner{
-	  width: 500px;
-	}
+
 	
 	.labelLogin{
 	display: block;

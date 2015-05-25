@@ -47,7 +47,7 @@ table.ui-datagrid-data {
 			<br />
 
 			<h:form>
-				<p:dataGrid columns="1"
+				<p:dataGrid columns="1" id="btnList"
 					value="#{quizAppMbean.quizzChosen.listQuestions.get(0).answers}"
 					var="option" rowIndexVar="rowIndex">
 					<p:commandButton value="#{option}" id="setC"
@@ -61,14 +61,66 @@ table.ui-datagrid-data {
 
 
 				</p:dataGrid>
-
-
+<!-- **Keep just in case**
 				<p:dialog showEffect="bounce" widgetVar="dlg1" header="Correct"
 					severity="alert">
 
 					<div>
 
-						<p:panelGrid columns="2" styleClass="ui-responsive jqm_corner"
+						<p:panelGrid columns="2" styleClass="ui-responsive, jqm_corner"
+							style="margin-top:2%;background-color: lightgrey">
+							<h:outputText value="#{messages.label_answer_yours} "
+								styleClass="popUpStyle" />
+							<h:outputText  value="" />
+
+							<h:outputText value="#{messages.label_answer_true} "
+								styleClass="popUpStyle" />
+							<h:outputText 
+								value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(0).response)}" />
+
+							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
+							
+							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getExplanation()}" id="ClarificationTrue" />
+
+						</p:panelGrid>
+
+					</div>
+				</p:dialog>
+
+
+				<p:dialog showEffect="bounce" widgetVar="dlg2" header="Incorrect"
+					severity="alert">
+
+					<div>
+
+						<p:panelGrid columns="2" styleClass="ui-responsive, jqm_corner"
+							style="margin-top:2%;background-color: lightgrey">
+							<h:outputText value="#{messages.label_answer_yours} " styleClass="popUpStyle" />
+							<h:outputText value="" />
+
+							<h:outputText value="#{messages.label_answer_true} "
+								styleClass="popUpStyle" />
+							<h:outputText
+								value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(0).response)}" />
+
+							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
+							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getExplanation()}" id="ClarificationFalse" />		
+						</p:panelGrid>
+
+					</div>
+				</p:dialog>
+	 -->			
+	 		
+<!-- 
+**
+*Show on response TRUE
+**
+ -->
+				<div id="divTrue" style="display:none" >
+				
+					<div>
+
+						<p:panelGrid columns="2" styleClass="ui-responsive, jqm_corner"
 							style="margin-top:2%;background-color: lightgrey">
 							<h:outputText value="#{messages.label_answer_yours} "
 								styleClass="popUpStyle" />
@@ -81,28 +133,28 @@ table.ui-datagrid-data {
 
 							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
 							
-							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getExplanation()}" id="ClarificationTrue" />
+							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getExplanation()}" />
 
 						</p:panelGrid>
 
 					</div>
-
-
+				
 					<div class="btnNextQQ">
 						<p:commandButton value="#{messages.label_next}"
 							icon="ui-icon-arrow-r" iconPos="right"
 							action="#{quizAppMbean.moveToNextQuestion}" />
 					</div>
-
-				</p:dialog>
-
-
-				<p:dialog showEffect="bounce" widgetVar="dlg2" header="Incorrect"
-					severity="alert">
-
+				</div>
+<!-- 
+**
+*Show on response fALSE
+**
+ -->
+				<div id="divFalse" style="display:none" >
+				
 					<div>
 
-						<p:panelGrid columns="2" styleClass="ui-responsive jqm_corner"
+						<p:panelGrid columns="2" styleClass="ui-responsive, jqm_corner"
 							style="margin-top:2%;background-color: lightgrey">
 							<h:outputText value="#{messages.label_answer_yours} " styleClass="popUpStyle" />
 							<h:outputText id="qqChoice" value="" />
@@ -113,19 +165,17 @@ table.ui-datagrid-data {
 								value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(0).response)}" />
 
 							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
-							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getExplanation()}" id="ClarificationFalse" />		
+							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getExplanation()}"  />		
 						</p:panelGrid>
 
 					</div>
-
-
 					<div class="btnNextQQ">
 						<p:commandButton value="#{messages.label_next}"
 							icon="ui-icon-arrow-r" iconPos="right"
 							action="#{quizAppMbean.moveToNextQuestion}" />
 					</div>
-				</p:dialog>
-
+				</div>
+				
 			</h:form>
 
 			<script>
@@ -138,6 +188,7 @@ table.ui-datagrid-data {
 					//no cookie
 				} else {
 					var el = document.getElementById(Cookies.get('dlgIdStep1'));
+					document.getElementById('j_idt6:j_idt15:btnList').style.display = 'none';
 					setTimeout(function() {
 						$(el).click();
 					}, 10)
@@ -152,7 +203,8 @@ table.ui-datagrid-data {
 					});
 					var value = document.getElementById(this.id).textContent;
 					document.getElementById('j_idt6:j_idt15:qqChoiceT').innerHTML = value;
-					
+					document.getElementById('divTrue').style.display = 'block';
+					document.getElementById('j_idt6:j_idt15:btnList').style.display = 'none';
 
 				});
 				$(document).on("click", '.btnResponsefalse', function() {
@@ -162,7 +214,9 @@ table.ui-datagrid-data {
 					});
 					var value = document.getElementById(this.id).textContent;
 					document.getElementById('j_idt6:j_idt15:qqChoice').innerHTML = value;
-					
+					document.getElementById('divFalse').style.display = 'block';
+					document.getElementById('j_idt6:j_idt15:btnList').style.display = 'none';
+
 				});
 				
 			

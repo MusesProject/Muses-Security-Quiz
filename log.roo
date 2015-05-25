@@ -30,3 +30,7 @@ field list --fieldName myQuizzes --type ~.Quizz
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-02-04 16:08:16
 jpa setup --database MYSQL --provider HIBERNATE 
 entity jpa --class ch.unige.QuizzResultDetails
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-05-06 23:24:54
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2015-05-07 15:51:53
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-05-07 17:03:09
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2015-05-11 16:32:26
