@@ -1250,7 +1250,20 @@ font-size: 1.3em;
 	  width: 50%; 
 }
 
+.imgTrue{
+	float: left;
+margin-top: 3%;
+margin-left:3%;
+}
 
+.imgFalse{
+	float: left;
+margin-top: 3%;
+margin-left:3%;
+}
+.jqm-rep{
+	float: right;
+}
 @media ( min-width : 60em) {
 	
 
