@@ -1250,6 +1250,20 @@ font-size: 1.3em;
 	  width: 50%; 
 }
 
+@-moz-document url-prefix() { 
+  .imgTrue{
+	float: left;
+	margin-top: 4% !important;
+	margin-left:3%;
+	}	
+	.imgFalse{
+	float: left;
+margin-top: 5% !important;;
+margin-left:3%;
+}
+}
+
+
 .imgTrue{
 	float: left;
 margin-top: 3%;
