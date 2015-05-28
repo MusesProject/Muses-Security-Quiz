@@ -23,6 +23,7 @@ import org.primefaces.model.chart.HorizontalBarChartModel;
 import org.primefaces.model.chart.PieChartModel;
 
 
+
 public class QuizAppMbean {
 	
 	private  List<Question> sampleQuestions = new ArrayList<Question>();
@@ -321,6 +322,161 @@ public class QuizAppMbean {
 		newQuizz = Quizz.findAllQuizzes();
 		//newQuizz.add(quizz1);
 	
+		/*
+		 QuizzQuestion question1 = new QuizzQuestion();
+	        
+		 question1.setQuestionText("XXXXX OOODN");
+	     
+	     
+		 question1.persist();
+	     QuizzResponse qr = new QuizzResponse();
+	     qr.setText("text");
+	     qr.setOptionsresponse(question1);
+	     
+	     QuizzResponse qr1 = new QuizzResponse();
+	     qr1.setText("text");
+	     qr1.setOptionsresponse(question1);
+	     
+	     QuizzResponse qr2 = new QuizzResponse();
+	     qr2.setText("text");
+	     qr2.setOptionsresponse(question1);
+	     
+	     qr.persist();
+	     qr1.persist();
+	     qr2.persist();
+	     
+	    
+		
+		QuizzQuestion q = new QuizzQuestion();
+		
+		quizzChosen.getListQuestions().size();
+	     
+		quizzChosen.getListQuestions().get(0).getListresponses().size() */
+		
+		/*QuizzQuestion q = QuizzQuestion.findQuizzQuestion((long)2411);
+		q.setQuestionText("You have to create a new password – which approach do you take?");
+		ArrayList<String> answers = new ArrayList<String>();
+		answers.add("I select a word I won’t forget like my partner’s name.");
+		answers.add("I combine a word that I will easily remember with a number, such as the name of my street and my postal code.");
+		answers.add("I use a meaningless word combined with a number or a special character.");
+		answers.add("I create a password with a minimum of 8 letters, including high and low case, numbers and special characters.");
+		q.setAnswers(answers);
+		q.setResponse(3);
+
+		q.merge();
+	
+		QuizzQuestion q1 = QuizzQuestion.findQuizzQuestion((long)2421);
+		q.setQuestionText("You have to leave your work place for a short meeting one floor down. What do you do with your laptop?");
+		ArrayList<String> answers1 = new ArrayList<String>();
+		answers1.add("I lock my screen.");
+		answers1.add("I lock my screen and lock my room.");
+		answers1.add("I don’t do anything specific, as the office is a safe place anyway.");
+		answers1.add("I take my laptop with me.");
+		q1.setAnswers(answers1);
+		q1.setResponse(1);
+
+		q1.merge();
+		
+		QuizzQuestion q2 = QuizzQuestion.findQuizzQuestion((long)2431);
+		q2.setQuestionText("You are on your way to enter your office area and see that 2 unknown persons are behind you. What do you do?");
+		ArrayList<String> answers2 = new ArrayList<String>();
+		answers2.add("I greet them politely and hold the door open so they can pass.");
+		answers2.add("I ask them politely where they need to go and explain to them how to get there if they need help.");
+		answers2.add("I stop them, ask them to state their names and their business and then I make a phone call to the colleague they claim they are here to see and check if they are really telling the truth.");
+		answers2.add("I ask them whom they are here to see and accompany them to the respective colleague.");
+		q2.setAnswers(answers2);
+		q2.setResponse(3);
+
+		q2.merge();
+		
+		QuizzQuestion q3 = QuizzQuestion.findQuizzQuestion((long)2441);
+		q3.setQuestionText("You are working in an airport café while waiting for your flight. You want to get another coffee from the counter - what do you do with your laptop?");
+		ArrayList<String> answers3 = new ArrayList<String>();
+		answers3.add("I take it with me to the counter.");
+		answers3.add("I ask the person on the table next to me to keep an eye on it.");
+		answers3.add("I keep an eye on it while I wait.");
+		answers3.add("I put it in my bag and store it under my chair.");
+		q3.setAnswers(answers3);
+		q3.setResponse(0);
+
+		q3.merge();
+		
+		
+		QuizzQuestion q4 = QuizzQuestion.findQuizzQuestion((long)2451);
+		q4.setQuestionText("You are on a business trip and want to go out for dinner. How do you keep your laptop safe?");
+		ArrayList<String> answers4 = new ArrayList<String>();
+		answers4.add("I put it in the hotel safe.");
+		answers4.add("I take it with me to dinner.");
+		answers4.add("I attach it to something that cannot be removed from the room with a cable lock and put a “do not disturb” sign on the door.");
+		answers4.add("I put it in the bottom of my suitcase and push the case under the bed or into another hidden spot.");
+		q4.setAnswers(answers4);
+		q4.setResponse(0);
+
+		q4.merge();
+		
+		
+		QuizzQuestion q5 = QuizzQuestion.findQuizzQuestion((long)2461);
+		q5.setQuestionText("You have difficulties with processing some files and while browsing for some tips online you encounter a freeware from an unknown site that would make the task much easier. What do you do?");
+		ArrayList<String> answers5 = new ArrayList<String>();
+		answers5.add("I download the file and install it – if there is a problem I am sure my anti-virus software will stop the installation and then I’ll just erase the file.");
+		answers5.add("I check if there are any safety certificates on the site that can ensure me that I won’t be downloading any malware. If I can locate such information I will download the freeware.");
+		answers5.add("I will look for a seal of approval, do some research on the program I want to download, and make sure my security programs are up to date. If all is clear and there are no reports of the program being corrupted I will download it.");
+		answers5.add("Nothing – it is never safe to download such programs.");
+		q5.setAnswers(answers5);
+		q5.setResponse(2);
+
+		q5.merge();
+		
+		QuizzQuestion q6 = QuizzQuestion.findQuizzQuestion((long)2471);
+		q6.setQuestionText("What is the safest way to store your work data?");
+		ArrayList<String> answers6 = new ArrayList<String>();
+		answers6.add("I store it on my computer and keep a safety copy of the most important files on an USB flash drive.");
+		answers6.add("I store it on my computer and keep a safety copy within a cloud service such as Dropbox or GoogleDrive");
+		answers6.add("I store my data on my company’s server.");
+		answers6.add("I store my data on my company’s server and send the most important files to my personal email address.");
+		q6.setAnswers(answers6);
+		q6.setResponse(2);
+
+		q6.merge();
+		
+		
+		
+		QuizzQuestion q7 = QuizzQuestion.findQuizzQuestion((long)2481);
+		q7.setQuestionText("You receive an email at your work account that you suspect to be spam. What do you do with it?");
+		ArrayList<String> answers7 = new ArrayList<String>();
+		answers7.add("I click on any provided links to check if it really is spam.");
+		answers7.add("I mark the email as spam and forward it to our IT support.");
+		answers7.add("I reply and ask the sender to remove me from the mailing list.");
+		answers7.add("I follow the instructions to remove my email from the mailing list.");
+		q7.setAnswers(answers7);
+		q7.setResponse(1);
+
+		q7.merge();
+		
+		
+		QuizzQuestion q8 = QuizzQuestion.findQuizzQuestion((long)2491);
+		q8.setQuestionText("You receive an email from a colleague with an attachment that is not addressed in the content of the email. What do you do?");
+		ArrayList<String> answers8 = new ArrayList<String>();
+		answers8.add("I contact my colleague and ask him about it. If he intentionally attached the file and it is something I’m actually supposed to look at, I will do so.");
+		answers8.add("I open it and check what it is.");
+		answers8.add("I ignore it – if it was something I am supposed to look at I’m sure my colleague will contact me about it.");
+		answers8.add("I forward the email to our IT-support and erase it from my computer.");
+		q8.setAnswers(answers8);
+		q8.setResponse(0);
+
+		q8.merge();
+		
+		QuizzQuestion q9 = QuizzQuestion.findQuizzQuestion((long)2401);
+		q9.setQuestionText("A business partner gives you an USB stick with data that you need to process. How do you access the data in a safe way?");
+		ArrayList<String> answers9 = new ArrayList<String>();
+		answers9.add("I just plug the USB stick in and copy the data – the USB stick of a business partner can be expected to be safe.");
+		answers9.add("I apologize to the business partner and explain that I need the data via a different channel as it is not safe to copy it from an USB device");
+		answers9.add("I take the USB drive to out IT department and have them check it. If they do not detect anything problematic I copy the data.");
+		answers9.add("I plug the USB stick in and check it with my anti-virus software. If it is pronounced clean I copy the data.");
+		q9.setAnswers(answers6);
+		q9.setResponse(1);
+
+		q9.merge();*/
 		
 	}
 	
@@ -346,86 +502,7 @@ public class QuizAppMbean {
 	
 	public void check (){
 		
-     /*    FacesContext facesContext = FacesContext.getCurrentInstance();
-
-		 FacesContext ctx = FacesContext.getCurrentInstance();
-		 NavigationHandler navigationHandler =
-	                facesContext.getApplication().getNavigationHandler();
-	         
-         String path = ctx.getExternalContext().getRequestContextPath();
-         //System.out.println("xav: "+path +" "+ctx.getExternalContext().getRequestServletPath());
-         String path1 = ctx.getExternalContext().getRequestServletPath();
-         //System.out.println("xav: "+path +" "+ctx.getExternalContext().getRequestServletPath());
-         HttpServletRequest servletRequest = (HttpServletRequest) ctx.getExternalContext().getRequest();
-         //returns something like "/myapplication/home.faces"
-         String fullURI = servletRequest.getRequestURI();
-         System.out.println("xav1: "+ fullURI);
-         System.out.println("step: "+ path1);
-         System.out.println("step1: "+ step);
-         
-         if( FacesContext.getCurrentInstance().isPostback()){
-        	 //navigationHandler.handleNavigation(facesContext, null, "outcome");
-         }
-		
- 		if(step.equalsIgnoreCase("1")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_one.jsf")){
-	       navigationHandler.handleNavigation(facesContext, null, "outcome");
-	        System.out.println("etape2");
-	       
-
-		}
-		if(step.equalsIgnoreCase("2")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_two.jsf")){
-	        navigationHandler.handleNavigation(facesContext, null, "test");
-	        System.out.println("etape3");
-	       
-
-		
-		}
-		if(step.equalsIgnoreCase("3")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_three.jsf") ){
-			navigationHandler.handleNavigation(facesContext, null, "outcome");
-	        System.out.println("etape3");
-	       
-	        
-
-	
-		}
-		if(step.equalsIgnoreCase("4")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_four.jsf") ){
-	        navigationHandler.handleNavigation(facesContext, null, "outcome");
-	        System.out.println("etape4");
-
-	
-		}
-		if(step.equalsIgnoreCase("5")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_five.jsf") ){
-	        navigationHandler.handleNavigation(facesContext, null, "outcome");
-
-	
-		}
-		if(step.equalsIgnoreCase("6")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_six.jsf") ){
-	        navigationHandler.handleNavigation(facesContext, null, "outcome");
-
-		
-		}
-		if(step.equalsIgnoreCase("7")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_seven.jsf") ){
-	        navigationHandler.handleNavigation(facesContext, null, "outcome");
-
-		
-		}
-		if(step.equalsIgnoreCase("8")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_height.jsf") ){
-	        navigationHandler.handleNavigation(facesContext, null, "outcome");
-
-		
-		}
-		if(step.equalsIgnoreCase("9")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_nine.jsf") ){
-	        navigationHandler.handleNavigation(facesContext, null, "outcome");
-
-		
-		}
-		if(step.equalsIgnoreCase("10")&& fullURI.equalsIgnoreCase("/muses-security-quizz/qq/step_ten.jsf") ){
-	        navigationHandler.handleNavigation(facesContext, null, "outcome");
-			
-		}*/
-    	
-        
-	
+    
 	}
 	
 	public String lunchquizz(){
