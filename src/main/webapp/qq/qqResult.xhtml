@@ -53,6 +53,12 @@ td {
 					styleClass="boldResult" />
 			</h:panelGroup>
 
+			<p:panelGrid columns="2" styleClass="ui-responsive"
+				style="margin-top:2%;background-color: lightgrey">
+				<p:chart type="pie" model="#{pieChartView.pieModel1}" />
+				<p:chart type="bar" model="#{chartView.barModel}" />
+
+			</p:panelGrid>
 
 			<p:dataTable value="#{quizAppMbean.quizzChosen.getListQuestions()}"
 				var="question" tableStyleClass="ui-table-columntoggle">
@@ -82,13 +88,6 @@ td {
 
 				</p:column>
 	</p:dataTable>
-
-			<p:panelGrid columns="2" styleClass="ui-responsive"
-				style="margin-top:2%;background-color: lightgrey">
-				<p:chart type="pie" model="#{pieChartView.pieModel1}" />
-				<p:chart type="bar" model="#{chartView.barModel}" />
-
-			</p:panelGrid>
 
 
 
