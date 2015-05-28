@@ -1250,6 +1250,12 @@ font-size: 1.3em;
 	  width: 50%; 
 }
 
+
+.ui-block-b{
+	text-align: justify;
+    text-justify: inter-word;
+}
+
 @-moz-document url-prefix() { 
   .imgTrue{
 	float: left;
