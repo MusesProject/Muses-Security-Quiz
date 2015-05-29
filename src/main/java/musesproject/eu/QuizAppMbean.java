@@ -1164,7 +1164,7 @@ public class QuizAppMbean {
         userDatas.set("Wrong", wrongAnswer);
         
         ChartSeries averageDatas = new ChartSeries();
-        averageDatas.setLabel("World");
+        averageDatas.setLabel("Others");
         averageDatas.set("Correct",averageCorrAnswer);
         averageDatas.set("Wrong", averageWrongAnswer);
 
@@ -1206,7 +1206,7 @@ public class QuizAppMbean {
         userDatas.set("Wrong", wrongAnswer);
 
         ChartSeries averageDatas = new ChartSeries();
-        averageDatas.setLabel("World");
+        averageDatas.setLabel("Others");
         averageDatas.set("Correct", averageCorrAnswer);
         averageDatas.set("Wrong", averageWrongAnswer);
 
