@@ -11,8 +11,8 @@
  	<pm:header title="Profile" >
     </pm:header>
     <style>
-		body{font-size:1.5em;}
-		.ui-block-a{text-align: end;}
+		.ui-content{font-size: 1.5em;}
+ 		.ui-block-a{text-align: end;}
     </style>
     
     
@@ -29,19 +29,13 @@
 			
 			<p:panelGrid columns="2" >
 				
-				<p:outputLabel value="Email :" />
+				<p:outputLabel value="#{messages.label_username} :" />
 				
 				<p:outputLabel value="#{quizAppMbean.employee.email}" styleClass="textEnd" />
 				
 				
 				<p:outputLabel value="#{messages.label_job} : " />
 				<p:outputLabel value="#{quizAppMbean.employee.job}" styleClass="textEnd" />
-				
-				<p:outputLabel value="#{messages.label_anciennete} : " />
-				<p:outputLabel value="#{quizAppMbean.employee.experience}" styleClass="textEnd" />
-				
-				<p:outputLabel value="#{messages.label_age} : " />
-				<p:outputLabel value="#{quizAppMbean.employee.age}" styleClass="textEnd" />
 				
 				<p:outputLabel value="#{messages.label_sex} : "  rendered="#{quizAppMbean.employee.sex != 0}" />
 
