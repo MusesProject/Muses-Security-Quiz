@@ -16,15 +16,12 @@
 	height: 100%;
 	text-align: center;
 }
-
 .btnQuiz {
 	width: 75%;
 }
-
 table.ui-datagrid-data {
 	border-spacing: 8;
 }
-
 .ui-content.jqm-content {
 	text-align: center;
 }
@@ -64,49 +61,36 @@ table.ui-datagrid-data {
 <!-- **Keep just in case**
 				<p:dialog showEffect="bounce" widgetVar="dlg1" header="Correct"
 					severity="alert">
-
 					<div>
-
 						<p:panelGrid columns="2" styleClass="ui-responsive, jqm_corner"
 							style="margin-top:2%;background-color: lightgrey">
 							<h:outputText value="#{messages.label_answer_yours} "
 								styleClass="popUpStyle" />
 							<h:outputText  value="" />
-
 							<h:outputText value="#{messages.label_answer_true} "
 								styleClass="popUpStyle" />
 							<h:outputText 
 								value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(0).response)}" />
-
 							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
 							
 							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getExplanation()}" id="ClarificationTrue" />
-
 						</p:panelGrid>
-
 					</div>
 				</p:dialog>
-
-
 				<p:dialog showEffect="bounce" widgetVar="dlg2" header="Incorrect"
 					severity="alert">
-
 					<div>
-
 						<p:panelGrid columns="2" styleClass="ui-responsive, jqm_corner"
 							style="margin-top:2%;background-color: lightgrey">
 							<h:outputText value="#{messages.label_answer_yours} " styleClass="popUpStyle" />
 							<h:outputText value="" />
-
 							<h:outputText value="#{messages.label_answer_true} "
 								styleClass="popUpStyle" />
 							<h:outputText
 								value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getAnswers().get(quizAppMbean.quizzChosen.listQuestions.get(0).response)}" />
-
 							<h:outputText value="#{messages.label_clarification}" styleClass="popUpStyle" />
 							<h:outputText value="#{quizAppMbean.quizzChosen.getListQuestions().get(0).getExplanation()}" id="ClarificationFalse" />		
 						</p:panelGrid>
-
 					</div>
 				</p:dialog>
 	 -->			
@@ -200,12 +184,9 @@ table.ui-datagrid-data {
 					setTimeout(function() {
 						$(el).click();
 					}, 10)
-
 				}
 			}
-
 				$(document).on("click", '.btnResponsetrue', function() {
-
 					Cookies('dlgIdStep1', this.id, {
 						expires : 7, path: '/'
 					});
@@ -213,10 +194,8 @@ table.ui-datagrid-data {
 					document.getElementById('j_idt6:j_idt15:qqChoiceT').innerHTML = value;
 					document.getElementById('divTrue').style.display = 'block';
 					document.getElementById('j_idt6:j_idt15:btnList').style.display = 'none';
-
 				});
 				$(document).on("click", '.btnResponsefalse', function() {
-
 					Cookies('dlgIdStep1', this.id, {
 						expires : 7, path: '/'
 					});
@@ -224,7 +203,6 @@ table.ui-datagrid-data {
 					document.getElementById('j_idt6:j_idt15:qqChoice').innerHTML = value;
 					document.getElementById('divFalse').style.display = 'block';
 					document.getElementById('j_idt6:j_idt15:btnList').style.display = 'none';
-
 				});
 				
 			
@@ -236,4 +214,3 @@ table.ui-datagrid-data {
 	</ui:define>
 
 </ui:composition>
-
