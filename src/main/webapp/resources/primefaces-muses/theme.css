@@ -913,7 +913,9 @@ button[disabled],
 
 /* HomeMade custom
 -----------------------------------------------------------------------------------------------------------*/
-
+.ui-mobile label, .ui-controlgroup-label{
+	display: initial !important;
+}
 
 
 .ui-grid-a > .ui-block-a, .ui-grid-a > .ui-block-b {
