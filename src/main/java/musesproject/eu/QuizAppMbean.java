@@ -353,120 +353,134 @@ public class QuizAppMbean {
 	     
 		quizzChosen.getListQuestions().get(0).getListresponses().size() */
 		
-		/*QuizzQuestion q = QuizzQuestion.findQuizzQuestion((long)2411);
-		q.setQuestionText("You have to create a new password – which approach do you take?");
+		/*QuizzQuestion q = QuizzQuestion.findQuizzQuestion((long)2401);
+		q.setQuestionText("TIene que crear una contraseña nueva. Cómo lo hace?");
 		ArrayList<String> answers = new ArrayList<String>();
-		answers.add("I select a word I won’t forget like my partner’s name.");
-		answers.add("I combine a word that I will easily remember with a number, such as the name of my street and my postal code.");
-		answers.add("I use a meaningless word combined with a number or a special character.");
-		answers.add("I create a password with a minimum of 8 letters, including high and low case, numbers and special characters.");
+		answers.add("Elijo una palabra difícil de olvidar, por ejemplo mi propio nombre.");
+		answers.add("Combino una palabra fácil de recordar ´con un número, por ejemplo el nombre de mi calle y mi distrito postal. ");
+		answers.add("Combino una palabra sin sentido con un número o un carácter especial. ");
+		answers.add("Elijo una palabra sin sentido que tenga 8 caracteres como mínimo, incluyendo mayúsculas, minúsculas, números y caracteres especiales. ");
 		q.setAnswers(answers);
 		q.setResponse(3);
 
 		q.merge();
+		
+		QuizzQuestion q11 = QuizzQuestion.findQuizzQuestion((long)2411);
+		q11.setQuestionText("Va a entrar en su oficina y dos desconocidos van detrás suyo. Qué hace?");
+		ArrayList<String> answers11 = new ArrayList<String>();
+		answers11.add("Les saludo educadamente y les dejo pasar primero, sin preguntar nada.");
+		answers11.add("Les pregunto educadamente donde van y les indico el camino");
+		answers11.add("Les paro, les pregunto quiénes son y de donde vienen, y llamo a la persona a la que dicen que van a ver para confirmar que dicen la verdad.");
+		answers11.add("Les pregunto a quién van a ver y les acompaño hasta donde está esta persona, o los dejo en manos de seguridad para que les acompañe. ");
+		q11.setAnswers(answers11);
+		q11.setResponse(3);
+
+		q11.merge();
+		
+		QuizzQuestion q8 = QuizzQuestion.findQuizzQuestion((long)2421);
+		q8.setQuestionText("Está trabajando en la cafetería del aeropuerto mientras espera a que salga su vuelo. Tiene que ir al mostrador a pedir un café… qué hace con su portátil?");
+		ArrayList<String> answers8 = new ArrayList<String>();
+		answers8.add("Me lo llevo al mostrador.");
+		answers8.add("Le pido a la persona de la mesa de al lado que me lo vigile.");
+		answers8.add("No lo pierdo de vista mientras voy al mostrador, pido el café y vuelvo.");
+		answers8.add("Lo meto en su bolsa y Ia pongo debajo de la silla.");
+		q8.setAnswers(answers8);
+		q8.setResponse(0);
+
+		q8.merge();
 	
-		QuizzQuestion q1 = QuizzQuestion.findQuizzQuestion((long)2421);
-		q.setQuestionText("You have to leave your work place for a short meeting one floor down. What do you do with your laptop?");
+		QuizzQuestion q1 = QuizzQuestion.findQuizzQuestion((long)2431);
+		q1.setQuestionText("Cuál es la forma más segura de guardar sus archivos de trabajo?");
 		ArrayList<String> answers1 = new ArrayList<String>();
-		answers1.add("I lock my screen.");
-		answers1.add("I lock my screen and lock my room.");
-		answers1.add("I don’t do anything specific, as the office is a safe place anyway.");
-		answers1.add("I take my laptop with me.");
+		answers1.add("Mantengo la información en el ordenador y copio los ficheros más importantes en una memoria USB. ");
+		answers1.add("Guardo toda mi información en el servidor de mi empresa.");
+		answers1.add("Guardo toda mi información en el servidor de mi empresa pero además tengo una copia de seguridad con algún servicio en la  nube.");
+		answers1.add("Guardo toda mi información en el servidor de mi empresa y me envío los archivos más importantes a mi dirección de correo personal. ");
 		q1.setAnswers(answers1);
 		q1.setResponse(1);
 
 		q1.merge();
 		
-		QuizzQuestion q2 = QuizzQuestion.findQuizzQuestion((long)2431);
-		q2.setQuestionText("You are on your way to enter your office area and see that 2 unknown persons are behind you. What do you do?");
+		QuizzQuestion q2 = QuizzQuestion.findQuizzQuestion((long)2441);
+		q2.setQuestionText("Recibe en su dirección de correo de trabajo un mensaje que parece un spam (correo no deseado). Qué hace con él?");
 		ArrayList<String> answers2 = new ArrayList<String>();
-		answers2.add("I greet them politely and hold the door open so they can pass.");
-		answers2.add("I ask them politely where they need to go and explain to them how to get there if they need help.");
-		answers2.add("I stop them, ask them to state their names and their business and then I make a phone call to the colleague they claim they are here to see and check if they are really telling the truth.");
-		answers2.add("I ask them whom they are here to see and accompany them to the respective colleague.");
+		answers2.add("Accedo a los enlaces indicados en el mensaje para comprobar si es realmente un spam.");
+		answers2.add("Contesto pidiendo que me eliminen de su lista de correos.");
+		answers2.add("Marco el mensaje como spam y lo envío a los informáticos de mi empresa.");
+		answers2.add("Sigo las instrucciones para borrar mi dirección de su lista de correos. ");
 		q2.setAnswers(answers2);
-		q2.setResponse(3);
+		q2.setResponse(2);
 
 		q2.merge();
 		
-		QuizzQuestion q3 = QuizzQuestion.findQuizzQuestion((long)2441);
-		q3.setQuestionText("You are working in an airport café while waiting for your flight. You want to get another coffee from the counter - what do you do with your laptop?");
+		QuizzQuestion q3 = QuizzQuestion.findQuizzQuestion((long)2451);
+		q3.setQuestionText("Recibe un correo de un colega de trabajo, con un fichero adjunto al que no se hace referencia en el texto del mensaje. Qué hace?");
 		ArrayList<String> answers3 = new ArrayList<String>();
-		answers3.add("I take it with me to the counter.");
-		answers3.add("I ask the person on the table next to me to keep an eye on it.");
-		answers3.add("I keep an eye on it while I wait.");
-		answers3.add("I put it in my bag and store it under my chair.");
+		answers3.add("Contacto a mi colega y le pregunto sobre el archivo. Si lo ha adjuntado conscientemente al mensaje, y es algo que se supone tengo que ver, lo abro.");
+		answers3.add("Abro el archivo para ver su contenido.");
+		answers3.add("Ignorarlo - si se supone que debo conocer el contenido del archivo, seguro que mi colega ya me dirá algo.");
+		answers3.add("Paso el correo a los informáticos de mi empresa y lo borro de mi ordenador.");
 		q3.setAnswers(answers3);
 		q3.setResponse(0);
 
 		q3.merge();
 		
 		
-		QuizzQuestion q4 = QuizzQuestion.findQuizzQuestion((long)2451);
-		q4.setQuestionText("You are on a business trip and want to go out for dinner. How do you keep your laptop safe?");
+		QuizzQuestion q4 = QuizzQuestion.findQuizzQuestion((long)2461);
+		q4.setQuestionText("Cómo puede estar seguro de que solamente se conecta a Internet a través de redes seguras? ");
 		ArrayList<String> answers4 = new ArrayList<String>();
-		answers4.add("I put it in the hotel safe.");
-		answers4.add("I take it with me to dinner.");
-		answers4.add("I attach it to something that cannot be removed from the room with a cable lock and put a “do not disturb” sign on the door.");
-		answers4.add("I put it in the bottom of my suitcase and push the case under the bed or into another hidden spot.");
+		answers4.add("Si se necesita un código WPA o WPA2 para acceder a una red, es que está encriptada y por lo tanto es segura. Me conecto.");
+		answers4.add("Solamente me conecto a una red si estoy seguro de que tiene un método fuerte de autenticación (WPA, WPA2), pero además solamente uso sitios seguros identificados por el prefijo https (y no por http), o me conecto a través de VPN.");
+		answers4.add("Solamente accedo a Internet a través de la red de mi empresa, lo demás es demasiado arriesgado.");
+		answers4.add("Confío en que mi software de protección funcione correctamente, y conecto mi portátil a cualquier red que encuentre disponible cuando me haga falta.");
 		q4.setAnswers(answers4);
-		q4.setResponse(0);
+		q4.setResponse(1);
 
 		q4.merge();
 		
 		
-		QuizzQuestion q5 = QuizzQuestion.findQuizzQuestion((long)2461);
-		q5.setQuestionText("You have difficulties with processing some files and while browsing for some tips online you encounter a freeware from an unknown site that would make the task much easier. What do you do?");
+		QuizzQuestion q5 = QuizzQuestion.findQuizzQuestion((long)2471);
+		q5.setQuestionText("Cuándo debe encriptar sus datos para protegerlos?");
 		ArrayList<String> answers5 = new ArrayList<String>();
-		answers5.add("I download the file and install it – if there is a problem I am sure my anti-virus software will stop the installation and then I’ll just erase the file.");
-		answers5.add("I check if there are any safety certificates on the site that can ensure me that I won’t be downloading any malware. If I can locate such information I will download the freeware.");
-		answers5.add("I will look for a seal of approval, do some research on the program I want to download, and make sure my security programs are up to date. If all is clear and there are no reports of the program being corrupted I will download it.");
-		answers5.add("Nothing – it is never safe to download such programs.");
+		answers5.add("Cuando se trata de información confidencial, solamente la guardo y envío en formato encriptado. ");
+		answers5.add("Encripto la información confidencial cuando voy a transmitirla de alguna forma. ");
+		answers5.add("Encripto toda mi información para asegurarme de que está protegida. ");
+		answers5.add("No es necesario encriptar la información siempre que se usen conexiones seguras y se envíe solamente a personas autorizadas a recibirla.");
 		q5.setAnswers(answers5);
-		q5.setResponse(2);
+		q5.setResponse(0);
 
 		q5.merge();
 		
-		QuizzQuestion q6 = QuizzQuestion.findQuizzQuestion((long)2471);
-		q6.setQuestionText("What is the safest way to store your work data?");
+		QuizzQuestion q6 = QuizzQuestion.findQuizzQuestion((long)2481);
+		q6.setQuestionText("Cuál es la forma más segura de navegar por Internet? ");
 		ArrayList<String> answers6 = new ArrayList<String>();
-		answers6.add("I store it on my computer and keep a safety copy of the most important files on an USB flash drive.");
-		answers6.add("I store it on my computer and keep a safety copy within a cloud service such as Dropbox or GoogleDrive");
-		answers6.add("I store my data on my company’s server.");
-		answers6.add("I store my data on my company’s server and send the most important files to my personal email address.");
+		answers6.add("Compruebo que mi red esté encriptada y que mi software de protección esté actualizado, y uso el navegador que tenga las mejores calificaciones de seguridad.");
+		answers6.add("Compruebo que las opciones de privacidad y seguridad de mi navegador sean las correctas, me suscribo a alertas para estar actualizado sobre temas de seguridad, tomo precauciones antes de instalar plug-ins y extensiones, instalo plug-ins de seguridad y mantengo actualizado mi navegador.");
+		answers6.add("Uso un software que protege mi identidad y borra mis huellas.");
+		answers6.add("Solamente visito webs seguras.");
 		q6.setAnswers(answers6);
-		q6.setResponse(2);
+		q6.setResponse(1);
 
 		q6.merge();
 		
 		
 		
-		QuizzQuestion q7 = QuizzQuestion.findQuizzQuestion((long)2481);
-		q7.setQuestionText("You receive an email at your work account that you suspect to be spam. What do you do with it?");
+		QuizzQuestion q7 = QuizzQuestion.findQuizzQuestion((long)2491);
+		q7.setQuestionText("Tengo que tomar precauciones específicas para proteger mi móvil de empresa de ataques de seguridad?");
 		ArrayList<String> answers7 = new ArrayList<String>();
-		answers7.add("I click on any provided links to check if it really is spam.");
-		answers7.add("I mark the email as spam and forward it to our IT support.");
-		answers7.add("I reply and ask the sender to remove me from the mailing list.");
-		answers7.add("I follow the instructions to remove my email from the mailing list.");
+		answers7.add("No, siempre que tenga activados un PIN, contraseña o patrón de bloqueo.");
+		answers7.add("Mientras no pierda el móvil, no hay riesgo de seguridad");
+		answers7.add("Instalo software de seguridad, tengo cuidado con lo que me descargo, no contesto los correos o mensajes de texto sospechosos, compruebo que tengo todo el software actualizado, encripto los datos, hago copias de seguridad con regularidad, y uso el bloqueo de pantalla.");
+		answers7.add("Compruebo que tanto el Sistema operativo como las apps estén actualizadas para que no haya agujeros de seguridad, y uso el bloqueo de pantalla. ");
 		q7.setAnswers(answers7);
-		q7.setResponse(1);
+		q7.setResponse(2);
 
-		q7.merge();
+		q7.merge();*/
 		
 		
-		QuizzQuestion q8 = QuizzQuestion.findQuizzQuestion((long)2491);
-		q8.setQuestionText("You receive an email from a colleague with an attachment that is not addressed in the content of the email. What do you do?");
-		ArrayList<String> answers8 = new ArrayList<String>();
-		answers8.add("I contact my colleague and ask him about it. If he intentionally attached the file and it is something I’m actually supposed to look at, I will do so.");
-		answers8.add("I open it and check what it is.");
-		answers8.add("I ignore it – if it was something I am supposed to look at I’m sure my colleague will contact me about it.");
-		answers8.add("I forward the email to our IT-support and erase it from my computer.");
-		q8.setAnswers(answers8);
-		q8.setResponse(0);
-
-		q8.merge();
 		
-		QuizzQuestion q9 = QuizzQuestion.findQuizzQuestion((long)2401);
+		
+		/*QuizzQuestion q9 = QuizzQuestion.findQuizzQuestion((long)2401);
 		q9.setQuestionText("A business partner gives you an USB stick with data that you need to process. How do you access the data in a safe way?");
 		ArrayList<String> answers9 = new ArrayList<String>();
 		answers9.add("I just plug the USB stick in and copy the data – the USB stick of a business partner can be expected to be safe.");

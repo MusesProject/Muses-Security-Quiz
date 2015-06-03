@@ -38,8 +38,8 @@ table.ui-datagrid-data {
 				class="questionStyle">/10</span></span>
 
 			<br />
-			<p:outputLabel
-				value="#{messages.label_question_1}" 
+			<h:outputText
+				value="#{quizAppMbean.quizzChosen.listQuestions.get(0).questionText}" 
 				styleClass="questionStyle" />
 			<br />
 
