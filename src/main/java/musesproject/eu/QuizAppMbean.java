@@ -1173,14 +1173,14 @@ public class QuizAppMbean {
         wrongAnswer = resultQuizzChosen.getWrongAnswers();
         
         ChartSeries userDatas = new ChartSeries();
-        userDatas.setLabel("You");
-        userDatas.set("Correct", correctAnswer);
-        userDatas.set("Wrong", wrongAnswer);
+        userDatas.setLabel("Usted");
+        userDatas.set("Correcto", correctAnswer);
+        userDatas.set("Incorrecto", wrongAnswer);
         
         ChartSeries averageDatas = new ChartSeries();
-        averageDatas.setLabel("Others");
-        averageDatas.set("Correct",averageCorrAnswer);
-        averageDatas.set("Wrong", averageWrongAnswer);
+        averageDatas.setLabel("Otros");
+        averageDatas.set("Correcto",averageCorrAnswer);
+        averageDatas.set("Incorrecto", averageWrongAnswer);
 
         model.addSeries(userDatas);
         model.addSeries(averageDatas);
@@ -1204,7 +1204,7 @@ public class QuizAppMbean {
         xAxis.setLabel("Quizz");
         
         Axis yAxis = barModel.getAxis(AxisType.Y);
-        yAxis.setLabel("Moyenne");
+        yAxis.setLabel("Promedio");
         yAxis.setMin(0);
         yAxis.setMax(10);
     }
@@ -1215,14 +1215,14 @@ public class QuizAppMbean {
         wrongAnswer = resultQuizzChosen.getWrongAnswers();
         
         ChartSeries userDatas = new ChartSeries();
-        userDatas.setLabel("You");
-        userDatas.set("Correct", correctAnswer);
-        userDatas.set("Wrong", wrongAnswer);
+        userDatas.setLabel("Usted");
+        userDatas.set("Correcto", correctAnswer);
+        userDatas.set("Incorrecto", wrongAnswer);
 
         ChartSeries averageDatas = new ChartSeries();
-        averageDatas.setLabel("Others");
-        averageDatas.set("Correct", averageCorrAnswer);
-        averageDatas.set("Wrong", averageWrongAnswer);
+        averageDatas.setLabel("Otros");
+        averageDatas.set("Correcto", averageCorrAnswer);
+        averageDatas.set("Incorrecto", averageWrongAnswer);
 
         horizontalBarModel.addSeries(userDatas);
         horizontalBarModel.addSeries(averageDatas);
@@ -1232,7 +1232,7 @@ public class QuizAppMbean {
         horizontalBarModel.setStacked(true);
         
         Axis xAxis = horizontalBarModel.getAxis(AxisType.X);
-        xAxis.setLabel("Moyenne");
+        xAxis.setLabel("Promedio");
         xAxis.setMin(0);
         xAxis.setMax(10);
         
@@ -1249,8 +1249,8 @@ public class QuizAppMbean {
        
 
          
-        pieModel1.set("Right", correctAnswer);
-        pieModel1.set("False", wrongAnswer);
+        pieModel1.set("Correcto", correctAnswer);
+        pieModel1.set("Incorrecto", wrongAnswer);
         pieModel1.setFill(false);
         pieModel1.setShowDataLabels(true);
          
