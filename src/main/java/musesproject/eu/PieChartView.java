@@ -32,8 +32,8 @@ public class PieChartView implements Serializable {
         System.out.println("test: "+ QuizAppMbean.totalFinalWrongAnswer);
 
          
-        pieModel1.set("Right", correctAnswer);
-        pieModel1.set("False", wrongAnswer);
+        pieModel1.set("Correcto", correctAnswer);
+        pieModel1.set("Incorrecto", wrongAnswer);
         pieModel1.setFill(false);
         pieModel1.setShowDataLabels(true);
          

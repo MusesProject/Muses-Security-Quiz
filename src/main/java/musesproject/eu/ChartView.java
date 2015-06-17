@@ -78,15 +78,15 @@ public class ChartView implements Serializable {
         wrongAnswer = QuizAppMbean.totalFinalWrongAnswer;
         
         ChartSeries userDatas = new ChartSeries();
-        userDatas.setLabel("You");
+        userDatas.setLabel("Usted");
         userDatas.set("Correct", correctAnswer);
-        userDatas.set("Wrong", wrongAnswer);
+        userDatas.set("Incorrecto", wrongAnswer);
 
         
         ChartSeries averageDatas = new ChartSeries();
-        averageDatas.setLabel("World");
+        averageDatas.setLabel("Otros");
         averageDatas.set("Correct",averageCorrectAnswers());
-        averageDatas.set("Wrong", averageWrongAnswers());
+        averageDatas.set("Incorrecto", averageWrongAnswers());
 
         model.addSeries(userDatas);
         model.addSeries(averageDatas);
@@ -110,7 +110,7 @@ public class ChartView implements Serializable {
         xAxis.setLabel("Quizz");
         
         Axis yAxis = barModel.getAxis(AxisType.Y);
-        yAxis.setLabel("Moyenne");
+        yAxis.setLabel("Promedio");
         yAxis.setMin(0);
         yAxis.setMax(10);
     }
@@ -121,14 +121,14 @@ public class ChartView implements Serializable {
         wrongAnswer = QuizAppMbean.totalFinalWrongAnswer;
         
         ChartSeries userDatas = new ChartSeries();
-        userDatas.setLabel("You");
-        userDatas.set("Correct", correctAnswer);
-        userDatas.set("Wrong", wrongAnswer);
+        userDatas.setLabel("Usted");
+        userDatas.set("Correcto", correctAnswer);
+        userDatas.set("Incorrecto", wrongAnswer);
 
         ChartSeries averageDatas = new ChartSeries();
-        averageDatas.setLabel("World");
-        averageDatas.set("Correct", averageCorrectAnswers());
-        averageDatas.set("Wrong", averageWrongAnswers());
+        averageDatas.setLabel("Otros");
+        averageDatas.set("Correcto", averageCorrectAnswers());
+        averageDatas.set("Incorrecto", averageWrongAnswers());
 
         horizontalBarModel.addSeries(userDatas);
         horizontalBarModel.addSeries(averageDatas);
@@ -138,7 +138,7 @@ public class ChartView implements Serializable {
         horizontalBarModel.setStacked(true);
         
         Axis xAxis = horizontalBarModel.getAxis(AxisType.X);
-        xAxis.setLabel("Moyenne");
+        xAxis.setLabel("Promedio");
         xAxis.setMin(0);
         xAxis.setMax(10);
         
