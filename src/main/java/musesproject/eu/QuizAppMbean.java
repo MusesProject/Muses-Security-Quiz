@@ -306,9 +306,9 @@ public class QuizAppMbean {
 	public void initQuizzes(){
 		
 		totalCorrAnswer = 0;
-		
+
 		totalWrongAnswer = 0;
-		
+		 
 		averageCorrAnswer = averageCorrectAnswers();
 		
 		averageWrongAnswer = averageWrongAnswers();
@@ -528,7 +528,8 @@ public class QuizAppMbean {
 		
 		
 		totalCorrAnswer = 0;
-		
+		responseslist.clear();
+
 		totalWrongAnswer = 0;
 		
 		step1Done = false;
@@ -854,7 +855,6 @@ public class QuizAppMbean {
 	public void clearQuizz(){
 		
 		sampleQuestions.clear();
-
 		totalCorrAnswer = 0;
 		
 	}
